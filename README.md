@@ -8,17 +8,18 @@
 
 <!-- toc -->
 
-- [Installation](#installation)
-- [Contributing](#contributing)
-  * [Create an issue](#create-an-issue)
-  * [Submit a pull request (PR)](#submit-a-pull-request-pr)
-- [License](#license)
+- [1. Installation](#1-installation)
+- [2. Usage](#2-usage)
+- [3. Contributing](#3-contributing)
+  * [3.1. Create an issue](#31-create-an-issue)
+  * [3.2. Submit a pull request (PR)](#32-submit-a-pull-request-pr)
+- [4. License](#4-license)
 
 <!-- tocstop -->
 
 <!-- tocend -->
 
-## Installation
+## 1. Installation
 
 First, install [`Yeoman`](http://yeoman.io) and `generator-community` using [`npm`](https://www.npmjs.com/) (we assume you have pre-installed [`Node.js`](https://nodejs.org/)).
 
@@ -32,11 +33,11 @@ Then generate your new project (or add files to an existing repository):
 ```bash
 $ yo community
 ```
-## Usage
+## 2. Usage
 > ![Warning][icon-alert-50-image] `generator-community` will generate files in the current working directory, so be sure to change to a new directory first if you don't want to overwrite existing files.
 
 
-## Contributing
+## 3. Contributing
 
 ![Alt text](https://camo.githubusercontent.com/f96261621753dacf526590825b84f87ccb1db0e6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e7376673f7374796c653d666c6174 "Pull Request") We welcome contributors and pull requests!
 
@@ -45,19 +46,19 @@ Contributions are community-driven stories with a beginning, a middle, and an en
 * [Code of Conduct][code-of-conduct-url]
 * [Contributing][contributing-url] to `generator-community`
 
-### Create an issue
+### 3.1. Create an issue
 Contributions begin with Issues where we can discuss suggestions or problems.
 
  * [Report a defect ("bug")][issue-new-defect-url]
  * [Request a new feature or enhancement][issue-new-feat-url]
 
-### Submit a pull request (PR)
+### 3.2. Submit a pull request (PR)
 
 If you have a solution you'd like to demonstrate, you can go straight to a pull request.
 
  * [Create a pull request][pr-new-url]
 
-## License
+## 4. License
 
 [Apache-2.0][license-url] © [Greg Swindle](https://github.com/commonality)
 

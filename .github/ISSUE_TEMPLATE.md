@@ -9,7 +9,6 @@
 
 ## 2. User story summary
 > Describe what you want to accomplish and in what role/capacity, and why it's important to you.
-
 > __EXAMPLE:__
 > As a Job Applicant,
 > I want to submit my resume
@@ -42,4 +41,4 @@ In order to {achieve value}.
 * Operating System and version (desktop or mobile):
 * Link to your project:
 
-[icon-info-image]: /docs/img/icons8/icon-info-50.png
+[icon-info-image]: ../docs/img/icons8/icon-info-50.png
