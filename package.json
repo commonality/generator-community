@@ -72,8 +72,17 @@
   "main": "generators/index.js",
   "repository": "commonality/generator-community",
   "scripts": {
-    "prepublish": "nsp check",
-    "pretest": "eslint . --fix",
+    "docs:toc": "npm run docs:toc:contributing && npm run docs:toc:readme",
+    "docs:toc:contributing": "markdown-toc -i .github/CONTRIBUTING.md",
+    "docs:toc:readme": "markdown-toc -i README.md",
+    "lint": "npm run lint:js",
+    "lint:js": "eslint . --fix",
+    "posttest": "npm run security",
+    "prepublish": "npm run security",
+    "pretest": "npm run lint",
+    "quality-gates": "npm run test && npm run docs:toc",
+    "security": "npm run security:nsp:scan",
+    "security:nsp:scan": "nsp check",
     "test": "jest --config=jest.config.json"
   }
 }
