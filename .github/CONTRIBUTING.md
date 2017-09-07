@@ -54,15 +54,20 @@
 
     View `generator-community's` collaboration and contribution flowcharts:
 
-  > <details>
-    <summary>Toogle `generator-community's` __Issue workflow flowchart__.</summary>
-    ![Issue flowchart][contribution-lifecycle-issues-image]
-    </details>
-    <br>
-  > <details>
-    <summary>Toogle `generator-community's` __Pull Request workflow flowchart__.</summary>
-    ![Pull Request flowchart][contribution-lifecycle-pr-image]
-    </details>
+  <details>
+  <summary>Toogle the Issue workflow flowchart.</summary>
+
+  ![Issue flowchart][contribution-lifecycle-issues-image]
+
+  </details>
+  <br>
+
+  <details>
+  <summary>Toogle the Pull Request workflow flowchart.</summary>
+
+  ![Pull Request flowchart][contribution-lifecycle-pr-image]
+
+  </details>
 
 
 * ### 1.1. Create Issues for feature requests and defects.
@@ -84,15 +89,15 @@
    _Why:_
     > ⌦`type` categorizes product changes. Valid types are:
     >
-    1. `build`: Changes that affect the build system or external dependencies.
-    1. `ci`: Changes related to continuous integration, delivery, and deployment tasks.
-    1. `docs`: Documentation changes.
-    1. `feat`: A new feature.
-    1. `fix`: Defect (bug) repair.
-    1. `perf`: Performance enhancements.
-    1. `refactor`: Source code design improvements that don't affect product behavior.
-    1. `style`: Changes involving graphics, typography, etc., as well as source code beautification.
-    1. `test`: Tests added to increase code coverage, or corrected due to errors.
+    > * `build`: Changes that affect the build system or external dependencies.
+    > * `ci`: Changes related to continuous integration, delivery, and deployment tasks.
+    > * `docs`: Documentation changes.
+    > * `feat`: A new feature.
+    > * `fix`: Defect (bug) repair.
+    > * `perf`: Performance enhancements.
+    > * `refactor`: Source code design improvements that don't affect product behavior.
+    > * `style`: Changes involving graphics, typography, etc., as well as source code beautification.
+    > * `test`: Tests added to increase code coverage, or corrected due to errors.
 
 * ### 1.3. Fill out the issue template.
 
@@ -104,14 +109,14 @@
     _Why:_
     > ⌦ We use [`git-labelmaker`][gh-git-labelmaker-url] to categorize Issues (and Pull Requests) consistently. There are four label categories:
     >
-    1. `Type`: the "kind" of product change.
-    2. `Status`: the state of a change.
-    3. `Priority`: the importance and value of a change.
-    4. `Points`: the size/complexity of a change.
+    > * `Type`: the "kind" of product change.
+    > * `Status`: the state of a change.
+    > * `Priority`: the importance and value of a change.
+    > * `Points`: the size/complexity of a change.
     <br><br>
 
     <details>
-    <summary>__Toggle the table of Label definitions.__</summary>
+    <summary>Toggle the Label definitions table.</summary>
       <table class="table table-striped table-bordered">
       <thead>
       <tr>
@@ -268,8 +273,7 @@
 * ### 1.6. Your issue will be either accepted for work, or declined.
 
     _Why:_
-    > ⌦ It's up to the Product Owner to agree to proposed changes. If they believe your issue add value, the issue will be approved, and we'll
-    > ask someone to volunteer to do the work.
+    > ⌦ It's up to the Product Owner to agree to proposed changes. If they believe your issue add value, the issue will be approved, and we'll ask someone to volunteer to do the work.
     >
     > Otherwise, your issue will be politely declined.
 
@@ -299,14 +303,14 @@
 
     _Why:_
     > ⌦ It notifies team members whenever changes occur and allows the community to review your changes at any time..
-
+    >
     > It also enables easy peer-review of the code and dedicates forum for discussing the proposed feature.
 
 * #### 2.1.4. Submit a Pull Request as soon as possible.
 
     _Why:_
     > ⌦ Pull Requests declare work in progress. Frequent pushes to a Pull Request notify your team members about change, and gives them the opportunity to provide feedback more often.
-
+    >
     > Pull Request pushes also trigger automated CI-services, which help you fail fast and assess quality.
 
 * #### 2.1.5. Rebase your local `master` branch before you ask for PR approvals.
@@ -320,10 +324,10 @@
     > ⌦ Rebasing will merge in the `master` branch and apply the commits that you have made locally to the top of it.
 
 * #### 2.1.7. Add reviewers and the label `Status: Needs Review` when the topic branch is ready.
-f
+
     _Why:_
     > ⌦ When you add a Reviewer, GitHub (or Bitbucket) notifies teammates that your topic branch meets all Acceptance Criteria and is ready to be merged into `master`.
-
+    >
     > Add the label "Status: Review Needed" formally declares the status of your topic branch, and helps teams filter through issues.
 
 * #### 2.1.8. Delete local and remote topic branches after merging.
@@ -335,7 +339,7 @@ f
 
     _Why:_
     > ⌦ Branch protection prevents production-ready branches from incorporating unexpected and irreversible changes. Learn more about
-
+    >
     > * [GitHub protected branches](https://help.github.com/articles/about-protected-branches/) and
     > * [Bitbucket protected branches](https://confluence.atlassian.com/bitbucketserver/using-branch-permissions-776639807.html).
 
@@ -477,17 +481,17 @@ f
 [code-of-conduct-url]: ./CODE_OF_CONDUCT.md
 [commonality-palette-image]: ./docs/img/palette.svg
 [contributing-url]: ./CONTRIBUTING.md
-[contribution-lifecycle-issues-image]: /docs/img/icons8/contribution-lifecycle-create-issue.png
-[contribution-lifecycle-pr-image]: /docs/img/icons8/contribution-lifecycle-pr.png
+[contribution-lifecycle-issues-image]: ../docs/img/icons8/contribution-lifecycle-create-issue.png
+[contribution-lifecycle-pr-image]: ../docs/img/icons8/contribution-lifecycle-pr.png
 [coolors-palette-url]: https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533
 [force-with-lease-url]: https://developer.atlassian.com/blog/2015/04/force-with-lease/
 [fossa-image-large]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Forganization%2Frepo-name.svg?type=large
 [gh-git-labelmaker-url]: https://github.com/himynameisdave/git-labelmaker
 [git-resolve-conflicts-url]: https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/
-[icon-git-logo-image]: /docs/img/icons8/git-logo.png
-[icon-info-image]: /docs/img/icons8/icon-info-50.png
-[icon-issue-image]: /docs/img/icons8/icon-issues.png
-[icon-pr-image]: /docs/img/icons8/icon-pr.png
+[icon-git-logo-image]: ../docs/img/icons8/git-logo.png
+[icon-info-image]: ../docs/img/icons8/icon-info-50.png
+[icon-issue-image]: ../docs/img/icons8/icon-issues.png
+[icon-pr-image]: ../docs/img/icons8/icon-pr.png
 [issues-new-defect-url]: https://github.com/commonality/generator-community/issues/new?title=fix%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
 [issues-new-feat-url]: https://github.com/commonality/generator-community/issues/new?title=feat%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
 [issues-url]: https://github.com/commonality/generator-community/issues
@@ -495,6 +499,6 @@ f
 [makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [makeapullrequest-url]: http://makeapullrequest.com
 [markdown-toc-url]: https://github.com/jonschlinkert/markdown-toc
-[product-development-guidelines-url]: /docs/product-development-guidelines/js/PRODUCT_DEVELOPEMENT_GUIDELINES.md
+[product-development-guidelines-url]: ../docs/product-development-guidelines/js/PRODUCT_DEVELOPEMENT_GUIDELINES.md
 [product-repo-logo-image]: ../docs/img/logo-commonalaxy.png
 [product-repo-url]: .
