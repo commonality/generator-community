@@ -27,8 +27,8 @@
     + [2.1.7. Add reviewers and the label `Status: Needs Review` when the topic branch is ready.](#217-add-reviewers-and-the-label-status-needs-review-when-the-topic-branch-is-ready)
     + [2.1.8. Delete local and remote topic branches after merging.](#218-delete-local-and-remote-topic-branches-after-merging)
     + [2.1.9. Protect your `master` branch.](#219-protect-your-master-branch)
-  * [2.2 __Git workflow__](#22-__git-workflow__)
-    + [2.2.1. New products: initialize a git repository in the project directory.](#221-new-products-initialize-a-git-repository-in-the-project-directory)
+  * [2.2. __Feature-branch-workflow__](#22-__feature-branch-workflow__)
+    + [2.2.1. Initialize a Git repository in the product directory (_for new repositories only_).](#221-initialize-a-git-repository-in-the-product-directory-_for-new-repositories-only_)
     + [2.2.2. Checkout a new `feat`ure or `fix` branch.](#222-checkout-a-new-feature-or-fix-branch)
     + [2.2.3. Make Changes.](#223-make-changes)
     + [2.2.4. Sync with remote to get changes you’ve missed.](#224-sync-with-remote-to-get-changes-youve-missed)
@@ -38,12 +38,9 @@
     + [2.2.8. Submit a Pull Request.](#228-submit-a-pull-request)
     + [2.2.9. Pull request will be accepted, merged and close by a reviewer.](#229-pull-request-will-be-accepted-merged-and-close-by-a-reviewer)
     + [2.2.10. Remove your local topic branch if you're done.](#2210-remove-your-local-topic-branch-if-youre-done)
-  * [2.3. Tell your boss how Git enables collaborative process models](#23-tell-your-boss-how-git-enables-collaborative-process-models)
+  * [2.3. __Tell your boss how Git enables collaborative process models.__](#23-__tell-your-boss-how-git-enables-collaborative-process-models__)
     + [2.3.1. Explain that inner and open source are _process models_](#231-explain-that-inner-and-open-source-are-_process-models_)
     + [2.3.2. Describe a typical Git workflow in collaborative terms](#232-describe-a-typical-git-workflow-in-collaborative-terms)
-  * [2.2.](#22)
-  * [__Pull Requests (PRs)__](#__pull-requests-prs__)
-- [Labels](#labels)
 
 <!-- tocstop -->
 
@@ -53,19 +50,19 @@
 
 ![Issues][icon-issue-image]
 
-Collaboration starts with Issues. Changes happen through Pull Requests.
+* __Collaboration starts with *Issues*. Changes happen through *Pull Requests*.__
 
-_View `generator-community's` collaboration and contribution flowcharts:_
+    View `generator-community's` collaboration and contribution flowcharts:
 
-> <details>
-  <summary>Toogle `generator-community's` __Issue workflow flowchart__.</summary>
-  ![Issue flowchart][contribution-lifecycle-issues-image]
-  </details>
-  <br>
-> <details>
-  <summary>Toogle `generator-community's` __Pull Request workflow flowchart__.</summary>
-  ![Pull Request flowchart][contribution-lifecycle-pr-image]
-  </details>
+  > <details>
+    <summary>Toogle `generator-community's` __Issue workflow flowchart__.</summary>
+    ![Issue flowchart][contribution-lifecycle-issues-image]
+    </details>
+    <br>
+  > <details>
+    <summary>Toogle `generator-community's` __Pull Request workflow flowchart__.</summary>
+    ![Pull Request flowchart][contribution-lifecycle-pr-image]
+    </details>
 
 
 * ### 1.1. Create Issues for feature requests and defects.
@@ -76,7 +73,11 @@ _View `generator-community's` collaboration and contribution flowcharts:_
     > conversation about features, defects ("bugs"), refactoring, product
     > delivery improvements, etc.
 
-    [Submit a new issue][issues-new-url] or [assign yourself an open issue][issues-url] to begin collaboration.
+    Go ahead! Get started now:
+
+    * [Report a defect ("bug")][issues-new-defect-url]
+    * [Request a feature][issues-new-feat-url]
+    * [Review all open issues][issues-url]
 
 * ### 1.2. Format titles with **`type(scope): subject`**.
 
@@ -107,9 +108,10 @@ _View `generator-community's` collaboration and contribution flowcharts:_
     2. `Status`: the state of a change.
     3. `Priority`: the importance and value of a change.
     4. `Points`: the size/complexity of a change.
+    <br><br>
 
     <details>
-    <summary>Toggle table of Label definitions...</summary>
+    <summary>__Toggle the table of Label definitions.__</summary>
       <table class="table table-striped table-bordered">
       <thead>
       <tr>
@@ -120,27 +122,27 @@ _View `generator-community's` collaboration and contribution flowcharts:_
       <tbody>
       <tr>
       <td><code>Type: Feature</code></td>
-      <td>A distinguished or expected characteristic of a product that either differentiates the product from competitors, or whose absence would be diminish the product’s value.&lt;br&gt;<strong>Note</strong> that <code>Type: Feature</code> and <code>Type: Defect</code> are mutually exclusive: an Issue cannot be both a feature and a defect.</td>
+      <td>A distinguished or expected characteristic of a product that either differentiates the product from competitors, or whose absence would be diminish the product’s value.<br><br><strong>Note</strong> that <code>Type: Feature</code> and <code>Type: Defect</code> are mutually exclusive: an Issue cannot be both a feature and a defect.</td>
       </tr>
       <tr>
       <td><code>Type: Defect</code></td>
-      <td>A flaw, fault, or abnormality that deviates from or prevents the product’s expected behavior.&lt;br&gt;<strong>Note</strong> that <code>Type: Feature</code> and <code>Type: Defect</code> are mutually exclusive: an Issue cannot be both a feature and a defect.</td>
+      <td>A flaw, fault, or abnormality that deviates from or prevents the product’s expected behavior.<br><br><strong>Note</strong> that <code>Type: Feature</code> and <code>Type: Defect</code> are mutually exclusive: an Issue cannot be both a feature and a defect.</td>
       </tr>
       <tr>
       <td><code>CLA: Signed</code></td>
-      <td>The person who submitted a product change has signed your Contributor License Agreement.&lt;br&gt;<em>Remove this label if your product owner does not require a CLA.</em></td>
+      <td>The person who submitted a product change has signed your Contributor License Agreement.<br><em>Remove this label if your product owner does not require a CLA.</em></td>
       </tr>
       <tr>
       <td><code>CLA: Unsigned</code></td>
-      <td>The person who submitted a product change has __<em>not</em>__signed your Contributor License Agreement.&lt;br&gt;<em>Remove this label if your product owner does not require a CLA.</em></td>
+      <td>The person who submitted a product change has __<em>not</em>__signed your Contributor License Agreement.<br><em>Remove this label if your product owner does not require a CLA.</em></td>
       </tr>
       <tr>
       <td><code>Priority: Critical</code></td>
-      <td><code>Type: Feature</code>: The proposed enhancement is essential to the success of your product.&lt;br&gt;<code>Type: Defect</code>: Your product no longer functions due to internal, <code>FATAL</code> errors, and must be addressed immediately in order to maintain consumer loyalty.</td>
+      <td><code>Type: Feature</code>: The proposed enhancement is essential to the success of your product.<br><code>Type: Defect</code>: Your product no longer functions due to internal, <code>FATAL</code> errors, and must be addressed immediately in order to maintain consumer loyalty.</td>
       </tr>
       <tr>
       <td><code>Priority: High</code></td>
-      <td><code>Type: Feature</code>: The proposed enhancement is central to product’s value proposition, and should be implemented as soon as possible.&lt;br&gt;<code>Type: Defect</code>: The product functions overall, but with an issue that risks consumer abandonment.</td>
+      <td><code>Type: Feature</code>: The proposed enhancement is central to product’s value proposition, and should be implemented as soon as possible.<br><code>Type: Defect</code>: The product functions overall, but with an issue that risks consumer abandonment.</td>
       </tr>
       <tr>
       <td><code>Priority: Medium</code></td>
@@ -164,7 +166,7 @@ _View `generator-community's` collaboration and contribution flowcharts:_
       </tr>
       <tr>
       <td><code>Status: Blocked</code></td>
-      <td><code>Type: Feature</code> and <code>Type: Defect</code>: The proposed change cannot be addressed until another issue has been resolved.&lt;br&gt;<strong>Note</strong> that the Issue blocking the proposed change SHOULD be referenced in the <code>Blocked</code> Issue’s description field.</td>
+      <td><code>Type: Feature</code> and <code>Type: Defect</code>: The proposed change cannot be addressed until another issue has been resolved.<br><br><strong>Note</strong> that the Issue blocking the proposed change SHOULD be referenced in the <code>Blocked</code> Issue’s description field.</td>
       </tr>
       <tr>
       <td><code>Status: Completed</code></td>
@@ -176,15 +178,15 @@ _View `generator-community's` collaboration and contribution flowcharts:_
       </tr>
       <tr>
       <td><code>Status: On Hold</code></td>
-      <td><code>Type: Feature</code> and <code>Type: Defect</code>: The Product Owner has (temporarily) postponed Issue resolution.&lt;br&gt;<strong>Note</strong> that the <em>reason</em> for postponement should be stated in the Issue’s description field.</td>
+      <td><code>Type: Feature</code> and <code>Type: Defect</code>: The Product Owner has (temporarily) postponed Issue resolution.<br><br><strong>Note</strong> that the <em>reason</em> for postponement should be stated in the Issue’s description field.</td>
       </tr>
       <tr>
       <td><code>Status: Pending</code></td>
-      <td><code>Type: Feature</code> and <code>Type: Defect</code>: product change or resolution is either awaiting the Product Owner’s decision.&lt;br&gt;Ideally, the Product Owner should declare why they’re undecided somewhere in the Issue thread.</td>
+      <td><code>Type: Feature</code> and <code>Type: Defect</code>: product change or resolution is either awaiting the Product Owner’s decision.<br>Ideally, the Product Owner should declare why they’re undecided somewhere in the Issue thread.</td>
       </tr>
       <tr>
       <td><code>Status: Rejected</code></td>
-      <td><code>Type: Feature</code> and <code>Type: Defect</code>: The Product Owner has declined a change proposal.&lt;br&gt;<strong>Note</strong> that the Product Owner should politely explain why they dismissed the change request.</td>
+      <td><code>Type: Feature</code> and <code>Type: Defect</code>: The Product Owner has declined a change proposal.<br><strong>Note</strong> that the Product Owner should politely explain why they dismissed the change request.</td>
       </tr>
       <tr>
       <td><code>Status: Review Needed</code></td>
@@ -196,7 +198,7 @@ _View `generator-community's` collaboration and contribution flowcharts:_
       </tr>
       <tr>
       <td><code>Type: Breaking Change</code></td>
-      <td>The change introduces backward incompatibility with previous product versions.&lt;br&gt;&lt;br&gt;<strong><code>Type: Breaking Change</code> MUST be recorded with a</strong> &lt;li&gt;Git commit message,&lt;li&gt;An increment (+1) in the product’s Semantic Version’s MAJOR version,&lt;li&gt;<code>CHANGELOG</code> entry, and&lt;li&gt;Updated API documentation.</td>
+      <td>The change introduces backward incompatibility with previous product versions.<br><br><strong><code>Type: Breaking Change</code> MUST be recorded with a</strong> <ol><br><li>Git commit message,<br><li>An increment (+1) in the product’s Semantic Version’s MAJOR version,<br><li><code>CHANGELOG</code> entry, and<br><li>Updated API documentation.</ol></td>
       </tr>
       <tr>
       <td><code>Type: Build</code></td>
@@ -216,7 +218,7 @@ _View `generator-community's` collaboration and contribution flowcharts:_
       </tr>
       <tr>
       <td><code>Type: Duplicate</code></td>
-      <td>An Issue that shares the same characteristics as a previously reported issue. <strong>Note</strong> that  product maintainers should reference the original Issue and close the <code>Type: Duplicate</code> Issue.</td>
+      <td>An Issue that shares the same characteristics as a previously reported issue. <br><br><strong>Note</strong> that  product maintainers should reference the original Issue and close the <code>Type: Duplicate</code> Issue.</td>
       </tr>
       <tr>
       <td><code>Type: Feedback</code></td>
@@ -244,7 +246,7 @@ _View `generator-community's` collaboration and contribution flowcharts:_
       </tr>
       <tr>
       <td><code>Type: Spike</code></td>
-      <td>A technical or design <em>experiment</em> that investigates a possible solution. <strong>Note</strong> that spike solutions are, by definition, <em>throwaway</em> solutions that should <strong>NEVER</strong> be added to a product release.</td>
+      <td>A technical or design <em>experiment</em> that investigates a possible solution. <br><br><strong>Note</strong> that spike solutions are, by definition, <em>throwaway</em> solutions that should <strong>NEVER</strong> be added to a product release.</td>
       </tr>
       <tr>
       <td><code>Type: Style</code></td>
@@ -280,162 +282,163 @@ _View `generator-community's` collaboration and contribution flowcharts:_
 
   `generator-community` manages contributions with the  [feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 
-  * #### 2.1.1. Makes changes in a topic branch.
+* #### 2.1.1. Makes changes in a topic branch.
+
+  _Why:_
+  > ⌦ Use an isolated topic branch for parallel product development. Topic branches allow you to submit multiple pull requests without confusion. You can iterate without polluting the master branch with potentially unstable, unfinished code. The `generator-community` team uses:
+
+  > * [Feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow) for small-ish codebases, or
+  > * [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow) for large applications and monoliths
+
+* #### 2.1.2. Branch out from `master`.
 
     _Why:_
-    > ⌦ Use an isolated topic branch for parallel product development. Topic branches allow you to submit multiple pull requests without confusion. You can iterate without polluting the master branch with potentially unstable, unfinished code. The `generator-community` team uses:
+    > ⌦ `generator-community` follows the feature-branch-workflow.
 
-    > * [Feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow) for small-ish codebases, or
-    > * [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow) for large applications and monoliths
+* #### 2.1.3. __*Never*__ push into the `master` branch. __*Always*__ submit a Pull Request.
 
-  * #### 2.1.2. Branch out from `master`.
+    _Why:_
+    > ⌦ It notifies team members whenever changes occur and allows the community to review your changes at any time..
 
-      _Why:_
-      > ⌦ `generator-community` follows the feature-branch-workflow.
+    > It also enables easy peer-review of the code and dedicates forum for discussing the proposed feature.
 
-  * #### 2.1.3. __*Never*__ push into the `master` branch. __*Always*__ submit a Pull Request.
+* #### 2.1.4. Submit a Pull Request as soon as possible.
 
-      _Why:_
-      > ⌦ It notifies team members whenever changes occur and allows the community to review your changes at any time..
+    _Why:_
+    > ⌦ Pull Requests declare work in progress. Frequent pushes to a Pull Request notify your team members about change, and gives them the opportunity to provide feedback more often.
 
-      > It also enables easy peer-review of the code and dedicates forum for discussing the proposed feature.
+    > Pull Request pushes also trigger automated CI-services, which help you fail fast and assess quality.
 
-  * #### 2.1.4. Submit a Pull Request as soon as possible.
+* #### 2.1.5. Rebase your local `master` branch before you ask for PR approvals.
 
-      _Why:_
-      > ⌦ Pull Requests declare work in progress. Frequent pushes to a Pull Request notify your team members about change, and gives them the opportunity to provide feedback more often.
+    _Why:_
+    > Rebasing will merge in the requested branch (`master` or `develop`) and apply the commits that you have made locally to the top of the history without creating a merge commit (assuming there were no conflicts). This results in a nice and clean history.
 
-      > Pull Request pushes also trigger automated CI-services, which help you fail fast and assess quality.
+* #### 2.1.6. Resolve rebase conflicts before Pull Request reviews.
 
-  * #### 2.1.5. Rebase your local `master` branch before you ask for PR approvals.
+    _Why:_
+    > ⌦ Rebasing will merge in the `master` branch and apply the commits that you have made locally to the top of it.
 
-      _Why:_
-      > Rebasing will merge in the requested branch (`master` or `develop`) and apply the commits that you have made locally to the top of the history without creating a merge commit (assuming there were no conflicts). This results in a nice and clean history.
-
-  * #### 2.1.6. Resolve rebase conflicts before Pull Request reviews.
-
-      _Why:_
-      > ⌦ Rebasing will merge in the `master` branch and apply the commits that you have made locally to the top of it.
-
-  * #### 2.1.7. Add reviewers and the label `Status: Needs Review` when the topic branch is ready.
+* #### 2.1.7. Add reviewers and the label `Status: Needs Review` when the topic branch is ready.
 f
-      _Why:_
-      > ⌦ When you add a Reviewer, GitHub (or Bitbucket) notifies teammates that your topic branch meets all Acceptance Criteria and is ready to be merged into `master`.
+    _Why:_
+    > ⌦ When you add a Reviewer, GitHub (or Bitbucket) notifies teammates that your topic branch meets all Acceptance Criteria and is ready to be merged into `master`.
 
-      > Add the label "Status: Review Needed" formally declares the status of your topic branch, and helps teams filter through issues.
+    > Add the label "Status: Review Needed" formally declares the status of your topic branch, and helps teams filter through issues.
 
-  * #### 2.1.8. Delete local and remote topic branches after merging.
+* #### 2.1.8. Delete local and remote topic branches after merging.
 
-      _Why:_
-      > ⌦ Topic branches should only exist while work is in-progress. Merged topic branches clutter up your list of branches with dead branches. Topic branch deletion also insures that you only ever merge back into `master`.
+    _Why:_
+    > ⌦ Topic branches should only exist while work is in-progress. Merged topic branches clutter up your list of branches with dead branches. Topic branch deletion also insures that you only ever merge back into `master`.
 
-  * #### 2.1.9. Protect your `master` branch.
+* #### 2.1.9. Protect your `master` branch.
 
-      _Why:_
-      > ⌦ Branch protection prevents production-ready branches from incorporating unexpected and irreversible changes. Learn more about
+    _Why:_
+    > ⌦ Branch protection prevents production-ready branches from incorporating unexpected and irreversible changes. Learn more about
 
-      > * [GitHub protected branches](https://help.github.com/articles/about-protected-branches/) and
-      > * [Bitbucket protected branches](https://confluence.atlassian.com/bitbucketserver/using-branch-permissions-776639807.html).
+    > * [GitHub protected branches](https://help.github.com/articles/about-protected-branches/) and
+    > * [Bitbucket protected branches](https://confluence.atlassian.com/bitbucketserver/using-branch-permissions-776639807.html).
 
-* ### 2.2 __Git workflow__
+* ### 2.2. __Feature-branch-workflow__
 
   We use the  [feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow). We _recommend_ [interactive rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing), too, but that's not required.
 
-  The main steps are as follow:
+* #### 2.2.1. Initialize a Git repository in the product directory (_for new repositories only_).
 
-  * #### 2.2.1. New products: initialize a git repository in the project directory.
+  For subsequent features and changes, this step should be ignored.
 
-    For subsequent features and changes, this step should be ignored.
+  ```sh
+  cd <product-repo-directory>
+  git init
+  ```
 
-    ```sh
-    cd <product-repo-directory>
-    git init
-    ```
+* #### 2.2.2. Checkout a new `feat`ure or `fix` branch.
 
-  * #### 2.2.2. Checkout a new `feat`ure or `fix` branch.
+  ```sh
+  # For a new feature branch:
+  git checkout -b feat/<issueId>-scope-of-change
 
-    ```sh
-    # For a new feature branch:
-    git checkout -b feat/<issueId>-scope-of-change
+  # For branches that address defects:
+  git checkout -b fix/<issueId>-scope-of-change
+  ```
 
-    # For branches that address defects:
-    git checkout -b fix/<issueId>-scope-of-change
-    ```
+* #### 2.2.3. Make Changes.
 
-  * #### 2.2.3. Make Changes.
+  ```sh
+  git add
+  git commit -a
+  ```
 
-    ```sh
-    git add
-    git commit -a
-    ```
+  _Why:_
+  > ⌦ `git commit -a` will start an editor which lets you separate the subject from the body. Read more about it in *section 1.3*.
 
-    _Why:_
-    > ⌦ `git commit -a` will start an editor which lets you separate the subject from the body. Read more about it in *section 1.3*.
+* #### 2.2.4. Sync with remote to get changes you’ve missed.
 
-  * #### 2.2.4. Sync with remote to get changes you’ve missed.
+  ```sh
+  git checkout master
+  git pull
+  ```
 
-    ```sh
-    git checkout master
-    git pull
-    ```
+  _Why:_
+  > ⌦ This will give you a chance to deal with conflicts on your machine while rebasing(later) rather than creating a Pull Request that contains conflicts.
 
-    _Why:_
-    > ⌦ This will give you a chance to deal with conflicts on your machine while rebasing(later) rather than creating a Pull Request that contains conflicts.
+* #### 2.2.5. Update your topic branch with the latest changes from `master` by interactive rebase.
 
-  * #### 2.2.5. Update your topic branch with the latest changes from `master` by interactive rebase.
+  ```sh
+  git checkout <branchname>
+  git rebase -i --autosquash master
+  ```
 
-    ```sh
-    git checkout <branchname>
-    git rebase -i --autosquash master
-    ```
+  _Why:_
+  > ⌦ You can use `--autosquash` to squash all your commits to a single commit. Nobody wants many commits for a single feature in develop branch.
+  >
+  > [Learn more about autosquashing Git commits....][autosquashing-git-commits-url]
+* #### 2.2.6. Resolve conflicts (if any occur), and continue rebase. Otherwise, skip this step.
 
-    _Why:_
-    > ⌦ You can use `--autosquash` to squash all your commits to a single commit. Nobody wants many commits for a single feature in develop branch. [Learn more about autosquashing Git commits....][autosquashing-git-commits-url]
-  * #### 2.2.6. Resolve conflicts (if any occur), and continue rebase. Otherwise, skip this step.
+  [Learn more about resolving conflicts][git-resolve-conflicts-url]....
 
-    [Learn more about resolving conflicts][git-resolve-conflicts-url]....
+  ```sh
+  git add <file1> <file2> ...
+  git rebase --continue
+  ```
 
-    ```sh
-    git add <file1> <file2> ...
-    git rebase --continue
-    ```
+* #### 2.2.7. Push your branch with the `-f` flag (if necessary).
 
-  * #### 2.2.7. Push your branch with the `-f` flag (if necessary).
+  Rebase changes history, so you might need to force changes into the `remote` branch with the `-f` flag. If someone else is working on your branch, use the less destructive `--force-with-lease`.
 
-    Rebase changes history, so you might need to force changes into the `remote` branch with the `-f` flag. If someone else is working on your branch, use the less destructive `--force-with-lease`.
+  ```sh
+  git push -f
+  ```
 
-    ```sh
-    git push -f
-    ```
+  _Why:_
+  > ⌦ When you do a rebase, you are changing the history on your topic branch. As a result, Git will reject normal `git push`. Instead, you'll need to use the -f or --force flag.
+  >
+  > [Learn more about `--force-with-lease`....][force-with-lease-url]
 
-    _Why:_
-    > ⌦ When you do a rebase, you are changing the history on your topic branch. As a result, Git will reject normal `git push`. Instead, you'll need to use the -f or --force flag. [Learn more about `--force-with-lease`....][force-with-lease-url]
+* #### 2.2.8. Submit a Pull Request.
 
-  * #### 2.2.8. Submit a Pull Request.
+* #### 2.2.9. Pull request will be accepted, merged and close by a reviewer.
 
-  * #### 2.2.9. Pull request will be accepted, merged and close by a reviewer.
+* #### 2.2.10. Remove your local topic branch if you're done.
 
-  * #### 2.2.10. Remove your local topic branch if you're done.
+  ```sh
+  git branch -d <branchname>
+  ```
 
-    ```sh
-    git branch -d <branchname>
-    ```
+  to remove all branches which are no longer on remote
 
-    to remove all branches which are no longer on remote
+  ```sh
+  git fetch -p && \
+    for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; \
+      do git branch -D $branch; \
+    done
+  ```
 
-    ```sh
-    git fetch -p && \
-      for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; \
-        do git branch -D $branch; \
-      done
-    ```
-
-
-### 2.3. Tell your boss how Git enables collaborative process models
+### 2.3. __Tell your boss how Git enables collaborative process models.__
 
 ![Leadership](../docs/img/icons8/icon-leadership-filled.png)
 
-  __Git enables collaboration with structured (business) process models.__ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called workflows.
+* __Git enables collaboration with structured (business) process models.__ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called workflows.
 
   > <details>
   > <summary>Toggle a workflow example.</summary><br>
@@ -455,17 +458,15 @@ f
   _Why:_
   > ⌦ Git can be intimidating, and The Boss (even if that's you!) needs to know why Git is valuable in *business terms.*
 
-  * #### 2.3.1. Explain that inner and open source are _process models_
+* #### 2.3.1. Explain that inner and open source are _process models_
 
-    _Why:_
-    > ⌦ Git is a __collaboration__ tool that grants people the opportunity to contribute to software products using simple and consistent process models called __workflows.__
+  _Why:_
+  > ⌦ Git is a __collaboration__ tool that grants people the opportunity to contribute to software products using simple and consistent process models called __workflows.__
 
-  * #### 2.3.2. Describe a typical Git workflow in collaborative terms
+* #### 2.3.2. Describe a typical Git workflow in collaborative terms
 
-    _Why:_
-    > ⌦ Many engineers can discuss Git's _technicalities_, but cannot articulate Git's as an applied _technology_ for collaboration.
-
-
+  _Why:_
+  > ⌦ Many engineers can discuss Git's _technicalities_, but cannot articulate Git's as an applied _technology_ for collaboration.
 
 
 [all-contributors-cli-url]: https://github.com/kentcdodds/all-contributors
@@ -487,6 +488,9 @@ f
 [icon-info-image]: /docs/img/icons8/icon-info-50.png
 [icon-issue-image]: /docs/img/icons8/icon-issues.png
 [icon-pr-image]: /docs/img/icons8/icon-pr.png
+[issues-new-defect-url]: https://github.com/commonality/generator-community/issues/new?title=fix%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
+[issues-new-feat-url]: https://github.com/commonality/generator-community/issues/new?title=feat%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
+[issues-url]: https://github.com/commonality/generator-community/issues
 [license-url]: ./LICENSE
 [makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [makeapullrequest-url]: http://makeapullrequest.com
