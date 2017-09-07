@@ -72,6 +72,7 @@
   "main": "generators/index.js",
   "repository": "commonality/generator-community",
   "scripts": {
+    "docs": "npm run docs:toc",
     "docs:toc": "npm run docs:toc:contributing && npm run docs:toc:readme",
     "docs:toc:contributing": "markdown-toc -i .github/CONTRIBUTING.md",
     "docs:toc:readme": "markdown-toc -i README.md",

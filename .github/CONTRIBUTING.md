@@ -39,8 +39,8 @@
     + [2.2.9. Pull request will be accepted, merged and close by a reviewer.](#229-pull-request-will-be-accepted-merged-and-close-by-a-reviewer)
     + [2.2.10. Remove your local topic branch if you're done.](#2210-remove-your-local-topic-branch-if-youre-done)
   * [2.3. __Tell your boss how Git enables collaborative process models.__](#23-__tell-your-boss-how-git-enables-collaborative-process-models__)
-    + [2.3.1. Explain that inner and open source are _process models_](#231-explain-that-inner-and-open-source-are-_process-models_)
-    + [2.3.2. Describe a typical Git workflow in collaborative terms](#232-describe-a-typical-git-workflow-in-collaborative-terms)
+    + [2.3.1. Explain that inner and open source are _process models_.](#231-explain-that-inner-and-open-source-are-_process-models_)
+    + [2.3.2. Describe a typical Git workflow in collaborative terms.](#232-describe-a-typical-git-workflow-in-collaborative-terms)
 
 <!-- tocstop -->
 
@@ -290,7 +290,7 @@
 
   _Why:_
   > ⌦ Use an isolated topic branch for parallel product development. Topic branches allow you to submit multiple pull requests without confusion. You can iterate without polluting the master branch with potentially unstable, unfinished code. The `generator-community` team uses:
-
+  >
   > * [Feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow) for small-ish codebases, or
   > * [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow) for large applications and monoliths
 
@@ -462,12 +462,12 @@
   _Why:_
   > ⌦ Git can be intimidating, and The Boss (even if that's you!) needs to know why Git is valuable in *business terms.*
 
-* #### 2.3.1. Explain that inner and open source are _process models_
+* #### 2.3.1. Explain that inner and open source are _process models_.
 
   _Why:_
   > ⌦ Git is a __collaboration__ tool that grants people the opportunity to contribute to software products using simple and consistent process models called __workflows.__
 
-* #### 2.3.2. Describe a typical Git workflow in collaborative terms
+* #### 2.3.2. Describe a typical Git workflow in collaborative terms.
 
   _Why:_
   > ⌦ Many engineers can discuss Git's _technicalities_, but cannot articulate Git's as an applied _technology_ for collaboration.
