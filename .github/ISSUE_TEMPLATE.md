@@ -9,7 +9,7 @@
 
 ## 2. User story summary
 >⌦ Describe what you want to accomplish, in what role/capacity, and why it's important to you.
-
+> 
 > __EXAMPLE:__
 > As a Applicant,
 > I want to submit my resume
