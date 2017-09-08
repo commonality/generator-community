@@ -35,7 +35,7 @@
     + [2.2.4. Follow the Conventional Commits Specification for commit messages.](#224-follow-the-conventional-commits-specification-for-commit-messages)
     + [2.2.5. Sync with remote to get changes you’ve missed.](#225-sync-with-remote-to-get-changes-youve-missed)
     + [2.2.6. Update your topic branch with the latest changes from `master` by interactive rebase.](#226-update-your-topic-branch-with-the-latest-changes-from-master-by-interactive-rebase)
-    + [2.2.7. Resolve conflicts (if any occur), and continue rebase. Otherwise, skip this step.](#227-resolve-conflicts-if-any-occur-and-continue-rebase-otherwise-skip-this-step)
+    + [2.2.7. Resolve conflicts (if any occur), and continue rebase.](#227-resolve-conflicts-if-any-occur-and-continue-rebase)
     + [2.2.8. Push your branch with the `-f` flag (if necessary).](#228-push-your-branch-with-the--f-flag-if-necessary)
     + [2.2.9. Submit a Pull Request.](#229-submit-a-pull-request)
     + [2.2.10. Once accepted, the Pull request will be merged, closed, and deleted by an administrator.](#2210-once-accepted-the-pull-request-will-be-merged-closed-and-deleted-by-an-administrator)
@@ -313,33 +313,33 @@
   >
   <dl>
   <dt>`bugfix/`</dt>
-  <dd>![Bitbucket branch prefix][icon-bitbucket-20-image] Defect (bug) repair issues.</dd>
+  <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> Defect (bug) repair issues.</dd>
   <dt>`build/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Issues related to product builds.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to product builds.</dd>
   <dt>`ci/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Issues related to continuous integration, delivery, and deployment tasks.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to continuous integration, delivery, and deployment tasks.</dd>
   <dt>`docs/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Issues related to documentation.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to documentation.</dd>
   <dt>`feat/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] New feature or enhancement requests.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> New feature or enhancement requests.</dd>
   <dt>`feature/`</dt>
-  <dd>![Bitbucket branch prefix][icon-bitbucket-20-image] New feature or enhancement requests.</dd>
+  <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> New feature or enhancement requests.</dd>
   <dt>`fix/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Defect (bug) repair issues.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Defect (bug) repair issues.</dd>
   <dt></dt>
-  <dd>![Bitbucket branch prefix][icon-bitbucket-20-image] `hotfix/`</dd>
+  <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> `hotfix/`</dd>
   <dt>`perf/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Performance improvement issues.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Performance improvement issues.</dd>
   <dt>`refactor/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Source code design **improvements that do not affect product behavior**.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Source code design **improvements that do not affect product behavior**.</dd>
   <dt>`revert/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Tasks that revert to a previous commit hash.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Tasks that revert to a previous commit hash.</dd>
   <dt>`spike/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Issues related in solution investigation.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related in solution investigation.</dd>
   <dt>`style/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Issues related to style guideline compliance, especially `ESLint` errors and warnings.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to style guideline compliance, especially `ESLint` errors and warnings.</dd>
   <dt>`test/`</dt>
-  <dd>![GitHub branch prefix][icon-github-20-image] Test coverage tasks.</dd>
+  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Test coverage tasks.</dd>
   </dl>
 
 * #### 2.1.3. Branch out from `master`.
@@ -364,7 +364,7 @@
 * #### 2.1.6. Rebase your local `master` branch before you ask for PR approvals.
 
     _Why:_
-    > Rebasing will merge in the requested branch (`master` or `develop`) and apply the commits that you have made locally to the top of the history without creating a merge commit (assuming there were no conflicts). This results in a nice and clean history.
+    > ⌦ Rebasing will merge in the requested branch (`master` or `develop`) and apply the commits that you have made locally to the top of the history without creating a merge commit (assuming there were no conflicts). This results in a nice and clean history.
 
 * #### 2.1.7. Resolve rebase conflicts before Pull Request reviews.
 
@@ -585,15 +585,16 @@
   _Why:_
   > ⌦ You can use `--autosquash` to squash all your commits to a single commit. Nobody wants many commits for a single feature in develop branch.
   >
-  > [Learn more about autosquashing Git commits....][autosquashing-git-commits-url]
-* #### 2.2.7. Resolve conflicts (if any occur), and continue rebase. Otherwise, skip this step.
+  > [Learn more about autosquashing Git commits][autosquashing-git-commits-url].
 
-  [Learn more about resolving conflicts][git-resolve-conflicts-url]....
+* #### 2.2.7. Resolve conflicts (if any occur), and continue rebase.
 
   ```sh
   git add <file1> <file2> ...
   git rebase --continue
   ```
+
+  [Learn more about resolving conflicts][git-resolve-conflicts-url].
 
 * #### 2.2.8. Push your branch with the `-f` flag (if necessary).
 
@@ -606,7 +607,7 @@
   _Why:_
   > ⌦ When you do a rebase, you are changing the history on your topic branch. As a result, Git will reject normal `git push`. Instead, you'll need to use the -f or --force flag.
   >
-  > [Learn more about `--force-with-lease`....][force-with-lease-url]
+  > [Learn more about `--force-with-lease`][force-with-lease-url].
 
 * #### 2.2.9. Submit a Pull Request.
 
@@ -672,14 +673,14 @@
 * ### 3.2. Use ESLint to analyze source code.
 
   _Why:_
-  > [ESLint][eslint-url] evaluates JavaScript code (and `--fix`es what it can) whenever `npm test` runs. You can run ESLint directly with:
+  > ⌦ [ESLint][eslint-url] evaluates JavaScript code (and `--fix`es what it can) whenever `npm test` runs. You can run ESLint directly with:
   >
   ```shell
   npm run lint:js
   ```
   >
 
-  Heres's a [table of `generator-community's` ESLint rules][eslint-rules-table-url] and their enforcement.
+  View [`generator-community's` ESLint rules][eslint-rules-table-url] and their enforcement.
 
 ## 4. __Unit testing__
 
@@ -688,7 +689,7 @@
 * ### 4.1. Write Jest tests.
 
   _Why:_
-  > Behavior-driven development specifications are executable documentation.
+  > ⌦ Behavior-driven development specifications are executable documentation.
 
   * **Put test files in the \__test\__ directory.**
 
@@ -696,7 +697,8 @@
 
 * ### 4.2. Reach 100% code coverage.
 
-    Coverage reports are generated with every test run.
+  _Why:_
+  > ⌦ Full coverage makes automated dependency drift updates safer.
 
   * View a test coverage summary in the Terminal:
 
@@ -769,3 +771,4 @@
 [standard-js-badge-image]: https://cdn.rawgit.com/standard/standard/master/badge.svg
 [standard-js-url]: https://github.com/standard/standard
 [standard-version-url]: https://github.com/conventional-changelog/standard-version
+[eslint-rules-table-url]: ./ESLINT_RULES.md
