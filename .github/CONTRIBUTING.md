@@ -311,36 +311,36 @@
   > Icon legend: ![Bitbucket branch prefix][icon-bitbucket-20-image] Bitbucket
   > ![GitHub branch prefix][icon-github-20-image] GitHub
   >
-  <dl>
-  <dt>`bugfix/`</dt>
-  <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> Defect (bug) repair issues.</dd>
-  <dt>`build/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to product builds.</dd>
-  <dt>`ci/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to continuous integration, delivery, and deployment tasks.</dd>
-  <dt>`docs/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to documentation.</dd>
-  <dt>`feat/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> New feature or enhancement requests.</dd>
-  <dt>`feature/`</dt>
-  <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> New feature or enhancement requests.</dd>
-  <dt>`fix/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Defect (bug) repair issues.</dd>
-  <dt></dt>
-  <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> `hotfix/`</dd>
-  <dt>`perf/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Performance improvement issues.</dd>
-  <dt>`refactor/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Source code design **improvements that do not affect product behavior**.</dd>
-  <dt>`revert/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Tasks that revert to a previous commit hash.</dd>
-  <dt>`spike/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related in solution investigation.</dd>
-  <dt>`style/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to style guideline compliance, especially `ESLint` errors and warnings.</dd>
-  <dt>`test/`</dt>
-  <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Test coverage tasks.</dd>
-  </dl>
+  > <dt>
+  > <dt><code>bugfix/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> Defect (bug) repair issues.</dd>
+  > <dt><code>build/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to product builds.</dd>
+  > <dt><code>ci/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to continuous integration, delivery, and deployment tasks.</dd>
+  > <dt><code>docs/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to documentation.</dd>
+  > <dt><code>feat/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> New feature or enhancement requests.</dd>
+  > <dt><code>feature/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> New feature or enhancement requests.</dd>
+  > <dt><code>fix/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Defect (bug) repair issues.</dd>
+  > <dt></dt>
+  > <dd><img src="../docs/img/icons8/icon-bitbucket-20.png" alt="Applies to Bitbucket branches"> `hotfix/`</dd>
+  > <dt><code>perf/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Performance improvement issues.</dd>
+  > <dt><code>refactor/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Source code design **improvements that do not affect product behavior**.</dd>
+  > <dt><code>revert/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Tasks that revert to a previous commit hash.</dd>
+  > <dt><code>spike/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related in solution investigation.</dd>
+  > <dt><code>style/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Issues related to style guideline compliance, especially `ESLint` errors and warnings.</dd>
+  > <dt><code>test/</code></dt>
+  > <dd><img src="../docs/img/icons8/icon-github-filled-20.png" alt="Applies to GitHub branches"> Test coverage tasks.</dd>
+  > </dl>
 
 * #### 2.1.3. Branch out from `master`.
 
