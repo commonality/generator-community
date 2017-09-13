@@ -22,14 +22,15 @@ replace this line and the following task completion line._
 
 - [ ] The quality gateways pass with an "A" grade.
 
-| Measure  | Scores     |
-|:---------|:-----------|
-| **`Complexity`**      | [![Complexity][sonar-complexity-img]][sonar-complexity-url]<br>[![Cognitive complexity][sonar-cognitive-img]][sonar-cognitive-url] |
-| **`Duplications`**    | [![Duplications][sonar-duplications-img]][sonar-duplications-url]  |
-| **`Issues`**          | [![Issues][sonar-issues-img]][sonar-issues-url]                    |
+| Measure               | Scores                                                                                                                                                                                                        |
+|:--------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`Complexity`**      | [![Complexity][sonar-complexity-img]][sonar-complexity-url]<br>[![Cognitive complexity][sonar-cognitive-img]][sonar-cognitive-url]                                                                            |
+| **`Duplications`**    | [![Duplications][sonar-duplications-img]][sonar-duplications-url]                                                                                                                                             |
+| **`Issues`**          | [![Issues][sonar-issues-img]][sonar-issues-url]                                                                                                                                                               |
 | **`Maintainability`** | [![Code smells][sonar-code-smells-img]][sonar-code-smells-url]<br>[![Maintainability][sonar-maintainability-img]][sonar-maintainability-url]<br>[![Technical debt][sonar-tech-debt-img]][sonar-tech-debt-url] |
-| **`Reliability`**     | [![Reliability][sonar-reliability-img]][sonar-reliability-url]     |
-| **`Security`**        | [![Security][sonar-security-img]][sonar-security-url]              |
+| **`Reliability`**     | [![Reliability][sonar-reliability-img]][sonar-reliability-url]                                                                                                                                                |
+| **`Security`**        | [![Security][sonar-security-img]][sonar-security-url]                                                                                                                                                         |
+
 
 #### 3. **Test coverage** [![Coverage Status][codecov-image]][codecov-url]
 

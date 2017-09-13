@@ -8,13 +8,35 @@
     "url": "https://github.com/commonality"
   },
   "bugs": "https://github.com/commonality/generator-community/issues",
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "build",
+      "chore",
+      "ci",
+      "docs",
+      "feat",
+      "fix",
+      "perf",
+      "refactor",
+      "revert",
+      "style",
+      "test"
+    ],
+    "scope": "\\S+.*"
+  },
   "dependencies": {
     "chalk": "^2.1.0",
     "escomplex": "^2.0.0-alpha",
-    "generator-standard-readme": "1.0.3",
+    "git-remote-origin-url": "2.0.0",
+    "git-url-parse": "7.0.1",
+    "github-username": "4.1.0",
+    "inquirer-npm-name": "2.0.0",
     "lodash": "^4.17.4",
-    "standard-readme-spec": "1.1.3",
-    "update-notifier": "^2.2.0",
+    "markdown-magic": "0.1.18",
+    "markdown-magic-install-command": "1.3.1",
+    "parse-author": "2.0.0",
+    "update-notifier": "2.2.0",
     "yeoman-generator": "^1.1.1",
     "yosay": "2.0.1"
   },
@@ -22,6 +44,7 @@
     "babel-jest": "21.0.0",
     "babel-preset-env": "1.6.0",
     "babelify": "7.3.0",
+    "check-node-version": "2.1.0",
     "commitplease": "2.7.10",
     "coveralls": "^2.13.1",
     "eslint": "4.6.1",
@@ -37,6 +60,7 @@
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-standard": "3.0.1",
     "eslint-plugin-xss": "0.1.8",
+    "fixpack": "2.3.1",
     "jest": "21.0.1",
     "jest-cli": "21.0.1",
     "markdown-toc": "1.1.0",
@@ -44,6 +68,9 @@
     "standard-version": "4.2.0",
     "yeoman-assert": "3.0.0",
     "yeoman-test": "1.7.0"
+  },
+  "engines": {
+    "node": ">=4.1.1"
   },
   "eslintConfig": {
     "extends": "xo-space",
@@ -68,22 +95,24 @@
     "repository",
     "yeoman-generator"
   ],
-  "license": "Apache-2.0",
+  "license": "MIT",
   "main": "generators/index.js",
   "repository": "commonality/generator-community",
   "scripts": {
     "docs": "npm run docs:toc",
-    "docs:toc": "npm run docs:toc:contributing && npm run docs:toc:readme",
-    "docs:toc:contributing": "markdown-toc -i .github/CONTRIBUTING.md",
-    "docs:toc:readme": "markdown-toc -i README.md",
-    "lint": "npm run lint:js",
-    "lint:js": "eslint . --fix",
+    "docs:toc": "md-magic --path '**/*.md' --ignore 'node_modules'",
+    "lint": "npm run lint:node-version && npm run lint:js && npm run lint:manifest",
+    "lint:js": "eslint ./generators/**/*.js ./__tests__/**/*.js --fix",
+    "lint:manifest": "fixpack",
+    "lint:node-version": "check-node-version --package",
+    "make-readme": "yo make-readme --help",
     "posttest": "npm run security",
     "prepublish": "npm run security",
     "pretest": "npm run lint",
     "quality-gates": "npm run test && npm run docs:toc",
     "security": "npm run security:nsp:scan",
     "security:nsp:scan": "nsp check",
+    "standard-readme": "yo standard-readme",
     "test": "jest --config=jest.config.json"
   }
 }

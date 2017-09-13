@@ -19,23 +19,137 @@
 
 <!-- tocend -->
 
-## 1. Installation
+## 1. Getting started
 
-First, install [`Yeoman`](http://yeoman.io) and `generator-community` using [`npm`](https://www.npmjs.com/) (we assume you have pre-installed [`Node.js`](https://nodejs.org/)).
+### 1.2. Prerequisite software
+
+This module is written in Node.js, which must be installed prior to use. Node.js includes the Node Package Manager (NPM), which is used for installing dependencies.
+
+### 1.2. Installation
+
+Install [`Yeoman`](http://yeoman.io) and `generator-community` using [`npm`](https://www.npmjs.com/) (we assume you have pre-installed [`Node.js`](https://nodejs.org/)).
 
 ```bash
 $ npm install -g yo
 $ npm install -g generator-community
 ```
 
-Then generate your new project (or add files to an existing repository):
-
-```bash
-$ yo community
-```
 ## 2. Usage
 > ![Warning][icon-alert-50-image] `generator-community` will generate files in the current working directory, so be sure to change to a new directory first if you don't want to overwrite existing files.
 
+### 2.1. Generate all recommended community standard documents.
+
+* __Option 1:__ provide product information with prompts:
+
+  Open a Terminal and run:
+  
+  >```bash
+  >yo community
+  >```
+
+  Answer all questions when prompted.
+
+* __Option 2:__ provide your product info with command line options.
+
+  You can also _automate_ document creation by providing product information to options. Use the `--help` flag to view all available options:
+
+  > ```shell
+  > yo community --help
+  > Usage:
+  > yo community:app [options]
+  >
+  > Options:
+  >   -h,   --help                 # Print the generator's options and usage
+  >         --skip-cache           # Do not remember prompt answers
+  >         --skip-install         # Do not automatically install dependencies
+  >         --generateInto         # Destination directory for generated files
+  >         --productName          # Product (and npm module) name
+  >         --description          # Product description
+  >         --githubAccount        # GitHub account/organization name
+  >         --authorName           # Author name
+  >         --authorUrl            # Author URL
+  >         --includeBadges        # Content: Include badges?
+  >         --logoPath             # Content: Absolute URL or relative path to logo (optional)
+  >         --securityContent      # Content: Security section content (optional)
+  >         --overviewContent      # Content: Overview section content (optional)
+  >         --backgroundContent    # Content: Background section content (optional)
+  >         --installationContent  # Content: Installation instructions
+  >         --configContent        # Content: Configuration instructions (optional)
+  >         --usageContent         # Content: Usage instructions
+  >         --apiContent           # Content: Public API overview (optional)
+  >         --contributingContent  # Content: Contribution instructions
+  > ```
+
+Both options will generate the following documents with your product's information:
+
+ 1. `README.md`
+ 2. `CONTRIBUTING.md`
+ 3. `CODE_OF_CONDUCT.md`
+ 4. `LICENSE`
+ 5. `.github/ISSUE_TEMPLATE.md`
+ 6. `.github/PULL_REQUEST_TEMPLATE.md`
+
+### 2.2. `community:readme` README.md sub-generator
+
+You can generate a README.md alone, too.
+
+```shell
+yo community:readme --help
+Usage:
+  yo community:readme [options]
+
+Options:
+  -h,   --help                 # Print the generator's options and usage
+        --skip-cache           # Do not remember prompt answers
+        --skip-install         # Do not automatically install dependencies
+        --generateInto         # Destination directory for generated files
+        --productName          # Product (and npm module) name
+        --description          # Product description
+        --githubAccount        # GitHub account/organization name
+        --authorName           # Author name
+        --authorUrl            # Author URL
+        --includeBadges        # Content: Include badges?
+        --logoPath             # Content: Absolute URL or relative path to your logo (optional)
+        --securityContent      # Content: Security section content (optional)
+        --overviewContent      # Content: Overview section content (optional)
+        --backgroundContent    # Content: Background section content (optional)
+        --installationContent  # Content: Installation instructions
+        --configContent        # Content: Configuration instructions (optional)
+        --usageContent         # Content: Usage instructions
+        --apiContent           # Content: Public API overview (optional)
+        --contributingContent  # Content: Contribution instructions
+```
+
+### 2.3. `community:conduct` Code of Conduct sub-generator
+
+Generate a CODE_OF_CONDUCT.md file.
+
+```shell
+yo community:readme --help
+Usage:
+  yo community:readme [options]
+
+Options:
+  -h,   --help                 # Print the generator's options and usage
+        --skip-cache           # Do not remember prompt answers
+        --skip-install         # Do not automatically install dependencies
+        --generateInto         # Destination directory for generated files
+        --productName          # Product (and npm module) name
+        --description          # Product description
+        --githubAccount        # GitHub account/organization name
+        --authorName           # Author name
+        --authorUrl            # Author URL
+        --includeBadges        # Content: Include badges?
+        --logoPath             # Content: Absolute URL or relative path to your logo (optional)
+        --securityContent      # Content: Security section content (optional)
+        --overviewContent      # Content: Overview section content (optional)
+        --backgroundContent    # Content: Background section content (optional)
+        --installationContent  # Content: Installation instructions
+        --configContent        # Content: Configuration instructions (optional)
+        --usageContent         # Content: Usage instructions
+        --apiContent           # Content: Public API overview (optional)
+        --contributingContent  # Content: Contribution instructions
+```
 
 ## 3. Contributing
 

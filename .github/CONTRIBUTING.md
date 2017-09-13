@@ -3,7 +3,13 @@
 # Contributing<br>to `generator-community`
 > [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url]
 >
-> Contributions are community conversations with a beginning, a middle, and an end, all told through issues, pull requests, comments, and commit logs.
+> Welcome to `generator-community`. You're among people eager to promote recommended community standards that encourage open source consumption and contributions with comprehensive `README`, `CODE_OF_CONDUCT`, `CONTRIBUTING`, and `LICENSE` documents. If you are curious, you're already a member!
+
+<dfn>__Contributions__ start with __community conversations__ that lead to __positive change.__</dfn> Open source provides a flexible collaboration model that facilitates change, even among perfect strangers. Contributions therefore:
+
+  1. Begin with __Issues__,
+  2. Occur in __Pull Requests__, and
+  3. End with __Merges__.
 
 ## Table of contents
 
@@ -60,6 +66,8 @@
 <!-- tocstop -->
 
 <!-- tocend -->
+
+
 
 ## 1. __Issues__
 
@@ -401,6 +409,8 @@
 * ### 2.2. __Feature-branch-workflow__
 
   We use the  [feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow). We _recommend_ [interactive rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing), too, but that's not required.
+
+
 
 * #### 2.2.1. Initialize a Git repository in the product directory (_for new repositories only_).
 
@@ -989,9 +999,9 @@
   * __Error Responses.__ Most endpoints have many ways to fail. From unauthorized access to wrongful parameters etc. All of those should be listed here. It might seem repetitive, but it helps prevent assumptions from being made. For example:
 
     * __HTTP status code__
-    ```
-    404 Not Found
-    ```
+      ```
+      404 Not Found
+      ```
 
     * __Response body__
       ```json
@@ -1005,22 +1015,22 @@
       ```
 
     * __Response headers__
-    ```
-    accept-ranges: bytes
-    access-control-allow-headers: Authorization
-    access-control-allow-methods: GET, HEAD, OPTIONS
-    access-control-allow-origin: *
-    cache-control: public, no-transform, must-revalidate
-    connection: keep-alive
-    content-encoding: gzip
-    content-language: en-US
-    content-length: 149
-    content-type: application/json
-    date: Fri, 08 Sep 2017 06:41:02 GMT
-    last-modified: Tue, 1 Oct 2014 10:10:10 GMT
-    server: nginx/1.12.1
-    vary: Accept-Encoding
-    ```
+      ```
+      accept-ranges: bytes
+      access-control-allow-headers: Authorization
+      access-control-allow-methods: GET, HEAD, OPTIONS
+      access-control-allow-origin: *
+      cache-control: public, no-transform, must-revalidate
+      connection: keep-alive
+      content-encoding: gzip
+      content-language: en-US
+      content-length: 149
+      content-type: application/json
+      date: Fri, 08 Sep 2017 06:41:02 GMT
+      last-modified: Tue, 1 Oct 2014 10:10:10 GMT
+      server: nginx/1.12.1
+      vary: Accept-Encoding
+      ```
 
   * Use API design tools, There are lots of open source tools for good documentation such as [API Blueprint](https://apiblueprint.org/) and [Swagger](https://swagger.io/).
 
@@ -1078,3 +1088,5 @@
 [standard-js-badge-image]: https://cdn.rawgit.com/standard/standard/master/badge.svg
 [standard-js-url]: https://github.com/standard/standard
 [standard-version-url]: https://github.com/conventional-changelog/standard-version
+[gh-create-account-url]: https://github.com/signup/free
+[gh-try-github-url]: https://try.github.io/levels/1/challenges/1
