@@ -11,7 +11,7 @@ module.exports = class extends YeomanGenerator {
     _.forEach(defaultOptions, (val, key) => this.option(key, val))
   }
 
-  _writeTableOfContents() {
+  _writeTableOfContents () {
     markdownMagic(
       this.destinationPath(this.options.generateInto, 'README.md')
     )
@@ -33,6 +33,5 @@ module.exports = class extends YeomanGenerator {
     })
 
     this._writeTableOfContents()
-
   }
 }

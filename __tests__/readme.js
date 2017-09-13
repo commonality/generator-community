@@ -2,19 +2,20 @@
 const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
-describe('community:readme', () => {
-  const options = {
-    authorName: 'Yeoman',
-    authorUrl: 'http://yeoman.io',
-    dependencyManager: 'Gradle',
-    description: 'a cool project',
-    githubAccount: 'yeoman',
-    includeBadges: true,
-    lang: 'Java',
-    logoPath: 'docs/img/logo.sample.png',
-    name: 'my-product'
-  }
+const options = {
+  authorName: 'Yeoman',
+  authorUrl: 'http://yeoman.io',
+  dependencyManager: 'Gradle',
+  description: 'a cool project',
+  githubAccount: 'yeoman',
+  includeBadges: true,
+  lang: 'Java',
+  logoPath: 'docs/img/logo.sample.png',
+  name: 'my-product',
+  licenseName: 'MIT'
+}
 
+describe('community:readme', () => {
   beforeEach(() => {
     return helpers.run(require.resolve('../generators/readme'))
       .withOptions(options)
@@ -38,16 +39,12 @@ describe('community:readme', () => {
 
 describe('community:readme --logoPath', () => {
   beforeEach(() => {
+    options.logoPath = 'img/logo.png'
+    options.name = 'my-product'
+    options.description = 'a cool project'
+    options.githubAccount = 'yeoman'
     return helpers.run(require.resolve('../generators/readme'))
-      .withOptions({
-        name: 'my-product',
-        description: 'a cool project',
-        githubAccount: 'yeoman',
-        authorName: 'Yeoman',
-        authorUrl: 'http://yeoman.io',
-        includeBadges: true,
-        logoPath: 'img/logo.png'
-      })
+      .withOptions(options)
       .on('ready', (gen) => {
         gen.fs.writeJSON(gen.destinationPath('package.json'), {
           license: 'MIT'

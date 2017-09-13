@@ -1,197 +1,170 @@
-[![Generator Community Repo][generator-community-logo-image]][generator-community-repo-url]
-
 # `generator-community`
+
 [![License][license-badge-image]][license-url] [![Dependencies' licenses][fossa-badge-image]][fossa-url] [![NSP Status][nsp-badge-image]][nsp-url] [![Synk Vulnerabilities][snyk-vulnerabilities-badge-image]][snyk-vulnerabilities-url]<br>[![StackShare][stack-share-badge-image]][stack-share-url] [![Dependency Status][david-dm-badge-image]][daviddm-url] [![devDependencies Status][david-dm-dev-badge-image]][daviddm-dev-url] <br>[![Build Status][travis-badge-image]][travis-url] [![Coverage percentage][coveralls-badge-image]][coveralls-url] [![Codacy quality][codacy-badge-image]][codacy-url]
 > Generate `README`, `CODE_OF_CONDUCT`, `CONTRIBUTING`, and `LICENSE` files according to [recommended community standards][opensource-guide-community-standards-url].
 
+
+
 ## Table of contents
-
-<!-- toc -->
-
+<!-- AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 - [1. Installation](#1-installation)
 - [2. Usage](#2-usage)
-- [3. Contributing](#3-contributing)
-  * [3.1. Create an issue](#31-create-an-issue)
-  * [3.2. Submit a pull request (PR)](#32-submit-a-pull-request-pr)
-- [4. License](#4-license)
+- [3. API](#3-api)
+  * [3.1. `community:readme` subgenerator](#31-communityreadme-subgenerator)
+- [4. Contributing to `generator-community`](#4-contributing-to-generator-community)
+- [5. License](#5-license)
+<!-- AUTO-GENERATED-CONTENT:END -->
 
-<!-- tocstop -->
+## 1. Installation
 
-<!-- tocend -->
+__Prerequisite software__
 
-## 1. Getting started
+`generator-community` is written in Node.js (JavaScript), which must be installed prior to use. Node.js (JavaScript) requires npm, which is used for installing dependencies. You'll also need to install Yeoman, a command-line interface framework.
 
-### 1.2. Prerequisite software
+> ```shell
+> # Install Yeoman and generator-community globally
+> npm install yo generator-community --global
+> ```
 
-This module is written in Node.js, which must be installed prior to use. Node.js includes the Node Package Manager (NPM), which is used for installing dependencies.
 
-### 1.2. Installation
-
-Install [`Yeoman`](http://yeoman.io) and `generator-community` using [`npm`](https://www.npmjs.com/) (we assume you have pre-installed [`Node.js`](https://nodejs.org/)).
-
-```bash
-$ npm install -g yo
-$ npm install -g generator-community
-```
 
 ## 2. Usage
-> ![Warning][icon-alert-50-image] `generator-community` will generate files in the current working directory, so be sure to change to a new directory first if you don't want to overwrite existing files.
 
-### 2.1. Generate all recommended community standard documents.
+> ```shell
+> # Install all recommended community documents
+> # with guided assistance:
+> yo community
+>
+> ⚠️  🔗  Heads up, You! 🔗 ⚠️
+>
+> You do not appear to have a Git repository associated with this directory.
+>
+> As a result, some of your links (e.g., "Report a defect" and "Request a
+> ew feature") will not work properly.
+>
+> Please consider cancelling generator-community and either creating a new
+> repository, cloning a remote, or forking another repository.
+>
+> Otherwise, be sure to fix and test your links!
+>
+> ? Module Name readme
+> ? The name above already exists on npm, choose another? No
+> ? Which programming language does this product use the most? Node.js (JavaScript)
+> ? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
+> ? GitHub username or organization gregswindle
+> ? ⦾ 📄  README: Select the sections to include in your README (Press <space> to select, <a> to toggle all, <i> to inverse selection)
+> ❯◯ Overview
+> ◯ Configuration
+> ◯ Security
+> ◉ API
+> ◯ Background
+> ◉ License
+> ?  ⦾ 📄  README: Select the sections to include in your README API, License
+>   conflict README.md
+> ? Overwrite README.md? (ynaxdH)
+ > y) overwrite
+ > n) do not overwrite
+ > a) overwrite this and all others
+ > x) abort
+ > d) show the differences between the old and the new
+ > h) Help, list all options
+ > Answer:
+ > ? Overwrite README.md? overwrite
+     > force README.md
+>
+>
+> I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
+>
+> # Dynamic table of contents generation, too___wat___
+>  ✔ /README.md Updated
+>   Transforms run
+>    ⁕ TOC
+>
+ > npm WARN @1.0.0 No license field.
+>
+ > up to date in 0.784s
+ > Thanks for generating community!
+> ```
 
-* __Option 1:__ provide product information with prompts:
 
-  Open a Terminal and run:
-  
-  >```bash
-  >yo community
-  >```
 
-  Answer all questions when prompted.
 
-* __Option 2:__ provide your product info with command line options.
+## 3. API
 
-  You can also _automate_ document creation by providing product information to options. Use the `--help` flag to view all available options:
+`generator-community` provides sub-generators, too, which gives you the option of installing one document at a time.
 
-  > ```shell
-  > yo community --help
-  > Usage:
-  > yo community:app [options]
-  >
-  > Options:
-  >   -h,   --help                 # Print the generator's options and usage
-  >         --skip-cache           # Do not remember prompt answers
-  >         --skip-install         # Do not automatically install dependencies
-  >         --generateInto         # Destination directory for generated files
-  >         --productName          # Product (and npm module) name
-  >         --description          # Product description
-  >         --githubAccount        # GitHub account/organization name
-  >         --authorName           # Author name
-  >         --authorUrl            # Author URL
-  >         --includeBadges        # Content: Include badges?
-  >         --logoPath             # Content: Absolute URL or relative path to logo (optional)
-  >         --securityContent      # Content: Security section content (optional)
-  >         --overviewContent      # Content: Overview section content (optional)
-  >         --backgroundContent    # Content: Background section content (optional)
-  >         --installationContent  # Content: Installation instructions
-  >         --configContent        # Content: Configuration instructions (optional)
-  >         --usageContent         # Content: Usage instructions
-  >         --apiContent           # Content: Public API overview (optional)
-  >         --contributingContent  # Content: Contribution instructions
-  > ```
+### 3.1. `community:readme` subgenerator
 
-Both options will generate the following documents with your product's information:
+You can automate README.md documentation via the command line interface (CLI) (e.g., during one of your CI/CD pipelines). To view all CLI options, use the `--help` or `-h` option:
 
- 1. `README.md`
- 2. `CONTRIBUTING.md`
- 3. `CODE_OF_CONDUCT.md`
- 4. `LICENSE`
- 5. `.github/ISSUE_TEMPLATE.md`
- 6. `.github/PULL_REQUEST_TEMPLATE.md`
+> ```shell
+> yo community:readme --help
+>
+> Usage:
+>   yo community:readme [options]
+>
+> Options:
+>   -h,   --help               # Print the generator's options and usage
+>         --skip-cache         # Do not remember prompt answers                                    Default: false
+>         --skip-install       # Do not automatically install dependencies                         Default: false
+>         --generateInto       # Destination directory for generated files
+>         --name               # Product name
+>         --description        # Product description
+>         --githubAccount      # GitHub account/organization name
+>         --authorName         # Author name
+>         --authorUrl          # Author URL
+>         --licenseName        # Open source software license
+>         --licenseUrl         # URL to your LICENSE file                                          Default: ./LICENSE
+> -l,   --includeLogoPath    # README.md: Absolute URL or relative logo  path (optional)  Default: docs/img/logo.sample.png
+> -s,   --includeSecurity    # README.md: Security section content (optional)                    Default: false
+> -o,   --includeOverview    # README.md: Overview section content (optional)                    Default: false
+> -b,   --includeBackground  # README.md: Background section content (optional)                  Default: false
+> -c,   --includeConfig      # README.md: Configuration instructions (optional)                  Default: false
+> -a,   --includeApi         # README.md: Public API overview (optional)                         Default: true
+> ```
 
-### 2.2. `community:readme` README.md sub-generator
+If you prefer interactive assistance, you can simply run the subgenerator without any options:
 
-You can generate a README.md alone, too.
+> ```shell
+> yo community
+> ```
 
-```shell
-yo community:readme --help
-Usage:
-  yo community:readme [options]
 
-Options:
-  -h,   --help                 # Print the generator's options and usage
-        --skip-cache           # Do not remember prompt answers
-        --skip-install         # Do not automatically install dependencies
-        --generateInto         # Destination directory for generated files
-        --productName          # Product (and npm module) name
-        --description          # Product description
-        --githubAccount        # GitHub account/organization name
-        --authorName           # Author name
-        --authorUrl            # Author URL
-        --includeBadges        # Content: Include badges?
-        --logoPath             # Content: Absolute URL or relative path to your logo (optional)
-        --securityContent      # Content: Security section content (optional)
-        --overviewContent      # Content: Overview section content (optional)
-        --backgroundContent    # Content: Background section content (optional)
-        --installationContent  # Content: Installation instructions
-        --configContent        # Content: Configuration instructions (optional)
-        --usageContent         # Content: Usage instructions
-        --apiContent           # Content: Public API overview (optional)
-        --contributingContent  # Content: Contribution instructions
-```
 
-### 2.3. `community:conduct` Code of Conduct sub-generator
+## 4. Contributing to `generator-community`
+> [![Learn how to make a Pull Request with free training][prs-welcome-badge-image]][prs-welcome-url]
+>
+> We welcome contributors with [Pull Requests][prs-welcome-url]!
 
-Generate a CODE_OF_CONDUCT.md file.
+Contributions in the form of GitHub pull requests are welcome. Before embarking on a significant change, please adhere to the following guidelines:
 
-```shell
-yo community:readme --help
-Usage:
-  yo community:readme [options]
+  1. Read the [Code of Conduct][code-of-conduct-url].
+  1. Create an issue to discuss the proposed change and ensure that it is likely to be merged:
+      * [Report a defect][issues-new-defect-url] (aka "bug")
+      * [Request a new feature][issues-new-feat-url]
+  1. Follow [Contributing to `generator-community`][contributing-url]'s coding conventions and Git workflow if you're willing and able to program (or want to learn how).
 
-Options:
-  -h,   --help                 # Print the generator's options and usage
-        --skip-cache           # Do not remember prompt answers
-        --skip-install         # Do not automatically install dependencies
-        --generateInto         # Destination directory for generated files
-        --productName          # Product (and npm module) name
-        --description          # Product description
-        --githubAccount        # GitHub account/organization name
-        --authorName           # Author name
-        --authorUrl            # Author URL
-        --includeBadges        # Content: Include badges?
-        --logoPath             # Content: Absolute URL or relative path to your logo (optional)
-        --securityContent      # Content: Security section content (optional)
-        --overviewContent      # Content: Overview section content (optional)
-        --backgroundContent    # Content: Background section content (optional)
-        --installationContent  # Content: Installation instructions
-        --configContent        # Content: Configuration instructions (optional)
-        --usageContent         # Content: Usage instructions
-        --apiContent           # Content: Public API overview (optional)
-        --contributingContent  # Content: Contribution instructions
-```
+## 5. License
 
-## 3. Contributing
 
-![Alt text](https://camo.githubusercontent.com/f96261621753dacf526590825b84f87ccb1db0e6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e7376673f7374796c653d666c6174 "Pull Request") We welcome contributors and pull requests!
+[MIT][license-url] © [Greg Swindle][author-url]
 
-Contributions are community-driven stories with a beginning, a middle, and an end, all told through issues, comments, and pull requests. If you're interested in collaborating, please review the:
 
-* [Code of Conduct][code-of-conduct-url]
-* [Contributing][contributing-url] to `generator-community`
 
-### 3.1. Create an issue
-Contributions begin with Issues where we can discuss suggestions or problems.
-
- * [Report a defect ("bug")][issue-new-defect-url]
- * [Request a new feature or enhancement][issue-new-feat-url]
-
-### 3.2. Submit a pull request (PR)
-
-If you have a solution you'd like to demonstrate, you can go straight to a pull request.
-
- * [Create a pull request][pr-new-url]
-
-## 4. License
-
-[Apache-2.0][license-url] © [Greg Swindle](https://github.com/commonality)
-
----
-
-[![Readme Score][readme-score-image]][readme-score-url]
-
-Graphic art by [icons8][icons8-license-url].
 
 <!-- ⛔️ 📝 NOTE: PLEASE ALPHABETIZE LINK REFERENCES. 📝 ⛔️ -->
 
 [angularjs-commit-message-guidelines-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+[author-url]: https://github.com/commonality
 [changelog-url]: ./CHANGELOG.md
 [cla-url]: https://www.clahub.com/agreements/commonality/generator-community
 [codacy-badge-image]: https://img.shields.io/codacy/grade/de7b30825ac649de8b7255e4303fb069.svg?style=flat-square
 [codacy-url]: https://www.codacy.com/app/commonality/generator-community?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=commonality/generator-community&amp;utm_campaign=Badge_Grade
 [code-of-conduct-url]: ./.github/CODE_OF_CONDUCT.md
+[code-of-conduct-url]: ./CODE_OF_CONDUCT.md
 [complexity-report-url]: ./docs/COMPLEXITY.md
 [contributing-url]: ./.github/CONTRIBUTING.md
+[contributing-url]: ./CONTRIBUTING.md
 [conventional-changelog-url]: https://github.com/conventional-changelog/conventional-changelog
 [conventional-commits-badge-image]: https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg?style=flat-square
 [conventional-commits-url]: https://conventionalcommits.org/
@@ -232,13 +205,19 @@ Graphic art by [icons8][icons8-license-url].
 [issues-url]: https://github.com/commonality/generator-community/issues
 [least-privilege-url]: https://en.wikipedia.org/wiki/Principle_of_least_privilege
 [license-badge-image]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square
+[license-choose-url]: https://choosealicense.com/
+[license-no-license-url]: https://choosealicense.com/no-license/
+[license-unlicense-url]: https://choosealicense.com/licenses/#unlicense
+[license-url]: ./LICENSE
 [license-url]: LICENSE
 [markdown-toc-url]: https://github.com/jonschlinkert/markdown-toc
 [mda-book-url]: https://www.amazon.com/Enterprise-Patterns-MDA-Building-Archetype/dp/032111230X
+[nodejs-url]: https://nodejs.org
 [nodejs-url]: https://nodejs.org/
 [npm-badge-image]: https://img.shields.io/npm/v/generator-community.svg?style=flat-square
 [npm-scripts-docs-url]: https://docs.npmjs.com/misc/scripts
 [npm-url]: https://npmjs.org/package/generator-community
+[npmjs-url]: https://www.npmjs.com/
 [nsp-badge-image]: https://nodesecurity.io/orgs/commonality/projects/0662674a-ad9f-4b2f-a930-30615e6222cd/badge?style=flat-square
 [nsp-sign-up-url]: https://nodesecurity.io/signup
 [nsp-url]: https://nodesecurity.io/orgs/commonality/projects/0662674a-ad9f-4b2f-a930-30615e6222cd

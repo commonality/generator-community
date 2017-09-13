@@ -13,7 +13,24 @@ _Explain what `<%= name %>` does in greater detail and why someone might want to
 
 ## Table of contents
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
-toc will be generated here
+- [Overview](#overview)
+- [Table of contents](#table-of-contents)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Security](#security)
+- [API](#api)
+  * [`Currency`](#currency)
+    + [**`getCurrencyByAlphabeticCode`**](#getcurrencybyalphabeticcode)
+    + [Example](#example)
+    + [Parameters](#parameters)
+    + [Return type: [**`Currency`**](Currency.md)](#return-type-currencycurrencymd)
+      - [`Currency` Properties](#currency-properties)
+    + [Authorization](#authorization)
+    + [HTTP request headers](#http-request-headers)
+- [Background](#background)
+- [Contributing to ``](#contributing-to-)
+- [License](#license)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Installation

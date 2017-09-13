@@ -7,7 +7,7 @@ const readme = {
     {
       type: 'checkbox',
       name: 'sections',
-      message: '== 📄  README: Select the sections to include in your README',
+      message: '⦾ 📄  README: Select the sections to include in your README',
       choices: [
         {
           name: 'Overview',
@@ -55,6 +55,7 @@ const readme = {
   // includeBackground: this.options.includeBackground
 
   toProps: function (generator) {
+    generator.log(generator)
     return {
       author: {
         name: generator.props.authorName,

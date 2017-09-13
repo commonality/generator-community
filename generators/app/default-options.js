@@ -39,8 +39,12 @@ const defaultOptions = {
     required: true,
     desc: 'URL to your LICENSE file',
     type: String,
-    defaults: './LICENSE',
-    hide: true
+    defaults: './LICENSE'
+  },
+  lang: {
+    required: true,
+    desc: 'Product\'s primary programming language',
+    type: String
   },
   includeLogoPath: {
     required: false,
