@@ -41,7 +41,8 @@ class DefaultPrompts {
       },
       {
         name: 'dependencyManager',
-        message: 'What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don\'t know.'
+        message: 'What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don\'t know.',
+        store: true
       }
     ]
   }

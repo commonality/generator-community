@@ -11,7 +11,7 @@ describe('generator-community:app', () => {
 
   it('creates files', () => {
     assert.file([
-      'dummyfile.txt'
+      'docs/img/logo-osi.png'
     ])
   })
 })

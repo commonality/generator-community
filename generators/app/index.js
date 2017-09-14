@@ -3,7 +3,6 @@
 const DefaultPrompts = require('./default-prompts')
 const YeomanGenerator = require('yeoman-generator')
 const _ = require('lodash')
-const chalk = require('chalk')
 const defaultOptions = require('./default-options')
 const githubUsername = require('github-username')
 const inquirerNpmName = require('inquirer-npm-name')
@@ -29,8 +28,10 @@ const CommunityAppGenerator = class extends YeomanGenerator {
       description: this.pkg.description,
       version: this.pkg.version,
       homepage: this.pkg.homepage,
-      license: util.license(this.pkg)
+      license: util.license(this)
     }
+
+    this.log(`License: ${this.props.license.name}`)
 
     util.git().then((repo) => { this.props.repository = repo })
 
@@ -46,7 +47,7 @@ const CommunityAppGenerator = class extends YeomanGenerator {
     }
   }
 
-  _askForModuleName () {
+  _askForProductName () {
     if (this.pkg.name || this.options.name) {
       this.props.name = this.pkg.name || _.kebabCase(this.options.name)
       return Promise.resolve()
@@ -54,7 +55,7 @@ const CommunityAppGenerator = class extends YeomanGenerator {
 
     return inquirerNpmName({
       name: 'name',
-      message: 'Module Name',
+      message: 'Product Name',
       default: path.basename(process.cwd()),
       filter: _.kebabCase,
       validate (str) {
@@ -103,28 +104,36 @@ const CommunityAppGenerator = class extends YeomanGenerator {
       })
   }
 
-  _warnIfNoRepo () {
-    if (!_.get(this.props.repository, 'gitRepo') || !_.isEmpty(this.props.repository.gitRepo)) {
-      const msg = {
-        noRepo: 'You do not appear to have a Git repository associated with this directory.',
-        consequences: 'As a result, some of your links (e.g., "Report a defect" and "Request a\new feature") will not work properly.',
-        recommendation: 'Please consider cancelling generator-community and either creating a new\nrepository, cloning a remote, or forking another repository.\n\nOtherwise, be sure to fix and test your links!'
-      }
-      this.log(`${chalk.bold('⚠️  🔗  Heads up, You! 🔗 ⚠️ ')}
+  _copyDocs () {
+    this.fs.copy(
+      this.templatePath('docs'),
+      this.destinationPath(this.options.generateInto, 'docs')
+    )
+  }
 
-${chalk.bgYellow.bold(msg.noRepo)}
+  _copyGithubTemplates () {
+    this.fs.copy(
+      this.templatePath(require.resolve('.github')),
+      this.destinationPath(this.options.generateInto, '.github')
+    )
+  }
 
-${chalk.yellow.bold(msg.consequences)}
-
-${msg.recommendation}
-      `)
+  _generateLicense () {
+    if (this.options.license && !this.pkg.license) {
+      this.composeWith(require.resolve('generator-license/app'), {
+        name: this.props.authorName,
+        email: this.props.authorEmail,
+        website: this.props.authorUrl
+      })
     }
   }
 
-  prompting () {
-    this._warnIfNoRepo()
+  _generateReadme () {
+    this.composeWith(require.resolve('../readme'), this.props)
+  }
 
-    return this._askForModuleName()
+  prompting () {
+    return this._askForProductName()
       .then(this._askFor.bind(this))
       .then(this._askForGithubAccount.bind(this))
       .then(this._askForReadme.bind(this))
@@ -144,14 +153,9 @@ ${msg.recommendation}
     //   this.composeWith(require.resolve('../cli'))
     // }
     //
-    // if (this.options.license && !this.pkg.license) {
-    //   this.composeWith(require.resolve('generator-license/app'), {
-    //     name: this.props.authorName,
-    //     email: this.props.authorEmail,
-    //     website: this.props.authorUrl
-    //   })
-    // }
-    this.composeWith(require.resolve('../readme'), this.props)
+    this._copyDocs()
+    // Generate a README file
+    this._generateReadme()
   }
 
   // installing () {
@@ -159,7 +163,7 @@ ${msg.recommendation}
   // }
 
   end () {
-    this.log('Thanks for generating community!')
+    this.log('Thank you for generating community!')
   }
 }
 
