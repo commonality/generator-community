@@ -6,130 +6,220 @@
 
 
 ## Table of contents
-<!-- AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-- [1. Installation](#1-installation)
-- [2. Usage](#2-usage)
-- [3. API](#3-api)
-  * [3.1. `community:readme` subgenerator](#31-communityreadme-subgenerator)
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+- [1. Overview](#1-overview)
+- [2. Installation](#2-installation)
+  * [2.1. Prerequisite software](#21-prerequisite-software)
+  * [2.2. Install Yeoman and `generator-community`](#22-install-yeoman-and-generator-community)
+- [3. Usage](#3-usage)
+  * [3.1. `yo community:readme`](#31-yo-communityreadme)
+    + [3.1.1. Guided assistance](#311-guided-assistance)
+    + [3.1.2. Command-line interface automation](#312-command-line-interface-automation)
+  * [3.2. `yo community:conduct`](#32-yo-communityconduct)
+  * [3.3. `yo community:contributing`](#33-yo-communitycontributing)
+  * [3.4. `yo community:license`](#34-yo-communitylicense)
+  * [3.5. Update your documents's tables of contents](#35-update-your-documentss-tables-of-contents)
 - [4. Contributing to `generator-community`](#4-contributing-to-generator-community)
 - [5. License](#5-license)
-<!-- AUTO-GENERATED-CONTENT:END -->
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
-## 1. Installation
+## 1. Overview
+---
 
-__Prerequisite software__
+[![Alert icon][icon-alert-50-image]][milestones-url] `generator-community` v0.1.0 only generates READMEs.
 
-`generator-community` is written in Node.js (JavaScript), which must be installed prior to use. Node.js (JavaScript) requires npm, which is used for installing dependencies. You'll also need to install Yeoman, a command-line interface framework.
+Please [see the Milestones][milestones-url] for `generator-community's` release plan.
 
-> ```shell
-> # Install Yeoman and generator-community globally
-> npm install yo generator-community --global
-> ```
+---
+
+`generator-community` helps product repository maintainers follow the [recommended community standards][opensource-guide-community-standards-url] for documentation that communicates expectations, manages contributions, protects participants' legal rights, and optimizes search engine results. `generator-community`'s simple command-line interface prompts you with simple questions in order to generate a:
+
+1. `CODE_OF_CONDUCT.md`
+2. `CONTRIBUTING.md`
+3. Open source `LICENSE.md`
+4. `README.md`
+
+## 2. Installation
+
+### 2.1. Prerequisite software
+
+1. [Node.js][nodejs-url] v4.1.1 or greater
+1. npm (which installs with Node.js)
+1. [Yeoman][yeoman-url] (a command-line tool which you will install with npm, and not a manual download)
+
+---
+
+<details>
+<summary>![Help][icon-help-image] __Verify Node.js availability...__</summary>
+<ul>
+<li><h4><a id="212_Verify_Nodejs_availability_0"></a>2.1.2. Verify Node.js availability</h4>
+<p>Open a Terminal and find out whether you have Node.js installed. Run:</p>
+<pre><code class="language-bash">$ node --version
+<span class="hljs-comment"># =&gt; v7.7.3</span>
+</code></pre>
+<p>If you do not have [Node.js][nodejs-url] installed, you will receive an error message similar to:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># Linux or macOS</span>
+bash: foobar: <span class="hljs-built_in">command</span> not found
+<span class="hljs-comment"># You need to install Node.js!</span>
+</code></pre></li>
+<li><h4><a id="212_Install_or_update_Nodejs_17"></a>2.1.2. Install or update Node.js</h4>
+<p>You have two options for installing Node.js. If you feel comfortable using the command line, try one of the following version managers:</p>
+<ul>
+<li>[Node Version Manager (<code>nvm</code>)][nvm-url] (for macOS and Linux Bash shells)</li>
+<li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> (for Windows)</li>
+<li><a href="https://github.com/marcelklehr/nodist">nodist</a> (for Windows)</li>
+</ul>
+<blockquote>
+<p>:information_source: I cannot vouch for the two Windows options, so do a little homework, first.</p>
+</blockquote>
+<p>The other (and easier) option is to simply [download and install Node.js][nodejs-url].</p></li>
+</ul>
+</details>
+
+---
+
+### 2.2. Install Yeoman and `generator-community`
+
+Once you've verified that you have Node.js v4.1.1. or higher installed, open a Terminal and run these two commands:
+
+```bash
+# Install Yeoman and generator-community globally
+$ npm install yo --global
+
+# 💡 The letter "i" is shorthand for "install"; -g is short for --global
+$ npm i generator-community -g
+```
 
 
 
-## 2. Usage
+## 3. Usage
 
-> ```shell
-> # Install all recommended community documents
-> # with guided assistance:
-> yo community
+Install all four recommended community standards (README, CODE_OF_CONDUCT, CONTRIBUTING, and a LICENSE):
+
+```bash
+# Generate README.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, and LICENSE files per the recommended community community standards:
+
+$ yo community
+```
+
+This will guide you with prompts to help you pre-fill the documents, e.g.,
+
+```bash
+? Which programming language does this product use the most? Node.js (JavaScript)
+? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
+? GitHub username or organization gregswindle
+? ⦾ 📄  README: Select the sections to include in your README API, Background, License
+   create README.md
+
+
+I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
+
+
+✔ /README.md Updated
+ Transforms run
+  ⁕ TOC
+
+up to date in 0.767s
+Thanks for generating community!
+```
+
+### 3.1. `yo community:readme`
+> ![Quote][icon-quote-left-image] READMEs do more than explain how to use your project. They also explain why your project matters, and what your users can do with it.
 >
-> ⚠️  🔗  Heads up, You! 🔗 ⚠️
+> In your README, try to answer the following questions:
 >
-> You do not appear to have a Git repository associated with this directory.
+> - What does this project do?
 >
-> As a result, some of your links (e.g., "Report a defect" and "Request a
-> ew feature") will not work properly.
+> - Why is this project useful?
 >
-> Please consider cancelling generator-community and either creating a new
-> repository, cloning a remote, or forking another repository.
+> - How do I get started?
 >
-> Otherwise, be sure to fix and test your links!
+> - Where can I get more help, if I need it?
 >
-> ? Module Name readme
-> ? The name above already exists on npm, choose another? No
-> ? Which programming language does this product use the most? Node.js (JavaScript)
-> ? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
-> ? GitHub username or organization gregswindle
-> ? ⦾ 📄  README: Select the sections to include in your README (Press <space> to select, <a> to toggle all, <i> to inverse selection)
-> ❯◯ Overview
-> ◯ Configuration
-> ◯ Security
-> ◉ API
-> ◯ Background
-> ◉ License
-> ?  ⦾ 📄  README: Select the sections to include in your README API, License
->   conflict README.md
-> ? Overwrite README.md? (ynaxdH)
- > y) overwrite
- > n) do not overwrite
- > a) overwrite this and all others
- > x) abort
- > d) show the differences between the old and the new
- > h) Help, list all options
- > Answer:
- > ? Overwrite README.md? overwrite
-     > force README.md
->
->
-> I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
->
-> # Dynamic table of contents generation, too___wat___
->  ✔ /README.md Updated
->   Transforms run
->    ⁕ TOC
->
- > npm WARN @1.0.0 No license field.
->
- > up to date in 0.784s
- > Thanks for generating community!
-> ```
+> Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#writing-a-readme
 
+#### 3.1.1. Guided assistance
 
+To answer prompts manually, open a Terminal and run
 
+```bash
+$ yo community:readme
+```
 
-## 3. API
+The `community:readme` subgenerator will evaluate your product repository's _manifests_ (e.g., package.json for Node.js products, or settings.gradle for Java products) to ensure consistency.
 
-`generator-community` provides sub-generators, too, which gives you the option of installing one document at a time.
-
-### 3.1. `community:readme` subgenerator
+#### 3.1.2. Command-line interface automation
 
 You can automate README.md documentation via the command line interface (CLI) (e.g., during one of your CI/CD pipelines). To view all CLI options, use the `--help` or `-h` option:
 
-> ```shell
-> yo community:readme --help
+```bash
+$ yo community:readme -h
+Usage:
+  yo community:readme [options]
+
+Options:
+  -h,   --help               # Print the generator's options and usage
+        --skip-cache         # Do not remember prompt answers                    Default: false
+        --skip-install       # Do not automatically install dependencies         Default: false
+        --authorName         # Author name
+        --authorUrl          # Author URL
+        --generateInto       # Destination directory for generated files
+        --githubAccount      # GitHub account/organization name
+        --dependencyManager  # Tool used to install third-party libraries        Default: Unspecified
+        --description        # Product description
+        --lang               # Product's primary programming language            Default: Unspecified
+        --licenseName        # Open source software license
+        --licenseUrl         # URL to your LICENSE file                          Default: ./LICENSE
+        --name               # Product name
+  -a,   --includeApi         # README.md: Public API overview (optional)         Default: true
+  -b,   --includeBackground  # README.md: Background section content (optional)  Default: false
+  -c,   --includeConfig      # README.md: Configuration instructions (optional)  Default: false
+  -o,   --includeOverview    # README.md: Overview section content (optional)    Default: false
+  -s,   --includeSecurity    # README.md: Security section content (optional)    Default: false
+```
+
+__Example:__
+
+```bash
+$ yo community:readme --authorName "Jane Doe" --authorUrl "https://jdoe.example.com" \
+  --githubAccount janedoeasindeer --lang JavaScript --licenseName MIT \
+  --name spike-sln-community \
+  --description "A spike solution to test generator-community." \
+  --includeApi --includeConfig --includeSecurity
+```
+
+### 3.2. `yo community:conduct`
+> ![Quote][icon-quote-left-image] ...a code of conduct helps set ground rules for behavior for your project’s participants. This is especially valuable if you’re launching an open source project for a community or company. A code of conduct empowers you to facilitate healthy, constructive community behavior, which will reduce your stress as a maintainer.
 >
-> Usage:
->   yo community:readme [options]
+> Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#establishing-a-code-of-conduct
+
+[![Alert icon][icon-goal-image]][milestones-url] This feature isn't available, yet.
+
+### 3.3. `yo community:contributing`
+> ![Quote][icon-quote-left-image] A CONTRIBUTING file tells your audience how to participate in your project. For example, you might include information on:
 >
-> Options:
->   -h,   --help               # Print the generator's options and usage
->         --skip-cache         # Do not remember prompt answers                                    Default: false
->         --skip-install       # Do not automatically install dependencies                         Default: false
->         --generateInto       # Destination directory for generated files
->         --name               # Product name
->         --description        # Product description
->         --githubAccount      # GitHub account/organization name
->         --authorName         # Author name
->         --authorUrl          # Author URL
->         --licenseName        # Open source software license
->         --licenseUrl         # URL to your LICENSE file                                          Default: ./LICENSE
-> -l,   --includeLogoPath    # README.md: Absolute URL or relative logo  path (optional)  Default: docs/img/logo.sample.png
-> -s,   --includeSecurity    # README.md: Security section content (optional)                    Default: false
-> -o,   --includeOverview    # README.md: Overview section content (optional)                    Default: false
-> -b,   --includeBackground  # README.md: Background section content (optional)                  Default: false
-> -c,   --includeConfig      # README.md: Configuration instructions (optional)                  Default: false
-> -a,   --includeApi         # README.md: Public API overview (optional)                         Default: true
-> ```
+> * How to file a bug report (try using issue and pull request templates)
+> * How to suggest a new feature
+> * How to set up your environment and run tests
+>
+> Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#writing-your-contributing-guidelines
 
-If you prefer interactive assistance, you can simply run the subgenerator without any options:
+[![Alert icon][icon-goal-image]][milestones-url] This feature isn't available, yet.
 
-> ```shell
-> yo community
-> ```
+### 3.4. `yo community:license`
+> ![Quote][icon-quote-left-image] An open source license guarantees that others can use, copy, modify, and contribute back to your project without repercussions. It also protects you from sticky legal situations. **You must include a license when you launch an open source project.**
+>
+> Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#launching-your-own-open-source-project
 
+[![Alert icon][icon-goal-image]][milestones-url] This feature isn't available, yet.
 
+### 3.5. Update your documents's tables of contents
+
+`yo community` installs an npm-script that will help keep your documents' table of contents up-to-date:
+
+```bash
+$ npm run docs:toc
+```
 
 ## 4. Contributing to `generator-community`
 > [![Learn how to make a Pull Request with free training][prs-welcome-badge-image]][prs-welcome-url]
@@ -146,9 +236,9 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
 
 ## 5. License
 
+[MIT][license-url] © [Greg Swindle][author-url].
 
-[MIT][license-url] © [Greg Swindle][author-url]
-
+---
 
 
 
@@ -189,10 +279,13 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
 [greenkeeper-url]: https://greenkeeper.io/
 [icon-alert-50-image]: ./docs/img/icons8/icon-alert-50.png
 [icon-eslint-image]: ./docs/img/tech-stack/icon-eslint-50.jpeg
+[icon-goal-image]: ./docs/img/icons8/icon-goal.png
+[icon-help-image]: ./docs/img/icons8/icon-help-48.png
 [icon-jest-image]: ./docs/img/tech-stack/icon-jest-50.jpeg
 [icon-nodejs-image]: ./docs/img/tech-stack/icon-nodejs-50.png
 [icon-npm-image]: ./docs/img/tech-stack/icon-npm-50.png
 [icon-package-image]: ./docs/img/icons8/icon-package-filled.png
+[icon-quote-left-image]: ./docs/img/icons8/icon-quote-left-25.png
 [icon-road-milestone-image]: ./docs/img/icons8/img-goal-filled-50.png
 [icon-standardjs-image]: ./docs/img/tech-stack/icon-standardjs-50.png
 [icon-travis-image]: ./docs/img/icons8/travis-ci-50.png
@@ -210,10 +303,11 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
 [license-unlicense-url]: https://choosealicense.com/licenses/#unlicense
 [license-url]: ./LICENSE
 [license-url]: LICENSE
+[logo-nodejs-image]: ./docs/img/logo-nodejs-46.png
 [markdown-toc-url]: https://github.com/jonschlinkert/markdown-toc
 [mda-book-url]: https://www.amazon.com/Enterprise-Patterns-MDA-Building-Archetype/dp/032111230X
+[milestones-url]: https://github.com/commonality/generator-community/milestones
 [nodejs-url]: https://nodejs.org
-[nodejs-url]: https://nodejs.org/
 [npm-badge-image]: https://img.shields.io/npm/v/generator-community.svg?style=flat-square
 [npm-scripts-docs-url]: https://docs.npmjs.com/misc/scripts
 [npm-url]: https://npmjs.org/package/generator-community
@@ -221,6 +315,7 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
 [nsp-badge-image]: https://nodesecurity.io/orgs/commonality/projects/0662674a-ad9f-4b2f-a930-30615e6222cd/badge?style=flat-square
 [nsp-sign-up-url]: https://nodesecurity.io/signup
 [nsp-url]: https://nodesecurity.io/orgs/commonality/projects/0662674a-ad9f-4b2f-a930-30615e6222cd
+[nvm-url]: https://github.com/creationix/nvm
 [opensource-guide-community-standards-url]: https://opensource.guide
 [pr-url]: /commonality/generator-community/pulls
 [product-development-guidelines-url]: ./.github/PRODUCT_DEVELOPEMENT_GUIDELINES.md
@@ -244,3 +339,4 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
 [standardjs-url]: https://standardjs.com/
 [travis-badge-image]: https://img.shields.io/travis/commonality/generator-community.svg?branch=master&style=flat-square
 [travis-url]: https://travis-ci.org/commonality/generator-community
+[yeoman-url]: https://yeoman.io

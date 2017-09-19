@@ -1,20 +1,17 @@
 'use strict'
 
 const YeomanGenerator = require('yeoman-generator')
-const _ = require('lodash')
+const { forEach, merge } = require('lodash')
 const defaultOptions = require('../app/default-options')
-const markdownMagic = require('markdown-magic')
+const readme = require('./readme')
 
-module.exports = class extends YeomanGenerator {
+class CommunityReadmeGenerator extends YeomanGenerator {
   constructor (args, options) {
     super(args, options)
-    _.forEach(defaultOptions, (val, key) => this.option(key, val))
-  }
 
-  _writeTableOfContents () {
-    markdownMagic(
-      this.destinationPath(this.options.generateInto, 'README.md')
-    )
+    forEach(defaultOptions, (val, key) => this.option(key, val))
+
+    this.options = merge(this.options, readme.toProps({options, props: options}))
   }
 
   writing () {
@@ -25,13 +22,9 @@ module.exports = class extends YeomanGenerator {
     )
   }
 
-  install () {
-    this.installDependencies({
-      npm: true,
-      bower: false,
-      yarn: false
-    })
-
-    this._writeTableOfContents()
+  end () {
+    readme.writeTableOfContents(this)
   }
 }
+
+module.exports = CommunityReadmeGenerator

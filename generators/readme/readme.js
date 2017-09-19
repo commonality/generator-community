@@ -1,5 +1,7 @@
 'use strict'
 
+const markdownMagic = require('markdown-magic')
+const util = require('../util')
 const { camelCase } = require('lodash')
 
 const readme = {
@@ -39,23 +41,8 @@ const readme = {
     }
   ],
 
-  // name: this.options.name,
-  // camelCaseName: _.camelCase(this.options.name),
-  // description: this.options.description,
-  // githubAccount: this.options.githubAccount,
-  // repository: pkg.repository,
-  // author: {
-  //   name: this.options.authorName,
-  //   url: this.options.authorUrl
-  // },
-  // includeOverview: this.options.includeOverview,
-  // includeConfig: this.options.includeConfig,
-  // includeSecurity: this.options.includeSecurity,
-  // includeApi: this.options.includeApi,
-  // includeBackground: this.options.includeBackground
-
-  toProps: function (generator) {
-    generator.log(generator)
+  toProps (generator) {
+    const license = util.license(generator)
     return {
       author: {
         name: generator.props.authorName,
@@ -63,17 +50,22 @@ const readme = {
       },
       camelCaseName: camelCase(generator.props.name),
       description: generator.props.description,
+      generateInto: generator.props.generateInto || '',
       githubAccount: generator.props.githubAccount,
-      license: generator.props.license,
+      license,
       includeApi: generator.props.includeApi,
       includeBackground: generator.props.includeBackground,
       includeConfig: generator.props.includeConfig,
-      includeLogoPath: generator.props.includeLogoPath,
       includeOverview: generator.props.includeOverview,
       includeSecurity: generator.props.includeSecurity,
       name: generator.props.name,
       repository: generator.props.repository
     }
+  },
+
+  writeTableOfContents (generator) {
+    const readmePath = generator.destinationPath(generator.options.generateInto, 'README.md')
+    markdownMagic(readmePath)
   }
 }
 

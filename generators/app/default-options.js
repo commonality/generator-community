@@ -21,6 +21,12 @@ const defaultOptions = {
     required: false,
     type: String
   },
+  gitRemoteOriginUrl: {
+    defaults: '/',
+    desc: 'The URI (SSH or HTTPS) of your Git repository',
+    required: false,
+    type: String
+  },
   githubAccount: {
     desc: 'GitHub account/organization name',
     required: true,

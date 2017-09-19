@@ -3,23 +3,26 @@
 const _ = require('lodash')
 const gitRemoteOriginUrl = require('git-remote-origin-url')
 const gitUrlParse = require('git-url-parse')
+const licensePath = './LICENSE'
 const parseAuthor = require('parse-author')
 const pkg = require('../package.json')
 const updateNotifier = require('update-notifier')
 
 const util = {
 
-  git: function() {
-    const props = {
-      originUrl: '',
-      gitRepo: gitUrlParse('')
-    }
-    return gitRemoteOriginUrl().then(originUrl => {
-      props.originUrl = originUrl
-      props.gitRepo = gitUrlParse(originUrl)
-      return Promise.resolve(props)
-    })
-  },
+  // git: function() {
+  //   const props = {
+  //     originUrl: '',
+  //     gitRepo: gitUrlParse('')
+  //   }
+  //   return gitRemoteOriginUrl().then(originUrl => {
+  //     props.originUrl = originUrl
+  //     props.gitRepo = gitUrlParse(originUrl)
+  //     return Promise.resolve(props)
+  //   }, () => {
+  //     return Promise.reject(new Error('Remote git repository not found'))
+  //   })
+  // },
 
   // initializer: {
   //   author: (generator) => {
@@ -85,14 +88,11 @@ const util = {
   //   }
   // },
 
-  license: function(pkgJson) {
+  license: function(generator) {
+    // Return a stub until we composeWith generator-license
     const license = {
-      name: null,
-      url: null
-    }
-    if (!_.isEmpty(pkgJson.license)) {
-      license.name = pkgJson.license
-      license.url = './LICENSE'
+      name: generator.options.licenseName || 'MIT',
+      url: generator.options.licenseUrl || licensePath
     }
     return license
   },
@@ -103,10 +103,6 @@ const util = {
       pkg,
       updateCheckInterval: daily
     }).notify()
-  },
-
-  toc: function(props) {
-    
   }
 }
 

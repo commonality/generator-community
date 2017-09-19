@@ -463,5 +463,5 @@ rules:
   security/detect-possible-timing-attacks:                      error
   security/detect-pseudoRandomBytes:                            error
   security/detect-unsafe-regex:                                 error
-  xss/no-location-href-assign:                                  error
-  xss/no-mixed-html:                                            error
+  xss/no-location-href-assign:                                  off
+  xss/no-mixed-html:                                            off

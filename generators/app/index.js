@@ -1,9 +1,13 @@
+/* eslint handle-callback-err: ["warn", "error"] */
+
 'use strict'
 
 const DefaultPrompts = require('./default-prompts')
 const YeomanGenerator = require('yeoman-generator')
 const _ = require('lodash')
 const defaultOptions = require('./default-options')
+const gitRemoteOriginUrl = require('git-remote-origin-url')
+const gitUrlParse = require('git-url-parse')
 const githubUsername = require('github-username')
 const inquirerNpmName = require('inquirer-npm-name')
 const merge = _.merge
@@ -12,29 +16,15 @@ const path = require('path')
 const readme = require('../readme/readme')
 const util = require('../util')
 
-const CommunityAppGenerator = class extends YeomanGenerator {
+class CommunityAppGenerator extends YeomanGenerator {
   constructor (args, options) {
     super(args, options)
 
     _.forEach(defaultOptions, (val, key) => this.option(key, val))
   }
 
-  initializing () {
-    this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
-
-    // Pre set the default props from the information we have at this point
-    this.props = {
-      name: this.pkg.name,
-      description: this.pkg.description,
-      version: this.pkg.version,
-      homepage: this.pkg.homepage,
-      license: util.license(this)
-    }
-
-    this.log(`License: ${this.props.license.name}`)
-
-    util.git().then((repo) => { this.props.repository = repo })
-
+  _initAuthorInfo () {
+    /* istanbul ignore else */
     if (_.isObject(this.pkg.author)) {
       this.props.authorName = this.pkg.author.name
       this.props.authorEmail = this.pkg.author.email
@@ -45,6 +35,54 @@ const CommunityAppGenerator = class extends YeomanGenerator {
       this.props.authorEmail = info.email
       this.props.authorUrl = info.url
     }
+    return this
+  }
+
+  _initProductInfo () {
+    // Pre set the default props from the information we have at this point
+    this.props = {
+      name: this.pkg.name,
+      description: this.pkg.description,
+      version: this.pkg.version,
+      homepage: this.pkg.homepage,
+      license: util.license(this)
+    }
+    return this
+  }
+
+  _initRepoInfo () {
+    gitRemoteOriginUrl()
+      .then((originUrl) => {
+        this.options.gitRemoteOriginUrl = originUrl
+        this.props.repository = {
+          url: _.trimEnd(gitUrlParse(originUrl), '.git')
+        }
+      })
+      .catch(() => {
+        const repo = this.pkg.repository
+        /* istanbul ignore else */
+        if (_.isObject(repo)) {
+          repo.url = repo.url.replace('.git', '')
+          this.options.gitRemoteOriginUrl = repo.url
+          this.props.repository = repo
+        } else if (_.isString(repo)) {
+          const originUrl = `/${repo}`
+          this.options.gitRemoteOriginUrl = originUrl
+          this.props.repository = {
+            url: originUrl
+          }
+        }
+      })
+    return this
+  }
+
+  initializing () {
+    this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
+
+    this
+      ._initProductInfo()
+      ._initAuthorInfo()
+      ._initRepoInfo()
   }
 
   _askForProductName () {
@@ -52,7 +90,7 @@ const CommunityAppGenerator = class extends YeomanGenerator {
       this.props.name = this.pkg.name || _.kebabCase(this.options.name)
       return Promise.resolve()
     }
-
+    /* istanbul ignore next */
     return inquirerNpmName({
       name: 'name',
       message: 'Product Name',
@@ -76,7 +114,6 @@ const CommunityAppGenerator = class extends YeomanGenerator {
 
   _askForReadme () {
     this.props = merge(this.props, readme.toProps(this))
-
     return this.prompt(readme.prompts)
       .then((props) => {
         _.forEach(props.sections, (section) => {
@@ -91,6 +128,7 @@ const CommunityAppGenerator = class extends YeomanGenerator {
       return Promise.resolve()
     }
 
+    /* istanbul ignore next */
     return githubUsername(this.props.authorEmail)
       .then((username) => username, () => '')
       .then((username) => {
@@ -98,9 +136,10 @@ const CommunityAppGenerator = class extends YeomanGenerator {
           name: 'githubAccount',
           message: 'GitHub username or organization',
           default: username
-        }).then((prompt) => {
-          this.props.githubAccount = prompt.githubAccount
         })
+          .then((prompt) => {
+            this.props.githubAccount = prompt.githubAccount
+          })
       })
   }
 
@@ -109,23 +148,6 @@ const CommunityAppGenerator = class extends YeomanGenerator {
       this.templatePath('docs'),
       this.destinationPath(this.options.generateInto, 'docs')
     )
-  }
-
-  _copyGithubTemplates () {
-    this.fs.copy(
-      this.templatePath(require.resolve('.github')),
-      this.destinationPath(this.options.generateInto, '.github')
-    )
-  }
-
-  _generateLicense () {
-    if (this.options.license && !this.pkg.license) {
-      this.composeWith(require.resolve('generator-license/app'), {
-        name: this.props.authorName,
-        email: this.props.authorEmail,
-        website: this.props.authorUrl
-      })
-    }
   }
 
   _generateReadme () {
@@ -140,27 +162,18 @@ const CommunityAppGenerator = class extends YeomanGenerator {
   }
 
   default () {
-    // if (this.options.editorconfig) {
-    //   this.composeWith(require.resolve('../editorconfig'))
-    // }
-    //
-    // this.composeWith(require.resolve('../git'), {
-    //   name: this.props.name,
-    //   githubAccount: this.props.githubAccount
-    // })
-    //
-    // if (this.options.cli) {
-    //   this.composeWith(require.resolve('../cli'))
-    // }
-    //
     this._copyDocs()
     // Generate a README file
     this._generateReadme()
   }
 
-  // installing () {
-  //   this.npmInstall()
-  // }
+  install () {
+    this.installDependencies({
+      npm: true,
+      bower: false,
+      yarn: false
+    })
+  }
 
   end () {
     this.log('Thank you for generating community!')
