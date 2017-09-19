@@ -50,7 +50,7 @@ Please [see the Milestones][milestones-url] for `generator-community's` release 
 ---
 
 <details>
-<summary><img src="./docs/img/icons8/icon-help-48.png" alt="Help"> __Verify Node.js availability...__</summary>
+<summary><img src="./docs/img/icons8/icon-help-48.png" alt="Help"> <strong>Verify Node.js availability...<strong></summary>
 <ul>
 <li><h4><a id="212_Verify_Nodejs_availability_0"></a>2.1.2. Verify Node.js availability</h4>
 <p>Open a Terminal and find out whether you have Node.js installed. Run:</p>
