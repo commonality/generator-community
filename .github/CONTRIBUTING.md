@@ -80,7 +80,7 @@
   ---
 
   <details>
-  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toogle the Issue workflow flowchart.</summary>
+  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of the Issue workflow flowchart.</summary>
 
   ![Issue flowchart][contribution-lifecycle-issues-image]
 
@@ -89,7 +89,7 @@
   ---
 
   <details>
-  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toogle the Pull Request workflow flowchart.</summary>
+  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of the Pull Request workflow flowchart.</summary>
 
   ![Pull Request flowchart][contribution-lifecycle-pr-image]
 
@@ -144,7 +144,7 @@
     ---
 
     <details>
-    <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle the Label definitions table.</summary>
+    <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of the Label definitions table.</summary>
       <table class="table table-striped table-bordered">
       <thead>
       <tr>
@@ -660,20 +660,20 @@
 
   ---
 
-  > <details>
-  > <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle a workflow example.</summary><br>
-  > <p>⌦ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called _workflows_.
-  > <ol>
-  > <li>Git __repositories__ store software products, as well as the historical changes to these products.<br><br>
-  > <li>Git workflows begin with either __cloning__ or __forking__ a repository, which __pulls__ a duplicate of the entire codebase onto a local computer.<br><br>
-  > <li>Contributors then create a local __topic branch__ in which they introduce changes—-features, fixes, documentation, tests, and design improvements—-which allows others to develop in parallel.<br><br>
-  > <li>Contributors __push__ their topic branch to others (usually another `remote` repository called `origin`) and submit __pull requests (PRs)__ to their announce their changes. __Pull requests are central to almost all Git workflows, since PRs allow Product Owners and their community to review suggested modifications. Product owners can approve or reject PRs at any time.__<br><br>
-  > <li>Other contributors answer the request to __pull__ the changes so they can review and test them.<br><br>
-  > <li>The changes in the PR are approved.<br><br>
-  > <li>The topic branch is either __merged__ or __rebased__ into the the software product.<br><br>
-  > <li>The topic branch gets deleted, and (ultimately) its changes are delivered to the world.
-  > </ol>
-  > </details>
+  <details>
+  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of a workflow example.</summary><br>
+  <p>⌦ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called _workflows_.
+  <ol>
+  <li>Git __repositories__ store software products, as well as the historical changes to these products.<br><br>
+  <li>Git workflows begin with either __cloning__ or __forking__ a repository, which __pulls__ a duplicate of the entire codebase onto a local computer.<br><br>
+  <li>Contributors then create a local __topic branch__ in which they introduce changes—-features, fixes, documentation, tests, and design improvements—-which allows others to develop in parallel.<br><br>
+  <li>Contributors __push__ their topic branch to others (usually another `remote` repository called `origin`) and submit __pull requests (PRs)__ to their announce their changes. __Pull requests are central to almost all Git workflows, since PRs allow Product Owners and their community to review suggested modifications. Product owners can approve or reject PRs at any time.__<br><br>
+  <li>Other contributors answer the request to __pull__ the changes so they can review and test them.<br><br>
+  <li>The changes in the PR are approved.<br><br>
+  <li>The topic branch is either __merged__ or __rebased__ into the the software product.<br><br>
+  <li>The topic branch gets deleted, and (ultimately) its changes are delivered to the world.
+  </ol>
+  </details>
 
   ---
 
