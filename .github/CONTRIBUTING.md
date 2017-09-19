@@ -77,21 +77,25 @@
 
     View `generator-community's` collaboration and contribution flowcharts:
 
+  ---
+
   <details>
-  <summary><mark>Toogle the Issue workflow flowchart.</mark></summary>
+  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toogle the Issue workflow flowchart.</summary>
 
   ![Issue flowchart][contribution-lifecycle-issues-image]
 
   </details>
-  <br>
+
+  ---
 
   <details>
-  <summary><mark>Toogle the Pull Request workflow flowchart.</mark></summary>
+  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toogle the Pull Request workflow flowchart.</summary>
 
   ![Pull Request flowchart][contribution-lifecycle-pr-image]
 
   </details>
 
+  ---
 
 * ### 1.1. Create Issues for feature requests and defects.
 
@@ -136,10 +140,11 @@
     > * `Status`: the state of a change.
     > * `Priority`: the importance and value of a change.
     > * `Points`: the size/complexity of a change.
-    <br><br>
+
+    ---
 
     <details>
-    <summary><mark>Toggle the Label definitions table.</mark></summary>
+    <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle the Label definitions table.</summary>
       <table class="table table-striped table-bordered">
       <thead>
       <tr>
@@ -287,6 +292,8 @@
       </tbody>
       </table>
     </details>
+
+    ---
 
 * ### 1.5. Monitor your issue for questions.
 
@@ -651,8 +658,10 @@
 
 * __Git enables collaboration with structured (business) process models.__ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called workflows.
 
+  ---
+
   > <details>
-  > <summary>Toggle a workflow example.</summary><br>
+  > <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle a workflow example.</summary><br>
   > <p>⌦ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called _workflows_.
   > <ol>
   > <li>Git __repositories__ store software products, as well as the historical changes to these products.<br><br>
@@ -665,6 +674,8 @@
   > <li>The topic branch gets deleted, and (ultimately) its changes are delivered to the world.
   > </ol>
   > </details>
+
+  ---
 
   _Why:_
   > ⌦ Git can be intimidating, and The Boss (even if that's you!) needs to know why Git is valuable in *business terms.*
