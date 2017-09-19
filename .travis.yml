@@ -5,7 +5,7 @@ addons:
     token:
       secure:       "$SONAR_TOKEN"
     github_token:
-      secure:       "$GITHUB_ACCESS_TOKEN"
+      secure:       "$GH_TOKEN"
     branches:
       - master
       - /[build|chore|ci|docs|feat|fix|perf|refactor|revert|spike|style|test].*/
@@ -26,7 +26,7 @@ before_script:
   - npm prune
 script:
   - npm test
-  - sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
+  - sonar-scanner -Dproject.settings=./sonar-project.properties -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
 after_script:
   - cat ./coverage/lcov.info | coveralls
 branches:

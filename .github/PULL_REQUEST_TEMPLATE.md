@@ -32,35 +32,33 @@ replace this line and the following task completion line._
 | **`Security`**        | [![Security][sonar-security-img]][sonar-security-url]                                                                                                                                                         |
 
 
-#### 3. **Test coverage** [![Coverage Status][codecov-image]][codecov-url]
+#### 3. **Test coverage** [![Coverage Status][sonar-coverage-img]][sonar-coverage-url]
 
 - [ ] The source code is 100% covered with passing specs.
 
 > **:information_source: These tasks are not required to open a PR, and may be addresses while the PR is open.**
 
-[codecov-image]: https://codecov.io/gh/commonality/generator-community/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/commonality/generator-community
 [coveralls-img]: https://coveralls.io/repos/github/commonality/generator-community/badge.svg
 [coveralls-url]: https://coveralls.io/github/commonality/generator-community
-[sonar-code-smells-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=code_smells
-[sonar-code-smells-url]: https://sonarcloud.io/component_measures/metric/code_smells/list?id=commonality-generator-community
-[sonar-cognitive-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=cognitive_complexity
-[sonar-cognitive-url]: https://sonarcloud.io/component_measures/metric/cognitive_complexity/list?id=commonality-generator-community
-[sonar-complexity-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=function_complexity
-[sonar-complexity-url]: https://sonarcloud.io/component_measures/domain/Complexity?id=commonality-generator-community
-[sonar-coverage-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=coverage
-[sonar-coverage-url]: https://sonarcloud.io/component_measures/domain/Coverage?id=commonality-generator-community
-[sonar-duplications-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=duplicated_line_density
-[sonar-duplications-url]: https://sonarcloud.io/component_measures/domain/Duplications?id=commonality-generator-community
-[sonar-gate-img]: http://sonarcloud.io/api/badges/gate?key=commonality-generator-community
-[sonar-gate-url]: http://sonarcloud.io/dashboard/index/commonality-generator-community
-[sonar-issues-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=blocker_violations
-[sonar-issues-url]: https://sonarcloud.io/component_measures/domain/Issues?id=commonality-generator-community
-[sonar-maintainability-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=new_maintainability_rating
-[sonar-maintainability-url]: https://sonarcloud.io/component_measures/domain/Maintainability?id=commonality-generator-community
-[sonar-reliability-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=new_reliability_rating
-[sonar-reliability-url]: https://sonarcloud.io/component_measures/domain/Reliability?id=commonality-generator-community
-[sonar-security-img]: http://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=vulnerabilities
-[sonar-security-url]: https://sonarcloud.io/component_measures/domain/Security?id=commonality-generator-community
-[sonar-tech-debt-img]:  https://sonarcloud.io/api/badges/measure?key=commonality-generator-community&metric=sqale_debt_ratio
-[sonar-tech-debt-url]: https://sonarcloud.io/component_measures/metric/sqale_index/list?id=commonality-generator-community
+[sonar-code-smells-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=code_smells
+[sonar-code-smells-url]: https://sonarcloud.io/component_measures/metric/code_smells/list?id=-commonality-generator-community&metric=code_smells
+[sonar-cognitive-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=cognitive_complexity
+[sonar-cognitive-url]: https://sonarcloud.io/component_measures/metric/cognitive_complexity/list?id=-commonality-generator-community&metric=cognitive_complexity
+[sonar-complexity-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=function_complexity
+[sonar-complexity-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=complexity
+[sonar-coverage-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=coverage
+[sonar-coverage-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=coverage
+[sonar-duplications-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=duplicated_line_density
+[sonar-duplications-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=duplicated_lines_density
+[sonar-gate-img]: http://sonarcloud.io/api/badges/gate?key=-commonality-generator-community
+[sonar-gate-url]: https://sonarcloud.io/dashboard?id=-commonality-generator-community
+[sonar-issues-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=blocker_violations
+[sonar-issues-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=violations
+[sonar-maintainability-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=new_maintainability_rating
+[sonar-maintainability-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=new_maintainability_rating
+[sonar-reliability-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=new_reliability_rating
+[sonar-reliability-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=new_reliability_rating
+[sonar-security-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=vulnerabilities
+[sonar-security-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=vulnerabilities
+[sonar-tech-debt-img]:  https://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=sqale_debt_ratio
+[sonar-tech-debt-url]: https://sonarcloud.io/component_measures/metric/sqale_index/list?id=-commonality-generator-community&metric=sqale_debt_ratio
