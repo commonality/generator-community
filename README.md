@@ -50,7 +50,7 @@ Please [see the Milestones][milestones-url] for `generator-community's` release 
 ---
 
 <details>
-<summary><img src="./docs/img/icons8/icon-help-48.png" alt="Help"> <strong>Verify Node.js availability...</strong></summary>
+<summary><img src="./docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> <strong>Verify Node.js availability...</strong></summary>
 <ul>
 <li><h4><a id="212_Verify_Nodejs_availability_0"></a>2.1.2. Verify Node.js availability</h4>
 <p>Open a Terminal and find out whether you have Node.js installed. Run:</p>
@@ -238,7 +238,7 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
 
 [MIT][license-url] © [Greg Swindle][author-url].
 
-__Third-party software licenses for `generator-community:__
+__Third-party software licenses for `generator-community__ ([read the NOTICE file][notice-url] for a detailed report):
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcommonality%2Fgenerator-community.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcommonality%2Fgenerator-community?ref=badge_large)
 
@@ -315,6 +315,7 @@ __Third-party software licenses for `generator-community:__
 [mda-book-url]: https://www.amazon.com/Enterprise-Patterns-MDA-Building-Archetype/dp/032111230X
 [milestones-url]: https://github.com/commonality/generator-community/milestones
 [nodejs-url]: https://nodejs.org
+[notice-url]: ./NOTICE.md
 [npm-badge-image]: https://img.shields.io/npm/v/generator-community.svg?style=flat-square
 [npm-scripts-docs-url]: https://docs.npmjs.com/misc/scripts
 [npm-url]: https://npmjs.org/package/generator-community
