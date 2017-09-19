@@ -238,8 +238,13 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
 
 [MIT][license-url] © [Greg Swindle][author-url].
 
+__Third-party software licenses for `generator-community:__
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcommonality%2Fgenerator-community.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcommonality%2Fgenerator-community?ref=badge_large)
+
 ---
 
+[![Greenkeeper automated dependency management][greenkeeper-badge-image]][greenkeeper-url] [![README score][readme-score-badge-image]][readme-score-url]
 
 
 <!-- ⛔️ 📝 NOTE: PLEASE ALPHABETIZE LINK REFERENCES. 📝 ⛔️ -->
