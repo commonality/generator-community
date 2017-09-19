@@ -50,7 +50,7 @@ Please [see the Milestones][milestones-url] for `generator-community's` release 
 ---
 
 <details>
-<summary>![Help][icon-help-image] __Verify Node.js availability...__</summary>
+<summary><img src="./docs/img/icons8/icon-help-48.png" alt="Help"> __Verify Node.js availability...__</summary>
 <ul>
 <li><h4><a id="212_Verify_Nodejs_availability_0"></a>2.1.2. Verify Node.js availability</h4>
 <p>Open a Terminal and find out whether you have Node.js installed. Run:</p>
@@ -193,7 +193,7 @@ $ yo community:readme --authorName "Jane Doe" --authorUrl "https://jdoe.example.
 >
 > Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#establishing-a-code-of-conduct
 
-[![Alert icon][icon-goal-image]][milestones-url] This feature isn't available, yet.
+[![Alert icon][icon-goal-image]][milestones-url] This feature will be delivered with [MVP2: community:conduct][milestones-url].
 
 ### 3.3. `yo community:contributing`
 > ![Quote][icon-quote-left-image] A CONTRIBUTING file tells your audience how to participate in your project. For example, you might include information on:
@@ -204,14 +204,14 @@ $ yo community:readme --authorName "Jane Doe" --authorUrl "https://jdoe.example.
 >
 > Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#writing-your-contributing-guidelines
 
-[![Alert icon][icon-goal-image]][milestones-url] This feature isn't available, yet.
+[![Alert icon][icon-goal-image]][milestones-url] This feature will be delivered with [MVP4: community:contribute][milestones-url].
 
 ### 3.4. `yo community:license`
 > ![Quote][icon-quote-left-image] An open source license guarantees that others can use, copy, modify, and contribute back to your project without repercussions. It also protects you from sticky legal situations. **You must include a license when you launch an open source project.**
 >
 > Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#launching-your-own-open-source-project
 
-[![Alert icon][icon-goal-image]][milestones-url] This feature isn't available, yet.
+[![Alert icon][icon-goal-image]][milestones-url] This feature will be delivered with [MVP3: community:license][milestones-url].
 
 ### 3.5. Update your documents's tables of contents
 
