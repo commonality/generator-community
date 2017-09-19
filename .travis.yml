@@ -23,14 +23,12 @@ node_js:
   - 6
   - node
 before_script:
-  - npm i -g codecov
   - npm prune
 script:
   - npm test && codecov
   - sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
 after_script:
   - cat ./coverage/lcov.info | coveralls
-  - cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
