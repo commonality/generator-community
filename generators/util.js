@@ -1,10 +1,10 @@
 'use strict'
 
-const _ = require('lodash')
-const gitRemoteOriginUrl = require('git-remote-origin-url')
-const gitUrlParse = require('git-url-parse')
+// const _ = require('lodash')
+// const gitRemoteOriginUrl = require('git-remote-origin-url')
+// const gitUrlParse = require('git-url-parse')
 const licensePath = './LICENSE'
-const parseAuthor = require('parse-author')
+// const parseAuthor = require('parse-author')
 const pkg = require('../package.json')
 const updateNotifier = require('update-notifier')
 

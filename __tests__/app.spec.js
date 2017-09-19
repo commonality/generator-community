@@ -179,7 +179,7 @@ describe('generator-community:app', () => {
 
     it('identifies the product author\'s github account', () => {
       assert.file('README.md')
-      assert.fileContent('README.md', '[MIT][license-url] © [Greg Swindle][author-url].')
+      assert.fileContent('README.md', '[issues-new-defect-url]: /commonality/')
     })
   })
 
