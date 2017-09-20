@@ -46,13 +46,14 @@ Please [see the Milestones][milestones-url] for `generator-community's` release 
 1. [Node.js][nodejs-url] v4.1.1 or greater
 1. npm (which installs with Node.js)
 1. [Yeoman][yeoman-url] (a command-line tool which you will install with npm, and not a manual download)
+2. A `package.json` application manifest.
 
 ---
 
 <details>
-<summary><img src="./docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> <strong>Verify Node.js availability...</strong></summary>
+<summary><img src="./docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> <strong>Verify prerequisite software...</strong></summary>
 <ul>
-<li><h4><a id="212_Verify_Nodejs_availability_0"></a>2.1.2. Verify Node.js availability</h4>
+<li><h4>2.1.2. Verify Node.js availability</h4>
 <p>Open a Terminal and find out whether you have Node.js installed. Run:</p>
 <pre><code class="language-bash">$ node --version
 <span class="hljs-comment"># =&gt; v7.7.3</span>
@@ -62,17 +63,30 @@ Please [see the Milestones][milestones-url] for `generator-community's` release 
 bash: foobar: <span class="hljs-built_in">command</span> not found
 <span class="hljs-comment"># You need to install Node.js!</span>
 </code></pre></li>
-<li><h4><a id="212_Install_or_update_Nodejs_17"></a>2.1.2. Install or update Node.js</h4>
+<li><h4>2.1.2. Install or update Node.js</h4>
 <p>You have two options for installing Node.js. If you feel comfortable using the command line, try one of the following version managers:</p>
 <ul>
-<li>[Node Version Manager (<code>nvm</code>)][nvm-url] (for macOS and Linux Bash shells)</li>
-<li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> (for Windows)</li>
-<li><a href="https://github.com/marcelklehr/nodist">nodist</a> (for Windows)</li>
+  <li>[Node Version Manager (<code>nvm</code>)][nvm-url] (for macOS and Linux Bash shells)</li>
+  <li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> (for Windows)</li>
+  <li><a href="https://github.com/marcelklehr/nodist">nodist</a> (for Windows)</li>
 </ul>
 <blockquote>
 <p>:information_source: I cannot vouch for the two Windows options, so do a little homework, first.</p>
 </blockquote>
-<p>The other (and easier) option is to simply [download and install Node.js][nodejs-url].</p></li>
+<p>The other (and easier) option is to simply [download and install Node.js][nodejs-url].</p>
+<li><h4>2.1.3. Create a `package.json` application manifest file (if you don't have one already).</h4>
+<p>Open an Terminal and run:</p>
+<pre><code class="language-bash"># On macOS and Linux:
+ls package.json
+
+# On Windows:
+dir package.json
+</code></pre>
+
+<p>If you receive an error message, run the following command and answer all prompts:</p>
+
+<pre><code class="language-bash">npm init
+</code></pre>
 </ul>
 </details>
 
