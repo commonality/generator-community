@@ -18,13 +18,13 @@ replace this line and the following task completion line._
 
 - [ ] `ESLint` passes.
 
-#### 2. **Code quality**. [![Quality Gate][sonar-gate-img]][sonar-gate-url]
+#### 2. **Code quality** [![Quality Gate][sonar-gate-img]][sonar-gate-url]
 
 - [ ] The quality gateways pass with an "A" grade.
 
 | Measure               | Scores                                                                                                                                                                                                        |
 |:--------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`Complexity`**      | [![Complexity][sonar-complexity-img]][sonar-complexity-url]<br>[![Cognitive complexity][sonar-cognitive-img]][sonar-cognitive-url]                                                                            |
+| **`Complexity`**      | [![Complexity][sonar-complexity-img]][sonar-complexity-url]<br>[![Cognitive complexity][sonar-cognitive-img]][sonar-cognitive-url]<br>[![Complexity per Class][sonar-complexity-class-img]][sonar-complexity-class-img]<br>[![Complexity per file][sonar-complexity-file-img]][sonar-complexity-file-img]            <br>[![Complexity per Function][sonar-complexity-function-img]][sonar-complexity-function-url]                                                              |
 | **`Duplications`**    | [![Duplications][sonar-duplications-img]][sonar-duplications-url]                                                                                                                                             |
 | **`Issues`**          | [![Issues][sonar-issues-img]][sonar-issues-url]                                                                                                                                                               |
 | **`Maintainability`** | [![Code smells][sonar-code-smells-img]][sonar-code-smells-url]<br>[![Maintainability][sonar-maintainability-img]][sonar-maintainability-url]<br>[![Technical debt][sonar-tech-debt-img]][sonar-tech-debt-url] |
@@ -44,8 +44,14 @@ replace this line and the following task completion line._
 [sonar-code-smells-url]: https://sonarcloud.io/component_measures/metric/code_smells/list?id=-commonality-generator-community&metric=code_smells
 [sonar-cognitive-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=cognitive_complexity
 [sonar-cognitive-url]: https://sonarcloud.io/component_measures/metric/cognitive_complexity/list?id=-commonality-generator-community&metric=cognitive_complexity
-[sonar-complexity-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=function_complexity
+[sonar-complexity-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=complexity
 [sonar-complexity-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=complexity
+[sonar-complexity-function-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=function_complexity
+[sonar-complexity-function-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=function_complexity
+[sonar-complexity-file-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=file_complexity
+[sonar-complexity-file-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=file_complexity
+[sonar-complexity-class-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=class_complexity
+[sonar-complexity-class-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=class_complexity
 [sonar-coverage-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=coverage
 [sonar-coverage-url]: https://sonarcloud.io/component_measures?id=-commonality-generator-community&metric=coverage
 [sonar-duplications-img]: http://sonarcloud.io/api/badges/measure?key=-commonality-generator-community&metric=duplicated_line_density
