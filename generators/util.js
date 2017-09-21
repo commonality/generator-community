@@ -1,10 +1,6 @@
 'use strict'
 
-// const _ = require('lodash')
-// const gitRemoteOriginUrl = require('git-remote-origin-url')
-// const gitUrlParse = require('git-url-parse')
 const licensePath = './LICENSE'
-// const parseAuthor = require('parse-author')
 const pkg = require('../package.json')
 const updateNotifier = require('update-notifier')
 
@@ -90,11 +86,10 @@ const util = {
 
   license: function(generator) {
     // Return a stub until we composeWith generator-license
-    const license = {
+    return {
       name: generator.options.licenseName || 'MIT',
       url: generator.options.licenseUrl || licensePath
     }
-    return license
   },
 
   notify: function() {
