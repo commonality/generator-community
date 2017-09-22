@@ -1,95 +1,34 @@
-/* eslint handle-callback-err: ["warn", "error"] */
-
 'use strict'
 
-const DefaultPrompts = require('./default-prompts')
-const YeomanGenerator = require('yeoman-generator')
+const NodeAppGenerator = require('generator-node/generators/app')
 const _ = require('lodash')
-const defaultOptions = require('./default-options')
-const gitRemoteOriginUrl = require('git-remote-origin-url')
-const gitUrlParse = require('git-url-parse')
-const githubUsername = require('github-username')
 const inquirerNpmName = require('inquirer-npm-name')
-const merge = _.merge
-const parseAuthor = require('parse-author')
 const path = require('path')
-const readme = require('../readme/readme')
-const util = require('../util')
 
-class CommunityAppGenerator extends YeomanGenerator {
+class CommunityAppGenerator extends NodeAppGenerator {
   constructor (args, options) {
-    super(args, options)
+    // Do not include generator-node's boilerplate, coveralls, or travis installations, and set the project root to the current directory.
+    const opts = _.merge(options, {
+      boilerplate: false,
+      coveralls: false,
+      projectRoot: './',
+      travis: false
+    })
 
-    _.forEach(defaultOptions, (val, key) => this.option(key, val))
-  }
-
-  _initAuthorInfo () {
-    /* istanbul ignore else */
-    if (_.isObject(this.pkg.author)) {
-      this.props.authorName = this.pkg.author.name
-      this.props.authorEmail = this.pkg.author.email
-      this.props.authorUrl = this.pkg.author.url
-    } else if (_.isString(this.pkg.author)) {
-      const info = parseAuthor(this.pkg.author)
-      this.props.authorName = info.name
-      this.props.authorEmail = info.email
-      this.props.authorUrl = info.url
-    }
-    return this
-  }
-
-  _initProductInfo () {
-    // Pre set the default props from the information we have at this point
-    this.props = {
-      name: this.pkg.name,
-      description: this.pkg.description,
-      version: this.pkg.version,
-      homepage: this.pkg.homepage,
-      license: util.license(this)
-    }
-    return this
-  }
-
-  _initRepoInfo () {
-    gitRemoteOriginUrl()
-      .then((originUrl) => {
-        this.options.gitRemoteOriginUrl = originUrl
-        this.props.repository = {
-          url: _.trimEnd(gitUrlParse(originUrl), '.git')
-        }
-      })
-      .catch(() => {
-        const repo = this.pkg.repository
-        /* istanbul ignore else */
-        if (_.isObject(repo)) {
-          repo.url = repo.url.replace('.git', '')
-          this.options.gitRemoteOriginUrl = repo.url
-          this.props.repository = repo
-        } else if (_.isString(repo)) {
-          const originUrl = `/${repo}`
-          this.options.gitRemoteOriginUrl = originUrl
-          this.props.repository = {
-            url: originUrl
-          }
-        }
-      })
-    return this
+    super(args, opts)
   }
 
   initializing () {
     this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
-
-    this
-      ._initProductInfo()
-      ._initAuthorInfo()
-      ._initRepoInfo()
+    super.initializing()
   }
 
-  _askForProductName () {
+  _askForModuleName () {
     if (this.pkg.name || this.options.name) {
       this.props.name = this.pkg.name || _.kebabCase(this.options.name)
       return Promise.resolve()
     }
+
     /* istanbul ignore next */
     return inquirerNpmName({
       name: 'name',
@@ -104,71 +43,86 @@ class CommunityAppGenerator extends YeomanGenerator {
     })
   }
 
-  _askFor () {
-    const prompts = new DefaultPrompts(this).prompts
-
-    return this.prompt(prompts).then((props) => {
-      this.props = merge(this.props, props)
-    })
-  }
-
-  _askForReadme () {
-    this.props = merge(this.props, readme.toProps(this))
-    return this.prompt(readme.prompts)
-      .then((props) => {
-        _.forEach(props.sections, (section) => {
-          _.set(this.props, section, true)
-        })
-      })
-  }
-
-  _askForGithubAccount () {
-    if (this.options.githubAccount) {
-      this.props.githubAccount = this.options.githubAccount
-      return Promise.resolve()
-    }
-
-    /* istanbul ignore next */
-    return githubUsername(this.props.authorEmail)
-      .then((username) => username, () => '')
-      .then((username) => {
-        return this.prompt({
-          name: 'githubAccount',
-          message: 'GitHub username or organization',
-          default: username
-        })
-          .then((prompt) => {
-            this.props.githubAccount = prompt.githubAccount
-          })
-      })
-  }
-
-  _copyDocs () {
-    this.fs.copy(
-      this.templatePath('docs'),
-      this.destinationPath(this.options.generateInto, 'docs')
-    )
-  }
-
-  _generateReadme () {
-    this.composeWith(require.resolve('../readme'), this.props)
-  }
-
   prompting () {
-    return this._askForProductName()
-      .then(this._askFor.bind(this))
-      .then(this._askForGithubAccount.bind(this))
-      .then(this._askForReadme.bind(this))
+    return super.prompting()
   }
 
   default () {
-    this._copyDocs()
-    // Generate a README file
-    this._generateReadme()
+    if (this.options.editorconfig) {
+      this.composeWith(
+        require.resolve('generator-node/generators/editorconfig')
+      )
+    }
+
+    this.composeWith(
+      require.resolve('generator-node/generators/nsp')
+    )
+
+    this.composeWith(require.resolve('generator-node/generators/git'), {
+      name: this.props.name,
+      githubAccount: this.props.githubAccount
+    })
+
+    if (this.options.cli) {
+      this.composeWith(
+        require.resolve('generator-node/generators/cli')
+      )
+    }
+
+    if (this.options.license && !this.pkg.license) {
+      this.composeWith(require.resolve('generator-license/app'), {
+        name: this.props.authorName,
+        email: this.props.authorEmail,
+        website: this.props.authorUrl
+      })
+    }
+
+    // If (!this.fs.exists(this.destinationPath('README.md'))) {
+    //   this.composeWith(require(generatorNode.readme), {
+    //     name: this.props.name,
+    //     description: this.props.description,
+    //     githubAccount: this.props.githubAccount,
+    //     authorName: this.props.authorName,
+    //     authorUrl: this.props.authorUrl,
+    //     coveralls: this.props.includeCoveralls,
+    //     content: this.options.readme
+    //   })
+    // }
+  }
+
+  writing () {
+    // Re-read the content at this point because a composed generator might modify it.
+    const currentPkg = this.fs.readJSON(this.destinationPath('package.json'), {})
+
+    const pkgTemplate = require('./templates/package.json')
+
+    const issuesUrl = `https://github.com/${this.props.githubAccount}/${this.props.name}`
+
+    const pkg = _.merge({
+      bugs: issuesUrl,
+      name: _.kebabCase(this.props.name),
+      version: '0.0.0',
+      description: this.props.description,
+      homepage: this.props.homepage,
+      author: {
+        name: this.props.authorName,
+        email: this.props.authorEmail,
+        url: this.props.authorUrl
+      },
+      keywords: []
+    }, pkgTemplate, currentPkg)
+
+    // Combine the keywords
+    if (this.props.keywords && this.props.keywords.length) {
+      pkg.keywords = _.uniq(this.props.keywords.concat(pkg.keywords))
+    }
+
+    // Let's extend package.json so we're not overwriting user previous fields
+    this.fs.writeJSON(this.destinationPath('package.json'), pkg)
   }
 
   install () {
-    this.installDependencies({
+    super.installDependencies({
       npm: true,
       bower: false,
       yarn: false

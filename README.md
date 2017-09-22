@@ -74,19 +74,6 @@ bash: foobar: <span class="hljs-built_in">command</span> not found
 <p>:information_source: I cannot vouch for the two Windows options, so do a little homework, first.</p>
 </blockquote>
 <p>The other (and easier) option is to simply [download and install Node.js][nodejs-url].</p>
-<li><h4>2.1.3. Create a `package.json` application manifest file (if you don't have one already).</h4>
-<p>Open an Terminal and run:</p>
-<pre><code class="language-bash"># On macOS and Linux:
-ls package.json
-
-# On Windows:
-dir package.json
-</code></pre>
-
-<p>If you receive an error message, run the following command and answer all prompts:</p>
-
-<pre><code class="language-bash">npm init
-</code></pre>
 </ul>
 </details>
 
