@@ -47,34 +47,6 @@ class CommunityAppGenerator extends NodeAppGenerator {
     return super.prompting()
   }
 
-  writing () {
-    // Re-read the content at this point because a composed generator might modify it.
-    const currentPkg = this.fs.readJSON(this.destinationPath('package.json'), {})
-
-    const pkgTemplate = require('./templates/package.json')
-
-    const pkg = _.merge({
-      name: _.kebabCase(this.props.name),
-      version: '0.0.0',
-      description: this.props.description,
-      homepage: this.props.homepage,
-      author: {
-        name: this.props.authorName,
-        email: this.props.authorEmail,
-        url: this.props.authorUrl
-      },
-      keywords: []
-    }, pkgTemplate, currentPkg)
-
-    // Combine the keywords
-    if (this.props.keywords && this.props.keywords.length) {
-      pkg.keywords = _.uniq(this.props.keywords.concat(pkg.keywords))
-    }
-
-    // Let's extend package.json so we're not overwriting user previous fields
-    this.fs.writeJSON(this.destinationPath('package.json'), pkg)
-  }
-
   default () {
     if (this.options.editorconfig) {
       this.composeWith(
@@ -116,6 +88,37 @@ class CommunityAppGenerator extends NodeAppGenerator {
     //     content: this.options.readme
     //   })
     // }
+  }
+
+  writing () {
+    // Re-read the content at this point because a composed generator might modify it.
+    const currentPkg = this.fs.readJSON(this.destinationPath('package.json'), {})
+
+    const pkgTemplate = require('./templates/package.json')
+
+    const issuesUrl = `https://github.com/${this.props.githubAccount}/${this.props.name}`
+
+    const pkg = _.merge({
+      bugs: issuesUrl,
+      name: _.kebabCase(this.props.name),
+      version: '0.0.0',
+      description: this.props.description,
+      homepage: this.props.homepage,
+      author: {
+        name: this.props.authorName,
+        email: this.props.authorEmail,
+        url: this.props.authorUrl
+      },
+      keywords: []
+    }, pkgTemplate, currentPkg)
+
+    // Combine the keywords
+    if (this.props.keywords && this.props.keywords.length) {
+      pkg.keywords = _.uniq(this.props.keywords.concat(pkg.keywords))
+    }
+
+    // Let's extend package.json so we're not overwriting user previous fields
+    this.fs.writeJSON(this.destinationPath('package.json'), pkg)
   }
 
   install () {

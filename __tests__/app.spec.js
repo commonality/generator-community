@@ -3,7 +3,7 @@ const _ = require('lodash')
 const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
-describe('generator-community:app', () => {
+describe('generator-community:app,', () => {
   beforeEach(() => {
     jest.mock('inquirer-npm-name', () => {
       return () => Promise.resolve(true)
@@ -94,8 +94,7 @@ describe('generator-community:app', () => {
     })
   })
 
-  /* Product name information */
-  describe('when given an empty value for the CLI flag --name,', () => {
+  describe('when no local Git repository exists,', () => {
     beforeEach(() => {
       jest.resetModules()
 
@@ -104,16 +103,15 @@ describe('generator-community:app', () => {
       })
 
       return helpers.run(require.resolve('../generators/app'))
-        .withPrompts({name: ''})
-        .on('ready', (gen) => {
-          gen.fs.writeJSON(gen.destinationPath('package.json'), {
-            name: undefined
-          })
+        .withOptions({
+          githubAccount: 'account',
+          name: 'product'
         })
     })
 
-    it('validates the product name', () => {
-
+    it('creates one', (done) => {
+      assert.file('.git/config')
+      done()
     })
   })
 
