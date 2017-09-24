@@ -3,6 +3,10 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
 describe('node:cli', () => {
+  afterAll(() => {
+    process.setMaxListeners(0)
+  })
+
   beforeEach(() => {
     return helpers.run(require.resolve('generator-node/generators/cli'))
       .on('ready', (generator) => {
