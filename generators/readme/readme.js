@@ -1,7 +1,6 @@
 'use strict'
 
 const markdownMagic = require('markdown-magic')
-const util = require('../util')
 const { camelCase } = require('lodash')
 
 const readme = {
@@ -42,7 +41,6 @@ const readme = {
   ],
 
   toProps (generator) {
-    const license = util.license(generator)
     return {
       author: {
         name: generator.props.authorName,
@@ -52,7 +50,7 @@ const readme = {
       description: generator.props.description,
       generateInto: generator.props.generateInto || '',
       githubAccount: generator.props.githubAccount,
-      license,
+      license: generator.props.license,
       includeApi: generator.props.includeApi,
       includeBackground: generator.props.includeBackground,
       includeConfig: generator.props.includeConfig,
@@ -64,7 +62,7 @@ const readme = {
   },
 
   writeTableOfContents (generator) {
-    const readmePath = generator.destinationPath(generator.options.generateInto, 'README.md')
+    const readmePath = generator.destinationPath(generator.props.generateInto, 'README.md')
     markdownMagic(readmePath)
   }
 }

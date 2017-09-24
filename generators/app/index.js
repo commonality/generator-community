@@ -70,7 +70,7 @@ class CommunityAppGenerator extends NodeAppGenerator {
     }
 
     if (this.options.license && !this.pkg.license) {
-      this.composeWith(require.resolve('generator-license/app'), {
+      this.composeWith(require.resolve('../license'), {
         name: this.props.authorName,
         email: this.props.authorEmail,
         website: this.props.authorUrl

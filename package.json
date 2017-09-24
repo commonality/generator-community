@@ -82,6 +82,7 @@
     }
   },
   "files": [
+    "index.js",
     "generators"
   ],
   "homepage": "https://github.com/commonality/generator-community",
@@ -98,7 +99,7 @@
     "yeoman-generator"
   ],
   "license": "MIT",
-  "main": "generators/index.js",
+  "main": "index.js",
   "repository": "commonality/generator-community",
   "scripts": {
     "docs": "npm run docs:toc",

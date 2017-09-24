@@ -4,6 +4,10 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
 describe('generator-community:app,', () => {
+  afterAll(() => {
+    process.setMaxListeners(0)
+  })
+
   beforeEach(() => {
     jest.mock('inquirer-npm-name', () => {
       return () => Promise.resolve(true)

@@ -16,7 +16,7 @@ class CommunityReadmeGenerator extends YeomanGenerator {
 
   writing () {
     this.fs.copyTpl(
-      this.templatePath('_README.md'),
+      this.templatePath('en/_README.md'),
       this.destinationPath(this.options.generateInto, 'README.md'),
       this.options
     )

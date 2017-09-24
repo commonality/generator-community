@@ -43,14 +43,14 @@ const defaultOptions = {
     required: true,
     type: String
   },
-  licenseName: {
+  license: {
     defaults: 'MIT',
     desc: 'Open source software license',
     required: true,
     type: String
   },
   licenseUrl: {
-    defaults: './LICENSE',
+    default: './LICENSE',
     desc: 'URL to your LICENSE file',
     required: true,
     type: String
