@@ -35,6 +35,7 @@ describe('generator-community:app,', () => {
         authorUrl: 'http://yeoman.io',
         keywords: ['foo', 'bar']
       }
+
       return helpers.run(require.resolve('../generators/app'))
         .withPrompts(answers)
         .then(() => {
@@ -72,7 +73,10 @@ describe('generator-community:app,', () => {
         keywords: ['bar']
       }
       return helpers.run(require.resolve('../generators/app'))
-        .withPrompts({name: 'generator-community'})
+        .withPrompts({
+          name: 'generator-community',
+          keywords: 'bar'
+        })
         .on('ready', (gen) => {
           gen.fs.writeJSON(gen.destinationPath('package.json'), pkg)
         })

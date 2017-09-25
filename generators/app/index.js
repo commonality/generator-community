@@ -1,29 +1,60 @@
 'use strict'
 
+const DefaultPrompts = require('./default-prompts')
 const NodeAppGenerator = require('generator-node/generators/app')
+const YeomanGenerator = require('yeoman-generator')
 const _ = require('lodash')
+const defaultOptions = require('./default-options')
+const githubUsername = require('github-username')
 const inquirerNpmName = require('inquirer-npm-name')
 const path = require('path')
 
-class CommunityAppGenerator extends NodeAppGenerator {
+class CommunityAppGenerator extends YeomanGenerator {
   constructor (args, options) {
     // Do not include generator-node's boilerplate, coveralls, or travis installations, and set the project root to the current directory.
-    const opts = _.merge(options, {
-      boilerplate: false,
-      coveralls: false,
-      projectRoot: './',
-      travis: false
-    })
+    super(args, options)
 
-    super(args, opts)
+    _.forEach(defaultOptions, (val, key) => this.option(key, val))
+
+    this.nodeAppGenerator = new NodeAppGenerator(args, this.options)
   }
 
   initializing () {
-    this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
-    super.initializing()
+    this.nodeAppGenerator.pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
+    this.nodeAppGenerator.initializing()
+
+    this.props = this.nodeAppGenerator.props
+    this.pkg = this.nodeAppGenerator.pkg
   }
 
-  _askForModuleName () {
+  _askForGithubAccount () {
+    if (this.options.githubAccount) {
+      this.props.githubAccount = this.options.githubAccount
+      return Promise.resolve()
+    }
+
+    /* istanbul ignore next */
+    return githubUsername(this.props.authorEmail)
+      .then((username) => username, () => '')
+      .then((username) => {
+        return this.prompt({
+          name: 'githubAccount',
+          message: 'GitHub username or organization',
+          default: username
+        }).then((prompt) => {
+          this.props.githubAccount = prompt.githubAccount
+        })
+      })
+  }
+
+  _askForProductInfo () {
+    const questions = new DefaultPrompts(this).prompts
+    return this.prompt(questions).then((answers) => {
+      this.props = _.merge(this.props, answers)
+    })
+  }
+
+  _askForProductName () {
     if (this.pkg.name || this.options.name) {
       this.props.name = this.pkg.name || _.kebabCase(this.options.name)
       return Promise.resolve()
@@ -44,7 +75,9 @@ class CommunityAppGenerator extends NodeAppGenerator {
   }
 
   prompting () {
-    return super.prompting()
+    return this._askForProductName()
+      .then(this._askForProductInfo.bind(this))
+      .then(this._askForGithubAccount.bind(this))
   }
 
   default () {
@@ -69,6 +102,7 @@ class CommunityAppGenerator extends NodeAppGenerator {
       )
     }
 
+    /* istanbul ignore else */
     if (this.options.license && !this.pkg.license) {
       this.composeWith(require.resolve('../license'), {
         name: this.props.authorName,

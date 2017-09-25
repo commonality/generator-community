@@ -35,6 +35,15 @@ class DefaultPrompts {
         store: true
       },
       {
+        name: 'keywords',
+        message: 'Package keywords (comma to split)',
+        when: !generator.pkg.keywords,
+        filter (words) {
+          /* istanbul ignore next */
+          return words.split(/\s*,\s*/g)
+        }
+      },
+      {
         name: 'lang',
         message: 'Which programming language does this product use the most?',
         store: true

@@ -44,7 +44,6 @@ const defaultOptions = {
     type: String
   },
   license: {
-    defaults: 'MIT',
     desc: 'Open source software license',
     required: true,
     type: String
