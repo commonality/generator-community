@@ -116,6 +116,6 @@
     "security": "npm run security:nsp:scan",
     "security:nsp:scan": "nsp check",
     "standard-readme": "yo standard-readme",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --forceExit --config=jest.config.json"
   }
 }
