@@ -132,7 +132,6 @@ $ yo community
 ? Package keywords (comma to split) recommended community standards,readme,license,toc,table of contents,markdown
 ? Which programming language does this product use the most? Node.js (JavaScript)
 ? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
-? Which license do you want to use? MIT
 ? ⦾ 📄  LICENSE: Select a license MIT
 ? ⦾ 📄  README: Select the sections to include in your README Overview, Configuration, Security, API, Background, License
    create package.json
