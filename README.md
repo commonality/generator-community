@@ -28,6 +28,14 @@
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
 ## 1. Overview
+
+`generator-community` helps product repository maintainers follow the [recommended community standards][opensource-guide-community-standards-url] for documentation that communicates expectations, manages contributions, protects participants' legal rights, and optimizes search engine results. `generator-community`'s simple command-line interface prompts you with simple questions in order to generate a:
+
+1. `CODE_OF_CONDUCT.md`
+2. `CONTRIBUTING.md`
+3. Open source `LICENSE.md`
+4. `README.md`
+
 ---
 
 [![Alert icon][icon-alert-50-image]][milestones-url] Currently, `generator-community` generates:
@@ -44,13 +52,6 @@
 Please [see the Milestones][milestones-url] for `generator-community's` release plan.
 
 ---
-
-`generator-community` helps product repository maintainers follow the [recommended community standards][opensource-guide-community-standards-url] for documentation that communicates expectations, manages contributions, protects participants' legal rights, and optimizes search engine results. `generator-community`'s simple command-line interface prompts you with simple questions in order to generate a:
-
-1. `CODE_OF_CONDUCT.md`
-2. `CONTRIBUTING.md`
-3. Open source `LICENSE.md`
-4. `README.md`
 
 ## 2. Installation
 
@@ -117,17 +118,18 @@ $ yo community
 This will guide you with prompts to help you pre-fill the documents, e.g.,
 
 ```shell
-yo community
+$ yo community
 ? GitHub username or organization johndoe
 ? Product Name spike-repo
 ? Write a short description/value proposition The most valuable spike in the world....
 ? Product homepage URL https://example
-? Author\'s name John Doe
-? Author\'s e-mail john@doe.info
-? Author\'s homepage https://github.com/johndoe
+? Author's name John Doe
+? Author's e-mail john@doe.info
+? Author's homepage https://github.com/johndoe
 ? Package keywords (comma to split) recommended community standards,readme,license,toc,table of contents,markdown
 ? Which programming language does this product use the most? Node.js (JavaScript)
-? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don\'t know. npm
+? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
+? Which license do you want to use? MIT
 ? ⦾ 📄  LICENSE: Select a license MIT
 ? ⦾ 📄  README: Select the sections to include in your README Overview, Configuration, Security, API, Background, License
    create package.json
@@ -138,7 +140,7 @@ yo community
    create LICENSE
 
 
-I\'m all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
+I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
 
 
 
@@ -297,7 +299,7 @@ __Example:__
 
 ```shell
 yo community:license
-? What\'s your name: Greg Swindle
+? What's your name: Greg Swindle
 ? Your email (optional): greg@swindle.net
 ? Your website (optional):
 ? Which license do you want to use?
@@ -320,7 +322,7 @@ Usage:
   yo community:license [options]
 
 Options:
-  -h,   --help            # Print the generator\'s options and usage
+  -h,   --help            # Print the generator's options and usage
         --skip-cache      # Do not remember prompt answers                 Default: false
         --skip-install    # Do not automatically install dependencies      Default: false
         --defaultLicense  # Default license
