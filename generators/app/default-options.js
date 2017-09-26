@@ -45,7 +45,7 @@ const defaultOptions = {
   },
   license: {
     desc: 'Open source software license',
-    required: true,
+    required: false,
     type: String
   },
   licenseUrl: {

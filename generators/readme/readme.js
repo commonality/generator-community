@@ -62,7 +62,8 @@ const readme = {
   },
 
   writeTableOfContents (generator) {
-    const readmePath = generator.destinationPath(generator.props.generateInto, 'README.md')
+    const destPath = generator.options.generateInto || ''
+    const readmePath = generator.destinationPath(destPath, 'README.md')
     markdownMagic(readmePath)
   }
 }

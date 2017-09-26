@@ -1,3 +1,5 @@
+/* eslint security/detect-non-literal-fs-filename: ["warn", "error"] */
+
 'use strict'
 
 const DefaultPrompts = require('./default-prompts')
@@ -8,6 +10,7 @@ const defaultOptions = require('./default-options')
 const githubUsername = require('github-username')
 const inquirerNpmName = require('inquirer-npm-name')
 const path = require('path')
+const readme = require('../readme/readme')
 
 class CommunityAppGenerator extends YeomanGenerator {
   constructor (args, options) {
@@ -24,6 +27,7 @@ class CommunityAppGenerator extends YeomanGenerator {
     this.nodeAppGenerator.initializing()
 
     this.props = this.nodeAppGenerator.props
+    this.props.license = this.nodeAppGenerator.pkg.license
     this.pkg = this.nodeAppGenerator.pkg
   }
 
@@ -74,10 +78,21 @@ class CommunityAppGenerator extends YeomanGenerator {
     })
   }
 
+  _askForReadmeInfo () {
+    const questions = readme.prompts
+    return this.prompt(questions).then((answer) => {
+      /* istanbul ignore next */
+      _.forEach(answer.sections, (section) => {
+        _.set(this.props, section, true)
+      })
+    })
+  }
+
   prompting () {
     return this._askForProductName()
       .then(this._askForProductInfo.bind(this))
       .then(this._askForGithubAccount.bind(this))
+      .then(this._askForReadmeInfo.bind(this))
   }
 
   default () {
@@ -105,23 +120,19 @@ class CommunityAppGenerator extends YeomanGenerator {
     /* istanbul ignore else */
     if (this.options.license && !this.pkg.license) {
       this.composeWith(require.resolve('../license'), {
-        name: this.props.authorName,
         email: this.props.authorEmail,
-        website: this.props.authorUrl
+        license: this.props.license,
+        name: this.props.authorName,
+        website: this.props.homepage
+      }, {
+        link: 'strong'
       })
     }
 
-    // If (!this.fs.exists(this.destinationPath('README.md'))) {
-    //   this.composeWith(require(generatorNode.readme), {
-    //     name: this.props.name,
-    //     description: this.props.description,
-    //     githubAccount: this.props.githubAccount,
-    //     authorName: this.props.authorName,
-    //     authorUrl: this.props.authorUrl,
-    //     coveralls: this.props.includeCoveralls,
-    //     content: this.options.readme
-    //   })
-    // }
+    /* istanbul ignore else */
+    if (!this.fs.exists(this.destinationPath('README.md'))) {
+      this.composeWith(require.resolve('../readme'), this.props)
+    }
   }
 
   writing () {

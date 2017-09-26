@@ -1,5 +1,8 @@
 'use strict'
 
+const licenseDefaultOptions = require('../license/default-options')
+const spdx = require('../license/spdx')
+
 class DefaultPrompts {
   constructor (generator) {
     this.prompts = [
@@ -52,6 +55,14 @@ class DefaultPrompts {
         name: 'dependencyManager',
         message: 'What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don\'t know.',
         store: true
+      },
+      {
+        type: 'list',
+        name: 'license',
+        message: licenseDefaultOptions.licensePrompt.defaults,
+        default: generator.props.defaultLicense || generator.props.license,
+        when: !generator.props.license,
+        choices: spdx.licenses
       }
     ]
   }
