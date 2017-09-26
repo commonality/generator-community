@@ -9,6 +9,12 @@ const defaultOptions = {
     required: true,
     type: String
   },
+  conduct: {
+    defaults: true,
+    desc: 'Code of Conduct',
+    required: false,
+    type: Boolean
+  },
   dependencyManager: {
     defaults: 'Unspecified',
     desc: 'Tool used to install third-party libraries',

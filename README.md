@@ -1,6 +1,6 @@
 # `generator-community`
 
-[![License][license-badge-image]][license-url] [![Dependencies' licenses][fossa-badge-image]][fossa-url] [![NSP Status][nsp-badge-image]][nsp-url] [![Synk Vulnerabilities][snyk-vulnerabilities-badge-image]][snyk-vulnerabilities-url]<br>[![StackShare][stack-share-badge-image]][stack-share-url] [![Dependency Status][david-dm-badge-image]][daviddm-url] [![devDependencies Status][david-dm-dev-badge-image]][daviddm-dev-url] <br>[![Build Status][travis-badge-image]][travis-url] [![Windows Build status][appveyor-badge-image]][appveyor-url] [![Coverage percentage][coveralls-badge-image]][coveralls-url] [![Codacy quality][codacy-badge-image]][codacy-url]
+[![License][license-badge-image]][license-url] [![Dependencies' licenses][fossa-badge-image]][fossa-url] [![NSP Status][nsp-badge-image]][nsp-url] [![Synk Vulnerabilities][snyk-vulnerabilities-badge-image]][snyk-vulnerabilities-url]<br>[![StackShare][stack-share-badge-image]][stack-share-url] [![Dependency Status][david-dm-badge-image]][daviddm-url] [![devDependencies Status][david-dm-dev-badge-image]][daviddm-dev-url] <br>[![Build Status][travis-badge-image]][travis-url] [![Windows Build status][appveyor-badge-image]][appveyor-url] [![Coverage Status](https://coveralls.io/repos/github/commonality/generator-community/badge.svg?branch=master)](https://coveralls.io/github/commonality/generator-community?branch=master) [![Codacy quality][codacy-badge-image]][codacy-url]
 > Generate `README`, `CODE_OF_CONDUCT`, `CONTRIBUTING`, and `LICENSE` files according to [recommended community standards][opensource-guide-community-standards-url].
 
 
@@ -16,6 +16,8 @@
     + [3.1.1. Guided assistance](#311-guided-assistance)
     + [3.1.2. CLI automation](#312-cli-automation)
   * [3.2. `yo community:conduct`](#32-yo-communityconduct)
+    + [3.2.1. Guided assistance](#321-guided-assistance)
+    + [3.2.2. CLI automation](#322-cli-automation)
   * [3.3. `yo community:contributing`](#33-yo-communitycontributing)
   * [3.4. `yo community:license`](#34-yo-communitylicense)
     + [3.4.1. Guided assistance](#341-guided-assistance)
@@ -38,14 +40,15 @@
 
 ---
 
-[![Alert icon][icon-alert-50-image]][milestones-url] Currently, `generator-community` generates:
+[![Alert icon][icon-alert-50-image]][milestones-url] Currently, `generator-community` generates a:
 
- 1. `README.md` files
- 1. `LICENSEs`
- 1. `.editorconfig` files
- 1. `.gitattributes` files
- 1. `.gitignore` files
- 1. `.yo-rc.json` files (to store answers for your convenience)
+ 1. `.editorconfig`
+ 1. `.gitattributes`
+ 1. `.gitignore`
+ 1. `.yo-rc.json` (to store answers for your convenience)
+ 1. `CODE_OF_CONDUCT.md`
+ 1. `LICENSE`
+ 1. `README.md`
 
 `generator-community` also initializes local Git repository, if one doesn't yet exist.
 
@@ -133,12 +136,14 @@ $ yo community
 ? Which programming language does this product use the most? Node.js (JavaScript)
 ? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
 ? ⦾ 📄  LICENSE: Select a license MIT
+? ⦾ 📄  CODE_OF_CONDUCT: Would you like to generate a Code of Conduct? Yes
 ? ⦾ 📄  README: Select the sections to include in your README Overview, Configuration, Security, API, Background, License
    create package.json
    create README.md
    create .editorconfig
    create .gitattributes
    create .gitignore
+   create CODE_OF_CONDUCT.md
    create LICENSE
 
 
@@ -263,7 +268,39 @@ $ yo community:readme --authorName "Jane Doe" --authorUrl "https://jdoe.example.
 >
 > Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#establishing-a-code-of-conduct
 
-[![Alert icon][icon-goal-image]][milestones-url] This feature will be delivered with [MVP2: community:conduct][milestones-url].
+#### 3.2.1. Guided assistance
+
+To answer prompts manually, open a Terminal and run
+
+```shell
+$ yo community:conduct
+? Contact email: fake@elsewhere.net
+   create CODE_OF_CONDUCT.md
+```
+
+#### 3.2.2. CLI automation
+
+You can automate CODE_OF_CONDUCT.md generation via the command line interface (CLI) (e.g., during one of your CI/CD pipelines). To view all CLI options, use the `--help` or `-h` option:
+
+```shell
+$ yo community:conduct --help
+Usage:
+  yo community:conduct [options]
+
+Options:
+  -h,   --help          # Print the generator's options and usage
+        --skip-cache    # Do not remember prompt answers             Default: false
+        --skip-install  # Do not automatically install dependencies  Default: false
+        --email         # Contact email
+        --generateInto  # Destination directory
+```
+
+__Example:__
+
+```shell
+$ yo community:conduct --email somebody@example.com
+   create CODE_OF_CONDUCT.md
+```
 
 ### 3.3. `yo community:contributing`
 > ![Quote][icon-quote-left-image] A CONTRIBUTING file tells your audience how to participate in your project. For example, you might include information on:
@@ -300,7 +337,7 @@ The `community:readme` subgenerator will evaluate your product repository's _man
 __Example:__
 
 ```shell
-yo community:license
+$ yo community:license
 ? What's your name: Greg Swindle
 ? Your email (optional): greg@swindle.net
 ? Your website (optional):
@@ -438,7 +475,7 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [conventional-commits-badge-image]: https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg?style=flat-square
 [conventional-commits-url]: https://conventionalcommits.org/
 [coolor-palette-url]: https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533
-[coveralls-badge-image]: https://img.shields.io/coveralls/repos/commonality/generator-community/badge.svg?style=flat-square
+[coveralls-badge-image]: https://img.shields.io/coveralls/repos/commonality/generator-community/badge.svg?branch=master&style=flat-square
 [coveralls-url]: https://coveralls.io/r/commonality/generator-community
 [david-dm-badge-image]: https://img.shields.io/david/dev/commonality/generator-community.svg?style=flat-square
 [david-dm-dev-badge-image]: https://img.shields.io/david/commonality/generator-community.svg?style=flat-square

@@ -63,6 +63,13 @@ class DefaultPrompts {
         default: generator.props.defaultLicense || generator.props.license,
         when: !generator.props.license,
         choices: spdx.licenses
+      },
+      {
+        type: 'confirm',
+        name: 'conduct',
+        message: '⦾ 📄  CODE_OF_CONDUCT: Would you like to generate a Code of Conduct?',
+        default: true,
+        when: !generator.props.conduct
       }
     ]
   }

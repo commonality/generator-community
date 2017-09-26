@@ -29,6 +29,7 @@ class CommunityAppGenerator extends YeomanGenerator {
     this.props = this.nodeAppGenerator.props
     this.props.license = this.nodeAppGenerator.pkg.license
     this.pkg = this.nodeAppGenerator.pkg
+    this.props.repository = this.pkg.repository
   }
 
   _askForGithubAccount () {
@@ -133,6 +134,13 @@ class CommunityAppGenerator extends YeomanGenerator {
     if (!this.fs.exists(this.destinationPath('README.md'))) {
       this.composeWith(require.resolve('../readme'), this.props)
     }
+
+    /* istanbul ignore else */
+    if (this.options.conduct) {
+      this.composeWith(require.resolve('../conduct'), {
+        email: this.props.authorEmail
+      })
+    }
   }
 
   writing () {
@@ -141,7 +149,7 @@ class CommunityAppGenerator extends YeomanGenerator {
 
     const pkgTemplate = require('./templates/package.json')
 
-    const issuesUrl = `https://github.com/${this.props.githubAccount}/${this.props.name}`
+    const issuesUrl = `https://github.com/${this.props.repository}/issues`
 
     const pkg = _.merge({
       bugs: issuesUrl,
