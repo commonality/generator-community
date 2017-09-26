@@ -110,7 +110,8 @@ $ npm i generator-community -g
 Install all four recommended community standards (README, CODE_OF_CONDUCT, CONTRIBUTING, and a LICENSE):
 
 ```shell
-# Generate README.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, and LICENSE files per the recommended community community standards:
+# Generate README.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, and LICENSE files
+# per the recommended community community standards:
 
 $ yo community
 ```
@@ -342,15 +343,15 @@ Options:
 `yo community` installs an __npm-script__ that will help keep your documents' table of contents up-to-date. To automatically update your markdown files' tables of contents:
 
 * Add the following comments to your markdown file(s):
-```md
-<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-This text will be replaced by a table of contents  😏.
-<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
-```
+  ```md
+  <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+  This text will be replaced by a table of contents  😏.
+  <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+  ```
 * Open a Terminal and run:
-```shell
-$ npm run docs:toc
-```
+  ```shell
+  $ npm run docs:toc
+  ```
 
 For more information, visit [`DavidWells/markdown-magic`][markdown-magic-toc-url].
 
