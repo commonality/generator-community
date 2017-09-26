@@ -1,26 +1,24 @@
 'use strict'
+
 const YeomanGenerator = require('yeoman-generator')
+const licenseDefaultOptions = require('./default-options')
+const { forEach } = require('lodash')
 
 class CommunityLicenseGenerator extends YeomanGenerator {
   constructor (args, options) {
     super(args, options)
 
-    this.option('generateInto', {
-      defaults: '',
-      desc: 'Destination directory of the generated files.',
-      required: false,
-      type: String
-    })
+    forEach(licenseDefaultOptions, (val, key) => this.option(key, val))
   }
 
   default () {
-    const props = {
+    this.props = {
       name: this.options.name,
       email: this.options.email,
       website: this.options.website,
       license: this.options.license
     }
-    this.composeWith('generator-license/app', props)
+    this.composeWith('generator-license/app', this.props)
   }
 }
 
