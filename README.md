@@ -78,16 +78,18 @@ bash: foobar: <span class="hljs-built_in">command</span> not found
 <span class="hljs-comment"># You need to install Node.js!</span>
 </code></pre></li>
 <li><h4>2.1.2. Install or update Node.js</h4>
-<p>You have two options for installing Node.js. If you feel comfortable using the command line, try one of the following version managers:</p>
+<p>You have two options for installing Node.js.</p>
+<p>The easiest option is to simply <a href="https://nodejs.org">download and install Node.js</a>.</p>
+<p>If you feel comfortable using the command line, try one of the following version managers:</p>
 <ul>
-  <li>[Node Version Manager (<code>nvm</code>)][nvm-url] (for macOS and Linux Bash shells)</li>
+  <li><a href="https://github.com/creationix/nvm">Node Version Manager (<code>nvm</code>)</a> (for macOS and Linux Bash shells)</li>
   <li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> (for Windows)</li>
   <li><a href="https://github.com/marcelklehr/nodist">nodist</a> (for Windows)</li>
 </ul>
+<br>
 <blockquote>
 <p>:information_source: I cannot vouch for the two Windows options, so do a little homework, first.</p>
 </blockquote>
-<p>The other (and easier) option is to simply [download and install Node.js][nodejs-url].</p>
 </ul>
 </details>
 
