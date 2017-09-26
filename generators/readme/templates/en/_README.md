@@ -21,6 +21,7 @@ __TODO:__ Put badges here. <%= license %>
     + [Authorization](#authorization)
     + [HTTP request headers](#http-request-headers)
 - [Background](#background)
+- [Semantic version and `CHANGELOG`](#semantic-version-and-changelog)
 - [Contributing to ``](#contributing-to-)
 - [License](#license)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
@@ -183,6 +184,7 @@ __*However, please consider [the consequences of publishing software products wi
 <!-- ⛔️ 📝 NOTE: PLEASE ALPHABETIZE LINK REFERENCES. 📝 ⛔️ -->
 
 [author-url]: <%= author.url %>
+[changelog-url]: ./CHANGELOG.md
 [license-choose-url]: https://choosealicense.com/
 [license-no-license-url]: https://choosealicense.com/no-license/
 [license-unlicense-url]: https://choosealicense.com/licenses/#unlicense

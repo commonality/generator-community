@@ -89,9 +89,9 @@ class CommunityAppGenerator extends YeomanGenerator {
   }
 
   prompting () {
-    return this._askForProductName()
+    return this._askForGithubAccount()
+      .then(this._askForProductName.bind(this))
       .then(this._askForProductInfo.bind(this))
-      .then(this._askForGithubAccount.bind(this))
       .then(this._askForReadmeInfo.bind(this))
   }
 

@@ -23,7 +23,7 @@ const defaultOptions = {
     type: String
   },
   licensePrompt: {
-    defaults: 'Which license do you want to use?',
+    defaults: '⦾ 📄  LICENSE: Select a license',
     desc: 'License prompt text',
     hide: true,
     required: false,

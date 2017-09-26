@@ -20,7 +20,7 @@
   * [3.4. `yo community:license`](#34-yo-communitylicense)
     + [3.4.1. Guided assistance](#341-guided-assistance)
     + [3.4.2. CLI automation](#342-cli-automation)
-  * [3.5. Update your documents' tables of contents](#35-update-your-documents-tables-of-contents)
+  * [3.5. Update tables of contents in markdown files](#35-update-tables-of-contents-in-markdown-files)
 - [4. `npm-scripts`](#4-npm-scripts)
 - [5. Semantic version and `CHANGELOG`](#5-semantic-version-and-changelog)
 - [6. Contributing to `generator-community`](#6-contributing-to-generator-community)
@@ -117,22 +117,75 @@ $ yo community
 This will guide you with prompts to help you pre-fill the documents, e.g.,
 
 ```shell
+yo community
+? GitHub username or organization johndoe
+? Product Name spike-repo
+? Write a short description/value proposition The most valuable spike in the world....
+? Product homepage URL https://example
+? Author\'s name John Doe
+? Author\'s e-mail john@doe.info
+? Author\'s homepage https://github.com/johndoe
+? Package keywords (comma to split) recommended community standards,readme,license,toc,table of contents,markdown
 ? Which programming language does this product use the most? Node.js (JavaScript)
-? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
-? GitHub username or organization gregswindle
-? ⦾ 📄  README: Select the sections to include in your README API, Background, License
+? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don\'t know. npm
+? ⦾ 📄  LICENSE: Select a license MIT
+? ⦾ 📄  README: Select the sections to include in your README Overview, Configuration, Security, API, Background, License
+   create package.json
    create README.md
+   create .editorconfig
+   create .gitattributes
+   create .gitignore
+   create LICENSE
 
 
-I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
+I\'m all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
 
 
+
+> commitplease@2.7.10 install /Users/swindle/Projects/github/commonality/sandbox/spike-repo/node_modules/commitplease
+> node install
+
+
+> git-validate@2.2.2 install /Users/swindle/Projects/github/commonality/sandbox/spike-repo/node_modules/nsp/node_modules/git-validate
+> node bin/install
+
+npm WARN prepublish-on-install As of npm@5, `prepublish` scripts are deprecated.
+npm WARN prepublish-on-install Use `prepare` for build steps and `prepublishOnly` for upload-only.
+npm WARN prepublish-on-install See the deprecation note in `npm help scripts` for more information.
+
+> spike-repo@0.0.0 prepublish /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> nsp check
+
+(+) No known vulnerabilities found
+
+> spike-repo@0.0.0 prepare /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> npm run lint && npm run security
+
+
+> spike-repo@0.0.0 lint /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> npm run lint:manifest
+
+
+> spike-repo@0.0.0 lint:manifest /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> fixpack
+
+missing main
+package.json fixed!
+
+> spike-repo@0.0.0 security /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> npm run security:nsp:scan
+
+
+> spike-repo@0.0.0 security:nsp:scan /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> nsp check
+
+(+) No known vulnerabilities found
+npm notice created a lockfile as package-lock.json. You should commit this file.
+added 571 packages in 9.146s
+Thank you for generating community!
 ✔ /README.md Updated
  Transforms run
-  ⁕ TOC
-
-up to date in 0.767s
-Thanks for generating community!
+  ⁕ TOC:excludeText=Table of contents
 ```
 
 ### 3.1. `yo community:readme`
@@ -244,7 +297,7 @@ __Example:__
 
 ```shell
 yo community:license
-? What's your name: Greg Swindle
+? What\'s your name: Greg Swindle
 ? Your email (optional): greg@swindle.net
 ? Your website (optional):
 ? Which license do you want to use?
@@ -267,7 +320,7 @@ Usage:
   yo community:license [options]
 
 Options:
-  -h,   --help            # Print the generator's options and usage
+  -h,   --help            # Print the generator\'s options and usage
         --skip-cache      # Do not remember prompt answers                 Default: false
         --skip-install    # Do not automatically install dependencies      Default: false
         --defaultLicense  # Default license
@@ -280,32 +333,17 @@ Options:
         --year            # Year(s) to include on the license              Default: 2017
 ```
 
-### 3.5. Update your documents' tables of contents
+### 3.5. Update tables of contents in markdown files
+
+![Markdown icon][icon-markdown-image]
 
 `yo community` installs an __npm-script__ that will help keep your documents' table of contents up-to-date. To automatically update your markdown files' tables of contents:
 
 * Add the following comments to your markdown file(s):
-```text
+```md
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-- [1. Overview](#1-overview)
-- [2. Installation](#2-installation)
-  * [2.1. Prerequisite software](#21-prerequisite-software)
-  * [2.2. Install Yeoman and `generator-community`](#22-install-yeoman-and-generator-community)
-- [3. Usage](#3-usage)
-  * [3.1. `yo community:readme`](#31-yo-communityreadme)
-    + [3.1.1. Guided assistance](#311-guided-assistance)
-    + [3.1.2. CLI automation](#312-cli-automation)
-  * [3.2. `yo community:conduct`](#32-yo-communityconduct)
-  * [3.3. `yo community:contributing`](#33-yo-communitycontributing)
-  * [3.4. `yo community:license`](#34-yo-communitylicense)
-    + [3.4.1. Guided assistance](#341-guided-assistance)
-    + [3.4.2. CLI automation](#342-cli-automation)
-  * [3.5. Update your documents' tables of contents](#35-update-your-documents-tables-of-contents)
-- [4. `npm-scripts`](#4-npm-scripts)
-- [5. Semantic version and `CHANGELOG`](#5-semantic-version-and-changelog)
-- [6. Contributing to `generator-community`](#6-contributing-to-generator-community)
-- [7. License](#7-license)
-<!-- AUTO-GENERATED-CONTENT:END -->
+This text will be replaced by a table of contents  😏.
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 ```
 * Open a Terminal and run:
 ```shell
@@ -421,6 +459,7 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [icon-help-image]: ./docs/img/icons8/icon-help-48.png
 [icon-issue-label-status-available-image]: ./docs/img/icon-issue-label-status-available.png
 [icon-jest-image]: ./docs/img/tech-stack/icon-jest-50.jpeg
+[icon-markdown-image]: ./docs/img/icons8/icon-markdown.png
 [icon-nodejs-image]: ./docs/img/tech-stack/icon-nodejs-50.png
 [icon-npm-image]: ./docs/img/tech-stack/icon-npm-50.png
 [icon-package-image]: ./docs/img/icons8/icon-package-filled.png
