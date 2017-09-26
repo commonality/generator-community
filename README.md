@@ -346,9 +346,9 @@ Options:
 
 * Add the following comments to your markdown file(s):
   ```md
-  <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-  This text will be replaced by a table of contents  😏.
-  <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+This text will be replaced by a table of contents 😏 .
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
   ```
 * Open a Terminal and run:
   ```shell
@@ -375,7 +375,6 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 | Script | Description |
 |--------|-------------|
 | `docs` | `npm run docs:scripts && npm run docs:toc` |
-| `docs:scripts` | `md-magic --path '**/*.md' --ignore 'node_modules' --config ./markdown.config.js` |
 | `docs:toc` | `md-magic --path '**/*.md' --ignore 'node_modules'` |
 | `lint` | `npm run lint:node-version && npm run lint:js && npm run lint:manifest` |
 | `lint:js` | `eslint ./generators/**/*.js ./__tests__/**/*.js --fix` |
