@@ -21,7 +21,7 @@ __TODO:__ Put badges here. <%= license %>
     + [Authorization](#authorization)
     + [HTTP request headers](#http-request-headers)
 - [Background](#background)
-- [Contributing to `<%= name %>`](#contributing-to-)
+- [Contributing to ``](#contributing-to-)
 - [License](#license)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
@@ -146,6 +146,10 @@ _The API section should detail `<%= name %>`'s objects and functions, their sign
 _If `<%= name %>` depends on important but not widely known abstractions or other ecosystems, explain them here. This is also a good place to explain the product's motivation if similar products already exist._
 
 <% } %>
+
+## Semantic version and `CHANGELOG`
+
+The latest version of `<%= name %>` is `0.0.0`. View the [`CHANGELOG`][changelog-url] for details.
 
 ## Contributing to `<%= name %>`
 > [![Learn how to make a Pull Request with free training][prs-welcome-badge-image]][prs-welcome-url]

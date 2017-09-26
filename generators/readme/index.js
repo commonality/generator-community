@@ -31,6 +31,7 @@ class CommunityReadmeGenerator extends YeomanGenerator {
 
     this.options.license = this.props.license || pkg.license
     this.options.repository = this._getRepositoryPath(pkg)
+    this.options.version = pkg.version || '0.0.0'
 
     this.fs.copyTpl(
       this.templatePath('en/_README.md'),
