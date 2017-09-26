@@ -2,7 +2,11 @@
 const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
-describe('node:cli', () => {
+describe('community:cli', () => {
+  afterAll(() => {
+    process.setMaxListeners(0)
+  })
+
   beforeEach(() => {
     return helpers.run(require.resolve('generator-node/generators/cli'))
       .on('ready', (generator) => {
@@ -19,7 +23,7 @@ describe('node:cli', () => {
     assert.fileContent('lib/cli.js', 'const myLib = require(\'./\')')
   })
 
-  it('Extends package.json', () => {
+  it('extends package.json', () => {
     assert.fileContent('package.json', '"bin": "lib/cli.js"')
     assert.fileContent('package.json', '"meow"')
     assert.fileContent('package.json', /"lec": "\^/)
@@ -27,7 +31,7 @@ describe('node:cli', () => {
   })
 })
 
-describe('node:cli', () => {
+describe('community:cli', () => {
   beforeEach(() => {
     return helpers.run(require.resolve('generator-node/generators/cli'))
       .withOptions({generateInto: 'other/'})
@@ -39,7 +43,7 @@ describe('node:cli', () => {
       })
   })
 
-  it('creates cli.js with path option', () => {
+  it('creates lib/cli.js in the directory specified by --generateInto', () => {
     assert.file('other/lib/cli.js')
   })
 })

@@ -4,7 +4,6 @@ install:
   - npm install --silent --quiet
 
 platform:
-  - x86
   - x64
 
 build: off

@@ -13,7 +13,8 @@
 
 ## Table of contents
 
-<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+<!-- toc -->
+
 - [1. __Issues__](#1-__issues__)
   * [1.1. Create Issues for feature requests and defects.](#11-create-issues-for-feature-requests-and-defects)
   * [1.2. Format titles with **`type(scope): subject`**.](#12-format-titles-with-typescope-subject)
@@ -56,13 +57,15 @@
   * [4.2. Reach 100% code coverage.](#42-reach-100%25-code-coverage)
 - [5. __Directory structure__](#5-__directory-structure__)
 - [6. __Logging__](#6-__logging__)
-- [7. __Dependencies__](#7-__dependencies__)
-- [8. __APIs__](#8-__apis__)
-  * [8.1 __API design__](#81-__api-design__)
-  * [8.2 __API security__](#82-__api-security__)
-  * [8.3 __API documentation__](#83-__api-documentation__)
-- [9. __Licensing__](#9-__licensing__)
-<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+- [7. __APIs__](#7-__apis__)
+  * [7.1 __API design__](#71-__api-design__)
+  * [7.2 __API security__](#72-__api-security__)
+  * [7.3 __API documentation__](#73-__api-documentation__)
+- [8. __Licensing__](#8-__licensing__)
+
+<!-- tocstop -->
+
+<!-- tocend -->
 
 
 
@@ -74,25 +77,21 @@
 
     View `generator-community's` collaboration and contribution flowcharts:
 
-  ---
-
   <details>
-  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of the Issue workflow flowchart.</summary>
+  <summary><mark>Toogle the Issue workflow flowchart.</mark></summary>
 
   ![Issue flowchart][contribution-lifecycle-issues-image]
 
   </details>
-
-  ---
+  <br>
 
   <details>
-  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of the Pull Request workflow flowchart.</summary>
+  <summary><mark>Toogle the Pull Request workflow flowchart.</mark></summary>
 
   ![Pull Request flowchart][contribution-lifecycle-pr-image]
 
   </details>
 
-  ---
 
 * ### 1.1. Create Issues for feature requests and defects.
 
@@ -137,11 +136,10 @@
     > * `Status`: the state of a change.
     > * `Priority`: the importance and value of a change.
     > * `Points`: the size/complexity of a change.
-
-    ---
+    <br><br>
 
     <details>
-    <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of the Label definitions table.</summary>
+    <summary><mark>Toggle the Label definitions table.</mark></summary>
       <table class="table table-striped table-bordered">
       <thead>
       <tr>
@@ -289,8 +287,6 @@
       </tbody>
       </table>
     </details>
-
-    ---
 
 * ### 1.5. Monitor your issue for questions.
 
@@ -655,24 +651,20 @@
 
 * __Git enables collaboration with structured (business) process models.__ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called workflows.
 
-  ---
-
-  <details>
-  <summary><img src="../docs/img/icons8/icon-help-48.png" alt="Help" align="middle" height="48" width="48"> Toggle view of a workflow example.</summary><br>
-  <p>⌦ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called _workflows_.
-  <ol>
-  <li>Git __repositories__ store software products, as well as the historical changes to these products.<br><br>
-  <li>Git workflows begin with either __cloning__ or __forking__ a repository, which __pulls__ a duplicate of the entire codebase onto a local computer.<br><br>
-  <li>Contributors then create a local __topic branch__ in which they introduce changes—-features, fixes, documentation, tests, and design improvements—-which allows others to develop in parallel.<br><br>
-  <li>Contributors __push__ their topic branch to others (usually another `remote` repository called `origin`) and submit __pull requests (PRs)__ to their announce their changes. __Pull requests are central to almost all Git workflows, since PRs allow Product Owners and their community to review suggested modifications. Product owners can approve or reject PRs at any time.__<br><br>
-  <li>Other contributors answer the request to __pull__ the changes so they can review and test them.<br><br>
-  <li>The changes in the PR are approved.<br><br>
-  <li>The topic branch is either __merged__ or __rebased__ into the the software product.<br><br>
-  <li>The topic branch gets deleted, and (ultimately) its changes are delivered to the world.
-  </ol>
-  </details>
-
-  ---
+  > <details>
+  > <summary>Toggle a workflow example.</summary><br>
+  > <p>⌦ Git is a collaboration tool that grants people the opportunity to contribute to software products using simple and consistent process models called _workflows_.
+  > <ol>
+  > <li>Git __repositories__ store software products, as well as the historical changes to these products.<br><br>
+  > <li>Git workflows begin with either __cloning__ or __forking__ a repository, which __pulls__ a duplicate of the entire codebase onto a local computer.<br><br>
+  > <li>Contributors then create a local __topic branch__ in which they introduce changes—-features, fixes, documentation, tests, and design improvements—-which allows others to develop in parallel.<br><br>
+  > <li>Contributors __push__ their topic branch to others (usually another `remote` repository called `origin`) and submit __pull requests (PRs)__ to their announce their changes. __Pull requests are central to almost all Git workflows, since PRs allow Product Owners and their community to review suggested modifications. Product owners can approve or reject PRs at any time.__<br><br>
+  > <li>Other contributors answer the request to __pull__ the changes so they can review and test them.<br><br>
+  > <li>The changes in the PR are approved.<br><br>
+  > <li>The topic branch is either __merged__ or __rebased__ into the the software product.<br><br>
+  > <li>The topic branch gets deleted, and (ultimately) its changes are delivered to the world.
+  > </ol>
+  > </details>
 
   _Why:_
   > ⌦ Git can be intimidating, and The Boss (even if that's you!) needs to know why Git is valuable in *business terms.*
@@ -756,65 +748,12 @@
 
 ## 6. __Logging__
 
-## 7. __Dependencies__
 
-![Package tech stack][tech-stack-image]
-
-[![StackShare][stackshare-badge-image]][stackshare-url]
-
-`generator-community` requires the following tech stack to either run, build, test, or deploy:
-
-<!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
-| **Dependency** | **Description** | **Version** | **Type** |
-| -------------- | --------------- | ----------- | -------- |
- | [generator-license@5.1.0](https://github.com/jozefizso/generator-license) | License generator for Yeoman based projects. | 5.1.0 | production | 
- | [generator-node@2.2.0](https://github.com/yeoman/generator-node) | Create a Node.js module | 2.2.0 | production | 
- | [git-remote-origin-url@2.0.0](https://github.com/sindresorhus/git-remote-origin-url#readme) | Get the remote origin url of a git repository | 2.0.0 | production | 
- | [git-url-parse@7.0.1](https://github.com/IonicaBizau/git-url-parse) | A high level git url parser for common git providers. | 7.0.1 | production | 
- | [github-username@4.1.0](https://github.com/sindresorhus/github-username#readme) | Get a GitHub username from an email address | 4.1.0 | production | 
- | [inquirer-npm-name@2.0.0](https://github.com/SBoudrias/inquirer-npm-name#readme) | Helper function using inquirer to validate a value provided in a prompt does not exist as an npm package. | 2.0.0 | production | 
- | [lodash@^4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | production | 
- | [markdown-magic@0.1.18](https://npmjs.org/package/markdown-magic) | Automatically update markdown files with content from external sources | 0.1.18 | production | 
- | [markdown-magic-install-command@1.3.1](https://github.com/camacho/markdown-magic-install-command#readme) | Print install command for markdown file | 1.3.1 | production | 
- | [markdown-magic-package-scripts@1.2.0](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.0 | production | 
- | [parse-author@2.0.0](https://github.com/jonschlinkert/parse-author) | Parse an author, contributor, maintainer or other 'person' string into an object with name, email and url properties following npm conventions. | 2.0.0 | production | 
- | [update-notifier@2.2.0](https://github.com/yeoman/update-notifier#readme) | Update notifications for your CLI app | 2.2.0 | production | 
- | [yeoman-generator@2.0.0](http://yeoman.io) | Rails-inspired generator system that provides scaffolding for your apps | 2.0.0 | production | 
- | [babel-jest@21.0.2](https://github.com/facebook/jest#readme) | Jest plugin to use babel for transformation. | 21.0.2 | dev | 
- | [babel-preset-env@1.6.0](https://babeljs.io/) | A Babel preset for each environment. | 1.6.0 | dev | 
- | [babelify@7.3.0](https://github.com/babel/babelify) | Babel browserify transform | 7.3.0 | dev | 
- | [check-node-version@2.1.0](https://github.com/parshap/check-node-version#readme) | Check installed versions of node and npm | 2.1.0 | dev | 
- | [commitplease@2.7.10](https://github.com/jzaefferer/commitplease#readme) | Validates strings as commit messages | 2.7.10 | dev | 
- | [coveralls@^2.13.1](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 2.13.1 | dev | 
- | [eslint@4.7.2](http://eslint.org) | An AST-based pattern checker for JavaScript. | 4.7.2 | dev | 
- | [eslint-config-xo-space@0.16.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.16.0 | dev | 
- | [eslint-plugin-import@2.7.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.7.0 | dev | 
- | [eslint-plugin-jest@21.1.0](https://github.com/facebook/jest#readme) | Eslint rules for Jest | 21.1.0 | dev | 
- | [eslint-plugin-jsdoc@3.1.3](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.1.3 | dev | 
- | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | dev | 
- | [eslint-plugin-no-unsanitized@2.0.1](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.1 | dev | 
- | [eslint-plugin-node@5.1.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.1.1 | dev | 
- | [eslint-plugin-promise@3.5.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.5.0 | dev | 
- | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | dev | 
- | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | dev | 
- | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | dev | 
- | [eslint-plugin-xss@0.1.8](https://npmjs.org/package/eslint-plugin-xss) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.8 | dev | 
- | [fixpack@2.3.1](https://github.com/henrikjoreteg/fixpack) | cli tool that cleans up package.json files. | 2.3.1 | dev | 
- | [jest@21.1.0](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 21.1.0 | dev | 
- | [jest-cli@21.1.0](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 21.1.0 | dev | 
- | [markdown-toc@1.2.0](https://github.com/jonschlinkert/markdown-toc) | Generate a markdown TOC (table of contents) with Remarkable. | 1.2.0 | dev | 
- | [nsp@2.8.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 2.8.0 | dev | 
- | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | dev | 
- | [yeoman-assert@3.1.0](http://yeoman.io) | Assert utility from yeoman | 3.1.0 | dev | 
- | [yeoman-test@1.7.0](http://yeoman.io/authoring/testing.html) | Test utilities for Yeoman generators | 1.7.0 | dev | 
-<!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
-<!-- AUTO-GENERATED-CONTENT:END -->
-
-## 8. __APIs__
+## 7. __APIs__
 
 ![APIs][icon-rest-api-image]
 
-* ### 8.1 __API design__
+* ### 7.1 __API design__
 
   _Why:_
   > ⌦ Because we try to enforce development of sanely constructed RESTful interfaces, which team members and clients can consume simply and consistently.
@@ -998,7 +937,7 @@
       ```
   * Pagination, filtering, and sorting don’t need to be supported from start for all resources. Document those resources that offer filtering and sorting.
 
-* ### 8.2 __API security__
+* ### 7.2 __API security__
 
   These are some basic security best practices:
 
@@ -1034,7 +973,7 @@
       _Why:_
       > ⌦ For instance, accepting the `application/x-www-form-urlencoded` mime type allows the attacker to create a form and trigger a simple POST request. The server should never assume the Content-Type. A lack of Content-Type header or an unexpected Content-Type header should result in the server rejecting the content with a `4XX` response.
 
-* ### 8.3 __API documentation__
+* ### 7.3 __API documentation__
 
   * Fill the `API Reference` section in [README.md template](./README.sample.md) for API.
   * Describe API authentication methods with a code sample.
@@ -1095,7 +1034,7 @@
 
   * Use API design tools, There are lots of open source tools for good documentation such as [API Blueprint](https://apiblueprint.org/) and [Swagger](https://swagger.io/).
 
-## 9. __Licensing__
+## 8. __Licensing__
 
 ![Licensing][osi-logo-image]
 
@@ -1123,9 +1062,7 @@
 [eslint-url]: https://eslint.org
 [force-with-lease-url]: https://developer.atlassian.com/blog/2015/04/force-with-lease/
 [fossa-image-large]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Forganization%2Frepo-name.svg?type=large
-[gh-create-account-url]: https://github.com/signup/free
 [gh-git-labelmaker-url]: https://github.com/himynameisdave/git-labelmaker
-[gh-try-github-url]: https://try.github.io/levels/1/challenges/1
 [git-commit-guidelines-url]: https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit
 [git-resolve-conflicts-url]: https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/
 [icon-bitbucket-20-image]: ../docs/img/icons8/icon-bitbucket-20.png
@@ -1148,9 +1085,8 @@
 [product-development-guidelines-url]: ../docs/product-development-guidelines/js/PRODUCT_DEVELOPEMENT_GUIDELINES.md
 [product-repo-logo-image]: ../docs/img/logo-commonalaxy.png
 [product-repo-url]: .
-[stackshare-badge-image]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat-square
-[stackshare-url]: https://stackshare.io/commonality/generator-community
 [standard-js-badge-image]: https://cdn.rawgit.com/standard/standard/master/badge.svg
 [standard-js-url]: https://github.com/standard/standard
 [standard-version-url]: https://github.com/conventional-changelog/standard-version
-[tech-stack-image]: ../docs/img/icons8/icon-package-filled.png
+[gh-create-account-url]: https://github.com/signup/free
+[gh-try-github-url]: https://try.github.io/levels/1/challenges/1

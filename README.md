@@ -14,23 +14,20 @@
 - [3. Usage](#3-usage)
   * [3.1. `yo community:readme`](#31-yo-communityreadme)
     + [3.1.1. Guided assistance](#311-guided-assistance)
-    + [3.1.2. Command-line interface automation](#312-command-line-interface-automation)
+    + [3.1.2. CLI automation](#312-cli-automation)
   * [3.2. `yo community:conduct`](#32-yo-communityconduct)
   * [3.3. `yo community:contributing`](#33-yo-communitycontributing)
   * [3.4. `yo community:license`](#34-yo-communitylicense)
-  * [3.5. Update your documents's tables of contents](#35-update-your-documentss-tables-of-contents)
-- [4. Contributing to `generator-community`](#4-contributing-to-generator-community)
-- [5. License](#5-license)
+    + [3.4.1. Guided assistance](#341-guided-assistance)
+    + [3.4.2. CLI automation](#342-cli-automation)
+  * [3.5. Update tables of contents in markdown files](#35-update-tables-of-contents-in-markdown-files)
+- [4. `npm-scripts`](#4-npm-scripts)
+- [5. Semantic version and `CHANGELOG`](#5-semantic-version-and-changelog)
+- [6. Contributing to `generator-community`](#6-contributing-to-generator-community)
+- [7. License](#7-license)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
 ## 1. Overview
----
-
-[![Alert icon][icon-alert-50-image]][milestones-url] Currently, `generator-community` v0.1.0 only generates READMEs.
-
-Please [see the Milestones][milestones-url] for `generator-community's` release plan.
-
----
 
 `generator-community` helps product repository maintainers follow the [recommended community standards][opensource-guide-community-standards-url] for documentation that communicates expectations, manages contributions, protects participants' legal rights, and optimizes search engine results. `generator-community`'s simple command-line interface prompts you with simple questions in order to generate a:
 
@@ -38,6 +35,23 @@ Please [see the Milestones][milestones-url] for `generator-community's` release 
 2. `CONTRIBUTING.md`
 3. Open source `LICENSE.md`
 4. `README.md`
+
+---
+
+[![Alert icon][icon-alert-50-image]][milestones-url] Currently, `generator-community` generates:
+
+ 1. `README.md` files
+ 1. `LICENSEs`
+ 1. `.editorconfig` files
+ 1. `.gitattributes` files
+ 1. `.gitignore` files
+ 1. `.yo-rc.json` files (to store answers for your convenience)
+
+`generator-community` also initializes local Git repository, if one doesn't yet exist.
+
+Please [see the Milestones][milestones-url] for `generator-community's` release plan.
+
+---
 
 ## 2. Installation
 
@@ -64,16 +78,19 @@ bash: foobar: <span class="hljs-built_in">command</span> not found
 <span class="hljs-comment"># You need to install Node.js!</span>
 </code></pre></li>
 <li><h4>2.1.2. Install or update Node.js</h4>
-<p>You have two options for installing Node.js. If you feel comfortable using the command line, try one of the following version managers:</p>
+<p>You have two options for installing Node.js.</p>
+<p>The easiest option is to simply <a href="https://nodejs.org">download and install Node.js</a>.</p>
+<p>If you feel comfortable using the command line, try one of the following version managers:</p>
 <ul>
-  <li>[Node Version Manager (<code>nvm</code>)][nvm-url] (for macOS and Linux Bash shells)</li>
+  <li><a href="https://github.com/creationix/nvm">Node Version Manager (<code>nvm</code>)</a> (for macOS and Linux Bash shells)</li>
   <li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> (for Windows)</li>
   <li><a href="https://github.com/marcelklehr/nodist">nodist</a> (for Windows)</li>
 </ul>
+<br>
 <blockquote>
 <p>:information_source: I cannot vouch for the two Windows options, so do a little homework, first.</p>
 </blockquote>
-<p>The other (and easier) option is to simply [download and install Node.js][nodejs-url].</p>
+</ul>
 </details>
 
 ---
@@ -82,7 +99,7 @@ bash: foobar: <span class="hljs-built_in">command</span> not found
 
 Once you've verified that you have Node.js v4.1.1. or higher installed, open a Terminal and run these two commands:
 
-```bash
+```shell
 # Install Yeoman and generator-community globally
 $ npm install yo --global
 
@@ -90,37 +107,89 @@ $ npm install yo --global
 $ npm i generator-community -g
 ```
 
-
-
 ## 3. Usage
 
 Install all four recommended community standards (README, CODE_OF_CONDUCT, CONTRIBUTING, and a LICENSE):
 
-```bash
-# Generate README.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, and LICENSE files per the recommended community community standards:
+```shell
+# Generate README.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, and LICENSE files
+# per the recommended community community standards:
 
 $ yo community
 ```
 
 This will guide you with prompts to help you pre-fill the documents, e.g.,
 
-```bash
+```shell
+$ yo community
+? GitHub username or organization johndoe
+? Product Name spike-repo
+? Write a short description/value proposition The most valuable spike in the world....
+? Product homepage URL https://example
+? Author's name John Doe
+? Author's e-mail john@doe.info
+? Author's homepage https://github.com/johndoe
+? Package keywords (comma to split) recommended community standards,readme,license,toc,table of contents,markdown
 ? Which programming language does this product use the most? Node.js (JavaScript)
 ? What do you use to manage dependencies (e.g., Gradle, npm, NuGet)? Leave blank if you don't know. npm
-? GitHub username or organization gregswindle
-? ⦾ 📄  README: Select the sections to include in your README API, Background, License
+? ⦾ 📄  LICENSE: Select a license MIT
+? ⦾ 📄  README: Select the sections to include in your README Overview, Configuration, Security, API, Background, License
+   create package.json
    create README.md
+   create .editorconfig
+   create .gitattributes
+   create .gitignore
+   create LICENSE
 
 
 I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
 
 
+
+> commitplease@2.7.10 install /Users/swindle/Projects/github/commonality/sandbox/spike-repo/node_modules/commitplease
+> node install
+
+
+> git-validate@2.2.2 install /Users/swindle/Projects/github/commonality/sandbox/spike-repo/node_modules/nsp/node_modules/git-validate
+> node bin/install
+
+npm WARN prepublish-on-install As of npm@5, `prepublish` scripts are deprecated.
+npm WARN prepublish-on-install Use `prepare` for build steps and `prepublishOnly` for upload-only.
+npm WARN prepublish-on-install See the deprecation note in `npm help scripts` for more information.
+
+> spike-repo@0.0.0 prepublish /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> nsp check
+
+(+) No known vulnerabilities found
+
+> spike-repo@0.0.0 prepare /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> npm run lint && npm run security
+
+
+> spike-repo@0.0.0 lint /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> npm run lint:manifest
+
+
+> spike-repo@0.0.0 lint:manifest /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> fixpack
+
+missing main
+package.json fixed!
+
+> spike-repo@0.0.0 security /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> npm run security:nsp:scan
+
+
+> spike-repo@0.0.0 security:nsp:scan /Users/swindle/Projects/github/commonality/sandbox/spike-repo
+> nsp check
+
+(+) No known vulnerabilities found
+npm notice created a lockfile as package-lock.json. You should commit this file.
+added 571 packages in 9.146s
+Thank you for generating community!
 ✔ /README.md Updated
  Transforms run
-  ⁕ TOC
-
-up to date in 0.767s
-Thanks for generating community!
+  ⁕ TOC:excludeText=Table of contents
 ```
 
 ### 3.1. `yo community:readme`
@@ -142,45 +211,46 @@ Thanks for generating community!
 
 To answer prompts manually, open a Terminal and run
 
-```bash
+```shell
 $ yo community:readme
 ```
 
 The `community:readme` subgenerator will evaluate your product repository's _manifests_ (e.g., package.json for Node.js products, or settings.gradle for Java products) to ensure consistency.
 
-#### 3.1.2. Command-line interface automation
+#### 3.1.2. CLI automation
 
 You can automate README.md documentation via the command line interface (CLI) (e.g., during one of your CI/CD pipelines). To view all CLI options, use the `--help` or `-h` option:
 
-```bash
+```shell
 $ yo community:readme -h
 Usage:
   yo community:readme [options]
 
-Options:
-  -h,   --help               # Print the generator's options and usage
-        --skip-cache         # Do not remember prompt answers                    Default: false
-        --skip-install       # Do not automatically install dependencies         Default: false
-        --authorName         # Author name
-        --authorUrl          # Author URL
-        --generateInto       # Destination directory for generated files
-        --githubAccount      # GitHub account/organization name
-        --dependencyManager  # Tool used to install third-party libraries        Default: Unspecified
-        --description        # Product description
-        --lang               # Product's primary programming language            Default: Unspecified
-        --licenseName        # Open source software license
-        --licenseUrl         # URL to your LICENSE file                          Default: ./LICENSE
-        --name               # Product name
-  -a,   --includeApi         # README.md: Public API overview (optional)         Default: true
-  -b,   --includeBackground  # README.md: Background section content (optional)  Default: false
-  -c,   --includeConfig      # README.md: Configuration instructions (optional)  Default: false
-  -o,   --includeOverview    # README.md: Overview section content (optional)    Default: false
-  -s,   --includeSecurity    # README.md: Security section content (optional)    Default: false
+  Options:
+    -h,   --help                # Print the generator's options and usage
+          --skip-cache          # Do not remember prompt answers                    Default: false
+          --skip-install        # Do not automatically install dependencies         Default: false
+          --authorName          # Author name
+          --authorUrl           # Author URL
+          --dependencyManager   # Tool used to install third-party libraries        Default: Unspecified
+          --generateInto        # Destination directory for generated files
+          --gitRemoteOriginUrl  # The URI (SSH or HTTPS) of your Git repository     Default: /
+          --githubAccount       # GitHub account/organization name
+          --description         # Product description
+          --lang                # Product's primary programming language            Default: Unspecified
+          --license             # Open source software license
+          --licenseUrl          # URL to your LICENSE file                          Default: ./LICENSE
+          --name                # Product name
+    -a,   --includeApi          # README.md: Public API overview (optional)         Default: true
+    -b,   --includeBackground   # README.md: Background section content (optional)  Default: false
+    -c,   --includeConfig       # README.md: Configuration instructions (optional)  Default: false
+    -o,   --includeOverview     # README.md: Overview section content (optional)    Default: false
+    -s,   --includeSecurity     # README.md: Security section content (optional)    Default: false
 ```
 
 __Example:__
 
-```bash
+```shell
 $ yo community:readme --authorName "Jane Doe" --authorUrl "https://jdoe.example.com" \
   --githubAccount janedoeasindeer --lang JavaScript --licenseName MIT \
   --name spike-sln-community \
@@ -211,17 +281,118 @@ $ yo community:readme --authorName "Jane Doe" --authorUrl "https://jdoe.example.
 >
 > Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#launching-your-own-open-source-project
 
-[![Alert icon][icon-goal-image]][milestones-url] This feature will be delivered with [MVP3: community:license][milestones-url].
+---
 
-### 3.5. Update your documents's tables of contents
+[![Alert icon][icon-alert-50-image]][milestones-url] If you already have a `LICENSE`, the `community:license` subgenerator will prompt you to overwrite it, as well as your `package.json`.
 
-`yo community` installs an npm-script that will help keep your documents' table of contents up-to-date:
+---
 
-```bash
-$ npm run docs:toc
+#### 3.4.1. Guided assistance
+
+To answer prompts manually, open a Terminal and run
+
+```shell
+$ yo community:license
 ```
 
-## 4. Contributing to `generator-community`
+The `community:readme` subgenerator will evaluate your product repository's _manifests_ (e.g., package.json for Node.js products, or settings.gradle for Java products) to ensure consistency.
+
+__Example:__
+
+```shell
+yo community:license
+? What's your name: Greg Swindle
+? Your email (optional): greg@swindle.net
+? Your website (optional):
+? Which license do you want to use?
+  Unlicense
+  No License (Copyrighted)
+  Apache 2.0
+❯ MIT
+  Mozilla Public License 2.0
+  BSD 2-Clause (FreeBSD) License
+  BSD 3-Clause (NewBSD) License
+```
+
+#### 3.4.2. CLI automation
+
+You can automatically generate a LICENSE file via the command line interface (CLI) (e.g., during one of your CI/CD pipelines). To view all CLI options, use the `--help` or `-h` option:
+
+```shell
+yo community:license -h
+Usage:
+  yo community:license [options]
+
+Options:
+  -h,   --help            # Print the generator's options and usage
+        --skip-cache      # Do not remember prompt answers                 Default: false
+        --skip-install    # Do not automatically install dependencies      Default: false
+        --defaultLicense  # Default license
+        --email           # Email of the license owner
+        --generateInto    # Destination directory of the generated files
+        --license         # Enter an SPDX license name
+        --name            # Name of the license owner
+        --output          # Set the output file for the generated license  Default: LICENSE
+        --website         # Website of the license owner
+        --year            # Year(s) to include on the license              Default: 2017
+```
+
+### 3.5. Update tables of contents in markdown files
+
+![Markdown icon][icon-markdown-image]
+
+`yo community` installs an __npm-script__ that will help keep your documents' table of contents up-to-date. To automatically update your markdown files' tables of contents:
+
+  * Add the following comments to your markdown file(s):
+    ```md
+    <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+    This text will be replaced by a table of contents 😏 .
+    <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+    ```
+  * Open a Terminal and run:
+    ```shell
+    $ npm run docs:toc
+    ```
+
+For more information, visit [`DavidWells/markdown-magic`][markdown-magic-toc-url].
+
+## 4. `npm-scripts`
+
+Software modules often have funky, irrelative names; therefore, we __prefix *custom* tasks__ by their responsibility and purpose.
+
+| Prefix      | Definition                                                                            |
+| ----------- | ------------------------------------------------------------------------------------- |
+| `build*`    | Source code distribution tasks.                                                       |
+| `docs*`     | API documentation and automation tasks.                                               |
+| `lint*`     | Code style, standards, and vulnerabilty assessments (as well as fixes, if available). |
+| `release`   | Bump the product's semver, update docs, commit, and publish to the `npm` registry.    |
+| `security*` | Security vulnerabilty checks.                                                         |
+
+The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (assuming you're human, gentle reader) and CI-services.
+
+<!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
+| Script | Description |
+|--------|-------------|
+| `docs` | `npm run docs:scripts && npm run docs:toc` |
+| `docs:toc` | `md-magic --path '**/*.md' --ignore 'node_modules'` |
+| `lint` | `npm run lint:node-version && npm run lint:js && npm run lint:manifest` |
+| `lint:js` | `eslint ./generators/**/*.js ./__tests__/**/*.js --fix` |
+| `lint:manifest` | `fixpack` |
+| `lint:node-version` | `check-node-version --package` |
+| `prepublish` | `npm run security` |
+| `release` | `standard-version` |
+| `security` | `npm run security:nsp:scan` |
+| `security:nsp:scan` | `nsp check` |
+| `pretest` | `npm prune && npm run lint` |
+| `test` | `jest --forceExit --config=jest.config.json` |
+| `posttest` | `npm run security` |
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## 5. Semantic version and `CHANGELOG`
+
+The latest version of `commonality/generator-community` is `0.0.0`. View the [`CHANGELOG`][changelog-url] for details.
+
+## 6. Contributing to `generator-community`
 > [![Learn how to make a Pull Request with free training][prs-welcome-badge-image]][prs-welcome-url]
 >
 > We welcome contributors with [Pull Requests][prs-welcome-url]!
@@ -235,7 +406,7 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
       * [![Issue Status: Available][icon-issue-label-status-available-image] Volunteer for an available issue][issues-available-url].
   1. Follow [Contributing to `generator-community`][contributing-url]'s coding conventions and Git workflow if you're willing and able to program (or want to learn how).
 
-## 5. License
+## 7. License
 
 [MIT][license-url] © [Greg Swindle][author-url].
 
@@ -245,7 +416,7 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 
 ---
 
-[![Greenkeeper automated dependency management][greenkeeper-badge-image]][greenkeeper-url] [![README score][readme-score-badge-image]][readme-score-url]
+[![Conventional Commits][conventional-commits-badge-image]][conventional-commits-url] [![Greenkeeper automated dependency management][greenkeeper-badge-image]][greenkeeper-url] [![README score][readme-score-badge-image]][readme-score-url]
 
 
 <!-- ⛔️ 📝 NOTE: PLEASE ALPHABETIZE LINK REFERENCES. 📝 ⛔️ -->
@@ -291,6 +462,7 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [icon-help-image]: ./docs/img/icons8/icon-help-48.png
 [icon-issue-label-status-available-image]: ./docs/img/icon-issue-label-status-available.png
 [icon-jest-image]: ./docs/img/tech-stack/icon-jest-50.jpeg
+[icon-markdown-image]: ./docs/img/icons8/icon-markdown.png
 [icon-nodejs-image]: ./docs/img/tech-stack/icon-nodejs-50.png
 [icon-npm-image]: ./docs/img/tech-stack/icon-npm-50.png
 [icon-package-image]: ./docs/img/icons8/icon-package-filled.png
@@ -304,18 +476,12 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [issues-available-url]: /commonality/generator-community/issues?q=is%3Aissue+is%3Aopen+label%3A%22Status%3A+Available%22
 [issues-new-defect-url]: https://github.com/commonality/generator-community/issues/new?title=fix%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
 [issues-new-feat-url]: https://github.com/commonality/generator-community/issues/new?title=feat%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
-[issues-new-url]: https://github.com/commonality/generator-community/issues/new
-[issues-url]: https://github.com/commonality/generator-community/issues
-[least-privilege-url]: https://en.wikipedia.org/wiki/Principle_of_least_privilege
 [license-badge-image]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square
 [license-choose-url]: https://choosealicense.com/
 [license-no-license-url]: https://choosealicense.com/no-license/
 [license-unlicense-url]: https://choosealicense.com/licenses/#unlicense
 [license-url]: ./LICENSE
-[license-url]: LICENSE
-[logo-nodejs-image]: ./docs/img/logo-nodejs-46.png
-[markdown-toc-url]: https://github.com/jonschlinkert/markdown-toc
-[mda-book-url]: https://www.amazon.com/Enterprise-Patterns-MDA-Building-Archetype/dp/032111230X
+[markdown-magic-toc-url]: https://github.com/DavidWells/markdown-magic#-toc
 [milestones-url]: https://github.com/commonality/generator-community/milestones
 [nodejs-url]: https://nodejs.org
 [notice-url]: ./NOTICE.md
@@ -329,13 +495,11 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [nvm-url]: https://github.com/creationix/nvm
 [opensource-guide-community-standards-url]: https://opensource.guide
 [pr-url]: /commonality/generator-community/pulls
-[product-development-guidelines-url]: ./.github/PRODUCT_DEVELOPEMENT_GUIDELINES.md
 [prs-welcome-badge-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs-welcome-url]: http://makeapullrequest.com
 [quote-left-img]: ./docs/img/icons8/quote-left-25.png
 [readme-score-badge-image]: http://readme-score-api.herokuapp.com/score.svg?style=flat-square&url=https://github.com/commonality/generator-community
 [readme-score-url]: http://clayallsopp.github.io/readme-score?url=https://github.com/commonality/generator-community
-[rest-api-image]: ./docs/img/icons8/icon-rest-api.png
 [snyk-vulnerabilities-badge-image]: https://snyk.io/test/github/commonality/generator-community/badge.svg?style=flat-square
 [snyk-vulnerabilities-url]: https://snyk.io/test/github/commonality/generator-community
 [sonarcloud-url]: https://sonarcloud.io

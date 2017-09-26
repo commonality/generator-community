@@ -4,6 +4,10 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
 describe('generator-community:app,', () => {
+  afterAll(() => {
+    process.setMaxListeners(0)
+  })
+
   beforeEach(() => {
     jest.mock('inquirer-npm-name', () => {
       return () => Promise.resolve(true)
@@ -13,7 +17,12 @@ describe('generator-community:app,', () => {
       return () => Promise.resolve('unicornUser')
     })
 
-    jest.mock('generator-license/app', () => {
+    jest.mock('../generators/license', () => {
+      const helpers = require('yeoman-test')
+      return helpers.createDummyGenerator()
+    })
+
+    jest.mock('../generators/readme', () => {
       const helpers = require('yeoman-test')
       return helpers.createDummyGenerator()
     })
@@ -31,6 +40,7 @@ describe('generator-community:app,', () => {
         authorUrl: 'http://yeoman.io',
         keywords: ['foo', 'bar']
       }
+
       return helpers.run(require.resolve('../generators/app'))
         .withPrompts(answers)
         .then(() => {
@@ -68,7 +78,10 @@ describe('generator-community:app,', () => {
         keywords: ['bar']
       }
       return helpers.run(require.resolve('../generators/app'))
-        .withPrompts({name: 'generator-community'})
+        .withPrompts({
+          name: 'generator-community',
+          keywords: 'bar'
+        })
         .on('ready', (gen) => {
           gen.fs.writeJSON(gen.destinationPath('package.json'), pkg)
         })
@@ -128,6 +141,36 @@ describe('generator-community:app,', () => {
       return helpers.run(require.resolve('../generators/app'))
         .withOptions({license: false})
         .then(() => assert.noFile('LICENSE'))
+    })
+  })
+
+  describe('when done prompting for README sections,', () => {
+    let gen = null
+    beforeEach(() => {
+      jest.resetModules()
+      jest.unmock('../generators/readme')
+      return helpers.run(require.resolve('../generators/app'))
+        .withPrompts({
+          name: 'generator-community',
+          description: 'A generator',
+          homepage: 'http://yeoman.io',
+          githubAccount: 'yeoman',
+          authorName: 'The Yeoman Team',
+          authorEmail: 'hi@yeoman.io',
+          authorUrl: 'http://yeoman.io',
+          keywords: ['foo', 'bar'],
+          includeApi: true,
+          includeBackground: true
+        })
+        .on('ready', (generator) => {
+          gen = generator
+          gen.fs.writeJSON(gen.destinationPath('package.json'), {})
+        })
+    })
+    it('adds the README sections users select to include', (done) => {
+      assert.file('README.md')
+      assert.fileContent('README.md', '## API')
+      done()
     })
   })
 })
