@@ -100,8 +100,8 @@
   "main": "index.js",
   "repository": "commonality/generator-community",
   "scripts": {
-    "docs": "md-magic --path '**/*.md' --ignore 'node_modules' --ignore 'node_modules' --config ./markdown.config.js",
-    "docs:toc": "md-magic --path '**/*.md' --ignore 'node_modules'",
+    "docs": "md-magic --ignore 'node_modules' --ignore 'node_modules' --config ./markdown.config.js",
+    "docs:toc": "md-magic --ignore 'node_modules'",
     "lint": "npm run lint:node-version && npm run lint:js && npm run lint:manifest",
     "lint:js": "eslint ./generators/**/*.js ./__tests__/**/*.js --fix",
     "lint:manifest": "fixpack",
