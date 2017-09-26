@@ -344,16 +344,16 @@ Options:
 
 `yo community` installs an __npm-script__ that will help keep your documents' table of contents up-to-date. To automatically update your markdown files' tables of contents:
 
-* Add the following comments to your markdown file(s):
-  ```md
-<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-This text will be replaced by a table of contents 😏 .
-<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
-  ```
-* Open a Terminal and run:
-  ```shell
-  $ npm run docs:toc
-  ```
+  * Add the following comments to your markdown file(s):
+    ```md
+    <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+    This text will be replaced by a table of contents 😏 .
+    <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+    ```
+  * Open a Terminal and run:
+    ```shell
+    $ npm run docs:toc
+    ```
 
 For more information, visit [`DavidWells/markdown-magic`][markdown-magic-toc-url].
 
