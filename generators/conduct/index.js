@@ -47,6 +47,6 @@ class CommunityConductGenerator extends YeomanGenerator {
       this.options
     )
   }
-};
+}
 
 module.exports = CommunityConductGenerator
