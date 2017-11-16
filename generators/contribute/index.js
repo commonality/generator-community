@@ -1,7 +1,7 @@
 'use strict'
-const Generator = require('yeoman-generator')
+const YeomanGenerator = require('yeoman-generator')
 
-module.exports = class extends Generator {
+class ContributingGenerator extends YeomanGenerator {
   prompting () {
     const prompts = [{
       type: 'confirm',
@@ -23,3 +23,5 @@ module.exports = class extends Generator {
     )
   }
 }
+
+module.exports = ContributingGenerator
