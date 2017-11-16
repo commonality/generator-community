@@ -383,8 +383,27 @@ Options:
   * Add the following comments to your markdown file(s):
     ```md
     <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-    This text will be replaced by a table of contents 😏 .
-    <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+- [1. Overview](#1-overview)
+- [2. Installation](#2-installation)
+  * [2.1. Prerequisite software](#21-prerequisite-software)
+  * [2.2. Install Yeoman and `generator-community`](#22-install-yeoman-and-generator-community)
+- [3. Usage](#3-usage)
+  * [3.1. `yo community:readme`](#31-yo-communityreadme)
+    + [3.1.1. Guided assistance](#311-guided-assistance)
+    + [3.1.2. CLI automation](#312-cli-automation)
+  * [3.2. `yo community:conduct`](#32-yo-communityconduct)
+    + [3.2.1. Guided assistance](#321-guided-assistance)
+    + [3.2.2. CLI automation](#322-cli-automation)
+  * [3.3. `yo community:contributing`](#33-yo-communitycontributing)
+  * [3.4. `yo community:license`](#34-yo-communitylicense)
+    + [3.4.1. Guided assistance](#341-guided-assistance)
+    + [3.4.2. CLI automation](#342-cli-automation)
+  * [3.5. Update tables of contents in markdown files](#35-update-tables-of-contents-in-markdown-files)
+- [4. `npm-scripts`](#4-npm-scripts)
+- [5. Semantic version and `CHANGELOG`](#5-semantic-version-and-changelog)
+- [6. Contributing to `generator-community`](#6-contributing-to-generator-community)
+- [7. License](#7-license)
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
     ```
   * Open a Terminal and run:
     ```shell
@@ -411,7 +430,7 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 | Script | Description |
 |--------|-------------|
 | `docs` | `npm run docs:scripts && npm run docs:toc` |
-| `docs:toc` | `md-magic --path '**/*.md' --ignore 'node_modules'` |
+| `docs:script` | `node ./markdown.config.js` |
 | `lint` | `npm run lint:node-version && npm run lint:js && npm run lint:manifest` |
 | `lint:js` | `eslint ./generators/**/*.js ./__tests__/**/*.js --fix` |
 | `lint:manifest` | `fixpack` |
