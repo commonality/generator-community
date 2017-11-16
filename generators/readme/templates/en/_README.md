@@ -180,7 +180,7 @@ Contributions in the form of GitHub pull requests are welcome. Before embarking 
   1. **[Make a pull request][pulls-url]** when you're ready for other to review your changes (or you get stuck somewhere).
 
      _PR novices:_
-     > **:raising_hand: Never created a pull request?** No problem. [Take this free online training][prs-welcome-url]. (It even covers most of the conventions in the [CONTRIBUTING guidelines][contributing-url]!)
+     > **:raising_hand: Never created a pull request?** No problem. [:free: Take this free online training][prs-welcome-url]. (It even covers most of the conventions in the [CONTRIBUTING guidelines][contributing-url]!)
 
 ## License
 <% if (!license) { %>
