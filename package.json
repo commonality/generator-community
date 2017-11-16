@@ -136,8 +136,9 @@
     "prepublish": "npm run security",
     "pretest": "npm prune && npm run lint",
     "release": "standard-version",
-    "security": "npm run security:nsp:scan",
+    "security": "npm run security:nsp:scan && npm run security:snyk:scan",
     "security:nsp:scan": "nsp check",
-    "test": "snyk test && jest --forceExit --config=jest.config.json"
+    "security:snyk:scan": "if [[ ( \"$TRAVIS\" == \"true\" ) ]]; then synk test; fi",
+    "test": "jest --forceExit --config=jest.config.json"
   }
 }
