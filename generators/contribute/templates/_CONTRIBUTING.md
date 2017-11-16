@@ -1,9 +1,9 @@
 [![Generator Community Repo][product-repo-logo-image]][product-repo-url]
 
-# Contributing<br>to `generator-community`
+# Contributing<br>to `<%= name %>`
 > [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url]
 >
-> Welcome to `generator-community`. You're among people eager to promote recommended community standards that encourage open source consumption and contributions with comprehensive `README`, `CODE_OF_CONDUCT`, `CONTRIBUTING`, and `LICENSE` documents. If you are curious, you're already a member!
+> Welcome to `<%= name %>`. You're among people eager to promote recommended community standards that encourage open source consumption and contributions with comprehensive `README`, `CODE_OF_CONDUCT`, `CONTRIBUTING`, and `LICENSE` documents. If you are curious, you're already a member!
 
 <dfn>__Contributions__ start with __community conversations__ that lead to __positive change.__</dfn> Open source provides a flexible collaboration model that facilitates change, even among perfect strangers. Contributions therefore:
 
@@ -14,7 +14,7 @@
 ## Table of contents
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-- [1. __Issues__](#1-__issues__)
+- [1. Issues](#1-issues)
   * [1.1. Create Issues for feature requests and defects.](#11-create-issues-for-feature-requests-and-defects)
   * [1.2. Format titles with **`type(scope): subject`**.](#12-format-titles-with-typescope-subject)
   * [1.3. Fill out the issue template.](#13-fill-out-the-issue-template)
@@ -66,13 +66,13 @@
 
 
 
-## 1. __Issues__
+## 1. Issues
 
 ![Issues][icon-issue-image]
 
 * __Collaboration starts with *Issues*. Changes happen through *Pull Requests*.__
 
-    View `generator-community's` collaboration and contribution flowcharts:
+    View `<%= name %>'s` collaboration and contribution flowcharts:
 
   ---
 
@@ -97,7 +97,7 @@
 * ### 1.1. Create Issues for feature requests and defects.
 
     _Why:_
-    > ⌦ `generator-community` follows an issue-driven product delivery model.
+    > ⌦ `<%= name %>` follows an issue-driven product delivery model.
     > Before any work is done, create an Issue, first. This starts a
     > conversation about features, defects ("bugs"), refactoring, product
     > delivery improvements, etc.
@@ -311,12 +311,12 @@
 
 * ### 2.1. __Rules__
 
-  `generator-community` manages contributions with the  [feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
+  `<%= name %>` manages contributions with the  [feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 
 * #### 2.1.1. Makes changes in a topic branch.
 
   _Why:_
-  > ⌦ Use an isolated topic branch for parallel product development. Topic branches allow you to submit multiple pull requests without confusion. You can iterate without polluting the master branch with potentially unstable, unfinished code. The `generator-community` team uses:
+  > ⌦ Use an isolated topic branch for parallel product development. Topic branches allow you to submit multiple pull requests without confusion. You can iterate without polluting the master branch with potentially unstable, unfinished code. The `<%= name %>` team uses:
   >
   > * [Feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow) for small-ish codebases, or
   > * [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow) for large applications and monoliths
@@ -364,7 +364,7 @@
 * #### 2.1.3. Branch out from `master`.
 
     _Why:_
-    > ⌦ `generator-community` follows the feature-branch-workflow.
+    > ⌦ `<%= name %>` follows the feature-branch-workflow.
 
 * #### 2.1.4. __*Never*__ push into the `master` branch. __*Always*__ submit a Pull Request.
 
@@ -693,7 +693,7 @@
 
 * ### 3.1. Use the Standard JS Style.
 
-  `generator-community` follows the [Standard JS Style][standard-js-url].
+  `<%= name %>` follows the [Standard JS Style][standard-js-url].
 
 * ### 3.2. Use ESLint to analyze source code.
 
@@ -705,7 +705,7 @@
   ```
   >
 
-  View [`generator-community's` ESLint rules][eslint-rules-table-url] and their enforcement.
+  View [`<%= name %>'s` ESLint rules][eslint-rules-table-url] and their enforcement.
 
 ## 4. __Unit testing__
 
@@ -733,7 +733,7 @@
     > jest --config=jest.config.json
 
       PASS  __tests__/app.js
-       generator-community:app
+       <%= name %>:app
         ✓ creates files (1ms)
 
     Test Suites: 1 passed, 1 total
@@ -762,52 +762,51 @@
 
 [![StackShare][stackshare-badge-image]][stackshare-url]
 
-`generator-community` requires the following tech stack to either run, build, test, or deploy:
+`<%= name %>` requires the following tech stack to either run, build, test, or deploy:
 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 | **Dependency** | **Description** | **Version** | **Type** |
 | -------------- | --------------- | ----------- | -------- |
- | [generator-license@5.1.0](https://github.com/jozefizso/generator-license) | License generator for Yeoman based projects. | 5.1.0 | production | 
- | [generator-node@2.3.0](https://github.com/yeoman/generator-node) | Create a Node.js module | 2.3.0 | production | 
- | [git-remote-origin-url@2.0.0](https://github.com/sindresorhus/git-remote-origin-url#readme) | Get the remote origin url of a git repository | 2.0.0 | production | 
- | [git-url-parse@7.0.1](https://github.com/IonicaBizau/git-url-parse) | A high level git url parser for common git providers. | 7.0.1 | production | 
- | [github-username@4.1.0](https://github.com/sindresorhus/github-username#readme) | Get a GitHub username from an email address | 4.1.0 | production | 
- | [inquirer-npm-name@2.0.0](https://github.com/SBoudrias/inquirer-npm-name#readme) | Helper function using inquirer to validate a value provided in a prompt does not exist as an npm package. | 2.0.0 | production | 
- | [lodash@^4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | production | 
- | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | production | 
- | [markdown-magic-dependency-table@1.2.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.2.2 | production | 
- | [markdown-magic-install-command@1.3.1](https://github.com/camacho/markdown-magic-install-command#readme) | Print install command for markdown file | 1.3.1 | production | 
- | [markdown-magic-package-scripts@1.2.0](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.0 | production | 
- | [parse-author@2.0.0](https://github.com/jonschlinkert/parse-author) | Parse an author, contributor, maintainer or other 'person' string into an object with name, email and url properties following npm conventions. | 2.0.0 | production | 
- | [update-notifier@2.2.0](https://github.com/yeoman/update-notifier#readme) | Update notifications for your CLI app | 2.2.0 | production | 
- | [yeoman-generator@2.0.1](http://yeoman.io) | Rails-inspired generator system that provides scaffolding for your apps | 2.0.1 | production | 
- | [babel-jest@21.2.0](https://github.com/facebook/jest#readme) | Jest plugin to use babel for transformation. | 21.2.0 | dev | 
- | [babel-preset-env@1.6.0](https://babeljs.io/) | A Babel preset for each environment. | 1.6.0 | dev | 
- | [babelify@7.3.0](https://github.com/babel/babelify) | Babel browserify transform | 7.3.0 | dev | 
- | [check-node-version@2.1.0](https://github.com/parshap/check-node-version#readme) | Check installed versions of node and npm | 2.1.0 | dev | 
- | [commitplease@2.7.10](https://github.com/jzaefferer/commitplease#readme) | Validates strings as commit messages | 2.7.10 | dev | 
- | [coveralls@2.13.3](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 2.13.3 | dev | 
- | [eslint@4.8.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.8.0 | dev | 
- | [eslint-config-xo-space@0.16.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.16.0 | dev | 
- | [eslint-plugin-import@2.7.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.7.0 | dev | 
- | [eslint-plugin-jest@21.2.0](https://github.com/facebook/jest#readme) | Eslint rules for Jest | 21.2.0 | dev | 
- | [eslint-plugin-jsdoc@3.1.3](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.1.3 | dev | 
- | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | dev | 
- | [eslint-plugin-no-unsanitized@2.0.1](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.1 | dev | 
- | [eslint-plugin-node@5.2.0](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.2.0 | dev | 
- | [eslint-plugin-promise@3.5.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.5.0 | dev | 
- | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | dev | 
- | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | dev | 
- | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | dev | 
- | [eslint-plugin-xss@0.1.8](https://npmjs.org/package/eslint-plugin-xss) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.8 | dev | 
- | [fixpack@2.3.1](https://github.com/henrikjoreteg/fixpack) | cli tool that cleans up package.json files. | 2.3.1 | dev | 
- | [jest@21.2.1](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 21.2.1 | dev | 
- | [jest-cli@21.2.1](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 21.2.1 | dev | 
- | [markdown-toc@1.2.0](https://github.com/jonschlinkert/markdown-toc) | Generate a markdown TOC (table of contents) with Remarkable. | 1.2.0 | dev | 
- | [nsp@2.8.1](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 2.8.1 | dev | 
- | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | dev | 
- | [yeoman-assert@3.1.0](http://yeoman.io) | Assert utility from yeoman | 3.1.0 | dev | 
- | [yeoman-test@1.7.0](http://yeoman.io/authoring/testing.html) | Test utilities for Yeoman generators | 1.7.0 | dev | 
+ | [generator-license@5.1.0](https://github.com/jozefizso/generator-license) | License generator for Yeoman based projects. | 5.1.0 | production |
+ | [generator-node@2.2.0](https://github.com/yeoman/generator-node) | Create a Node.js module | 2.2.0 | production |
+ | [git-remote-origin-url@2.0.0](https://github.com/sindresorhus/git-remote-origin-url#readme) | Get the remote origin url of a git repository | 2.0.0 | production |
+ | [git-url-parse@7.0.1](https://github.com/IonicaBizau/git-url-parse) | A high level git url parser for common git providers. | 7.0.1 | production |
+ | [github-username@4.1.0](https://github.com/sindresorhus/github-username#readme) | Get a GitHub username from an email address | 4.1.0 | production |
+ | [inquirer-npm-name@2.0.0](https://github.com/SBoudrias/inquirer-npm-name#readme) | Helper function using inquirer to validate a value provided in a prompt does not exist as an npm package. | 2.0.0 | production |
+ | [lodash@^4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | production |
+ | [markdown-magic@0.1.18](https://npmjs.org/package/markdown-magic) | Automatically update markdown files with content from external sources | 0.1.18 | production |
+ | [markdown-magic-install-command@1.3.1](https://github.com/camacho/markdown-magic-install-command#readme) | Print install command for markdown file | 1.3.1 | production |
+ | [markdown-magic-package-scripts@1.2.0](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.0 | production |
+ | [parse-author@2.0.0](https://github.com/jonschlinkert/parse-author) | Parse an author, contributor, maintainer or other 'person' string into an object with name, email and url properties following npm conventions. | 2.0.0 | production |
+ | [update-notifier@2.2.0](https://github.com/yeoman/update-notifier#readme) | Update notifications for your CLI app | 2.2.0 | production |
+ | [yeoman-generator@2.0.0](http://yeoman.io) | Rails-inspired generator system that provides scaffolding for your apps | 2.0.0 | production |
+ | [babel-jest@21.0.2](https://github.com/facebook/jest#readme) | Jest plugin to use babel for transformation. | 21.0.2 | dev |
+ | [babel-preset-env@1.6.0](https://babeljs.io/) | A Babel preset for each environment. | 1.6.0 | dev |
+ | [babelify@7.3.0](https://github.com/babel/babelify) | Babel browserify transform | 7.3.0 | dev |
+ | [check-node-version@2.1.0](https://github.com/parshap/check-node-version#readme) | Check installed versions of node and npm | 2.1.0 | dev |
+ | [commitplease@2.7.10](https://github.com/jzaefferer/commitplease#readme) | Validates strings as commit messages | 2.7.10 | dev |
+ | [coveralls@^2.13.1](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 2.13.1 | dev |
+ | [eslint@4.7.2](http://eslint.org) | An AST-based pattern checker for JavaScript. | 4.7.2 | dev |
+ | [eslint-config-xo-space@0.16.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.16.0 | dev |
+ | [eslint-plugin-import@2.7.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.7.0 | dev |
+ | [eslint-plugin-jest@21.1.0](https://github.com/facebook/jest#readme) | Eslint rules for Jest | 21.1.0 | dev |
+ | [eslint-plugin-jsdoc@3.1.3](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.1.3 | dev |
+ | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | dev |
+ | [eslint-plugin-no-unsanitized@2.0.1](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.1 | dev |
+ | [eslint-plugin-node@5.1.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.1.1 | dev |
+ | [eslint-plugin-promise@3.5.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.5.0 | dev |
+ | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | dev |
+ | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | dev |
+ | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | dev |
+ | [eslint-plugin-xss@0.1.8](https://npmjs.org/package/eslint-plugin-xss) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.8 | dev |
+ | [fixpack@2.3.1](https://github.com/henrikjoreteg/fixpack) | cli tool that cleans up package.json files. | 2.3.1 | dev |
+ | [jest@21.1.0](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 21.1.0 | dev |
+ | [jest-cli@21.1.0](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 21.1.0 | dev |
+ | [markdown-toc@1.2.0](https://github.com/jonschlinkert/markdown-toc) | Generate a markdown TOC (table of contents) with Remarkable. | 1.2.0 | dev |
+ | [nsp@2.8.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 2.8.0 | dev |
+ | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | dev |
+ | [yeoman-assert@3.1.0](http://yeoman.io) | Assert utility from yeoman | 3.1.0 | dev |
+ | [yeoman-test@1.7.0](http://yeoman.io/authoring/testing.html) | Test utilities for Yeoman generators | 1.7.0 | dev |
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
 
@@ -1110,7 +1109,7 @@
 [autosquashing-git-commits-url]: https://robots.thoughtbot.com/autosquashing-git-commits
 [changelog-url]: ./CHANGELOG.md
 [cite-interview-torvalds-url]: https://techcrunch.com/2012/04/19/an-interview-with-millenium-technology-prize-finalist-linus-torvalds/
-[cla-url]: https://www.clahub.com/agreements/commonality/generator-community
+[cla-url]: https://www.clahub.com/agreements/commonality/<%= name %>
 [code-of-conduct-url]: ./CODE_OF_CONDUCT.md
 [commitplease-url]: https://www.npmjs.com/package/commitplease
 [commonality-palette-image]: ./docs/img/palette.svg
@@ -1136,9 +1135,9 @@
 [icon-issue-image]: ../docs/img/icons8/icon-issues.png
 [icon-pr-image]: ../docs/img/icons8/icon-pr.png
 [icon-rest-api-image]: ../docs/img/icons8/icon-rest-api.png
-[issues-new-defect-url]: https://github.com/commonality/generator-community/issues/new?title=fix%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
-[issues-new-feat-url]: https://github.com/commonality/generator-community/issues/new?title=feat%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
-[issues-url]: https://github.com/commonality/generator-community/issues
+[issues-new-defect-url]: https://github.com/commonality/<%= name %>/issues/new?title=fix%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
+[issues-new-feat-url]: https://github.com/commonality/<%= name %>/issues/new?title=feat%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
+[issues-url]: https://github.com/commonality/<%= name %>/issues
 [jest-logo-image]: ../docs/img/logo-jest.png
 [jest-url]: https://facebook.github.io/jest/
 [license-url]: ./LICENSE
@@ -1150,7 +1149,7 @@
 [product-repo-logo-image]: ../docs/img/logo-commonalaxy.png
 [product-repo-url]: .
 [stackshare-badge-image]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat-square
-[stackshare-url]: https://stackshare.io/commonality/generator-community
+[stackshare-url]: https://stackshare.io/commonality/<%= name %>
 [standard-js-badge-image]: https://cdn.rawgit.com/standard/standard/master/badge.svg
 [standard-js-url]: https://github.com/standard/standard
 [standard-version-url]: https://github.com/conventional-changelog/standard-version

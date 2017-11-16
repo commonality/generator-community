@@ -25,7 +25,7 @@
   * [3.5. Update tables of contents in markdown files](#35-update-tables-of-contents-in-markdown-files)
 - [4. `npm-scripts`](#4-npm-scripts)
 - [5. Semantic version and `CHANGELOG`](#5-semantic-version-and-changelog)
-- [6. Contributing to `generator-community`](#6-contributing-to-generator-community)
+- [6. Contributing](#6-contributing)
 - [7. License](#7-license)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
@@ -86,13 +86,16 @@ bash: foobar: <span class="hljs-built_in">command</span> not found
 <p>If you feel comfortable using the command line, try one of the following version managers:</p>
 <ul>
   <li><a href="https://github.com/creationix/nvm">Node Version Manager (<code>nvm</code>)</a> (for macOS and Linux Bash shells)</li>
-  <li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> (for Windows)</li>
-  <li><a href="https://github.com/marcelklehr/nodist">nodist</a> (for Windows)</li>
+  <li><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> (for Windows)
+  <blockquote>
+  <p> :crystal_ball: I cannot vouch for this Windows option, so please do a little homework, first.</p>
+  </li>
+  <li><a href="https://github.com/marcelklehr/nodist">nodist</a> (for Windows)
+  <blockquote>
+  <p> :crystal_ball: I cannot vouch for this Windows option, so please do a little homework, first.</p>
+  </blockquote>
+  </li>
 </ul>
-<br>
-<blockquote>
-<p>:information_source: I cannot vouch for the two Windows options, so do a little homework, first.</p>
-</blockquote>
 </ul>
 </details>
 
@@ -311,7 +314,7 @@ $ yo community:conduct --email somebody@example.com
 >
 > Owen, K., Keepers, B., Shepherd, S., & Eghbal, N. (2017, February 17). Starting an Open Source Project. Retrieved September 13, 2017, from https://opensource.guide/starting-a-project/#writing-your-contributing-guidelines
 
-[![Alert icon][icon-goal-image]][milestones-url] This feature will be delivered with [MVP4: community:contribute][milestones-url].
+[![Alert icon][icon-alert-50-image]][milestones-url] This feature is slowly in development, and will be delivered with [MVP4: community:contribute][milestones-url].
 
 ### 3.4. `yo community:license`
 > ![Quote][icon-quote-left-image] An open source license guarantees that others can use, copy, modify, and contribute back to your project without repercussions. It also protects you from sticky legal situations. **You must include a license when you launch an open source project.**
@@ -381,10 +384,29 @@ Options:
 `yo community` installs an __npm-script__ that will help keep your documents' table of contents up-to-date. To automatically update your markdown files' tables of contents:
 
   * Add the following comments to your markdown file(s):
-    ```md
-    <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-    This text will be replaced by a table of contents 😏 .
-    <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+    ```markdown
+    <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) ⛔️ -->
+- [1. Overview](#1-overview)
+- [2. Installation](#2-installation)
+  * [2.1. Prerequisite software](#21-prerequisite-software)
+  * [2.2. Install Yeoman and `generator-community`](#22-install-yeoman-and-generator-community)
+- [3. Usage](#3-usage)
+  * [3.1. `yo community:readme`](#31-yo-communityreadme)
+    + [3.1.1. Guided assistance](#311-guided-assistance)
+    + [3.1.2. CLI automation](#312-cli-automation)
+  * [3.2. `yo community:conduct`](#32-yo-communityconduct)
+    + [3.2.1. Guided assistance](#321-guided-assistance)
+    + [3.2.2. CLI automation](#322-cli-automation)
+  * [3.3. `yo community:contributing`](#33-yo-communitycontributing)
+  * [3.4. `yo community:license`](#34-yo-communitylicense)
+    + [3.4.1. Guided assistance](#341-guided-assistance)
+    + [3.4.2. CLI automation](#342-cli-automation)
+  * [3.5. Update tables of contents in markdown files](#35-update-tables-of-contents-in-markdown-files)
+- [4. `npm-scripts`](#4-npm-scripts)
+- [5. Semantic version and `CHANGELOG`](#5-semantic-version-and-changelog)
+- [6. Contributing](#6-contributing)
+- [7. License](#7-license)
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END ⛔️ -->
     ```
   * Open a Terminal and run:
     ```shell
@@ -411,7 +433,7 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 | Script | Description |
 |--------|-------------|
 | `docs` | `npm run docs:scripts && npm run docs:toc` |
-| `docs:toc` | `md-magic --path '**/*.md' --ignore 'node_modules'` |
+| `docs:script` | `node ./markdown.config.js` |
 | `lint` | `npm run lint:node-version && npm run lint:js && npm run lint:manifest` |
 | `lint:js` | `eslint ./generators/**/*.js ./__tests__/**/*.js --fix` |
 | `lint:manifest` | `fixpack` |
@@ -429,25 +451,41 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 
 The latest version of `commonality/generator-community` is `0.0.0`. View the [`CHANGELOG`][changelog-url] for details.
 
-## 6. Contributing to `generator-community`
-> [![Learn how to make a Pull Request with free training][prs-welcome-badge-image]][prs-welcome-url]
->
-> We welcome contributors with [Pull Requests][prs-welcome-url]!
+## 6. Contributing
+
+[![Learn how to make a Pull Request with free training][prs-welcome-badge-image]][prs-welcome-url] We welcome contributions with [Pull Requests (PRs)][prs-welcome-url]!
+
+**[:four_leaf_clover: Read the CONTRIBUTING guidelines to get started. :four_leaf_clover:][contributing-url]**
+
+---
 
 Contributions in the form of GitHub pull requests are welcome. Before embarking on a significant change, please adhere to the following guidelines:
 
-  1. Read the [Code of Conduct][code-of-conduct-url].
-  1. Create an issue to discuss the proposed change and ensure that it is likely to be merged:
-      * [Report a defect][issues-new-defect-url] (aka "bug");
-      * [Request a new feature][issues-new-feat-url];
-      * [![Issue Status: Available][icon-issue-label-status-available-image] Volunteer for an available issue][issues-available-url].
-  1. Follow [Contributing to `generator-community`][contributing-url]'s coding conventions and Git workflow if you're willing and able to program (or want to learn how).
+  1. **[Create an issue][issues-url]**&mdash;e.g., a [defect ("bug") report][issues-new-defect-url] or a [feature request][issues-new-feat-url]&mdash;to propose changes.
+
+    _Exceptions:_
+    > If you're working on documentation and fixing something simple like a typo or an easy bug, go ahead and make a pull request.
+
+  1. **[Follow the CONTRIBUTING guidelines][contributing-url].**
+
+     _Why:_
+     > Standards and guidelines make communication easier. If you're willing and able to program&mdash;or want to learn how&mdash; following the guidelines will increase the likelihood of adding your changes to the software product.
+
+  1. **[Read the Code of Conduct][code-of-conduct-url].**
+
+     _Why:_
+     > It's more fun when everybody's friendly and respectful.
+
+  1. **[Make a pull request][pulls-url]** when you're ready for other to review your changes (or you get stuck somewhere).
+
+     _PR novices:_
+     > **:raising_hand: Never created a pull request?** No problem. [:free: Take this free online training][prs-welcome-url]. (It even covers most of the conventions in the [CONTRIBUTING guidelines][contributing-url]!)
 
 ## 7. License
 
 [MIT][license-url] © [Greg Swindle][author-url].
 
-__Third-party software licenses for `generator-community__ ([read the NOTICE file][notice-url] for a detailed report):
+__Third-party software licenses for `generator-community`__ ([read the NOTICE file][notice-url] for a detailed report):
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcommonality%2Fgenerator-community.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcommonality%2Fgenerator-community?ref=badge_large)
 
@@ -504,7 +542,6 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [icon-npm-image]: ./docs/img/tech-stack/icon-npm-50.png
 [icon-package-image]: ./docs/img/icons8/icon-package-filled.png
 [icon-quote-left-image]: ./docs/img/icons8/icon-quote-left-25.png
-[icon-road-milestone-image]: ./docs/img/icons8/img-goal-filled-50.png
 [icon-standardjs-image]: ./docs/img/tech-stack/icon-standardjs-50.png
 [icon-travis-image]: ./docs/img/icons8/travis-ci-50.png
 [icon-user-manual-image]: ./docs/img/icons8/icon-user-manual-grey-50.png
@@ -513,7 +550,8 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [issues-available-url]: /commonality/generator-community/issues?q=is%3Aissue+is%3Aopen+label%3A%22Status%3A+Available%22
 [issues-new-defect-url]: https://github.com/commonality/generator-community/issues/new?title=fix%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
 [issues-new-feat-url]: https://github.com/commonality/generator-community/issues/new?title=feat%28affected-scope%29%3A+subject-line-with-very-few-words&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
-[license-badge-image]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square
+[issues-url]: https://github.com/commonality/generator-community/issues
+[license-badge-image]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square
 [license-choose-url]: https://choosealicense.com/
 [license-no-license-url]: https://choosealicense.com/no-license/
 [license-unlicense-url]: https://choosealicense.com/licenses/#unlicense
@@ -534,6 +572,7 @@ __Third-party software licenses for `generator-community__ ([read the NOTICE fil
 [pr-url]: /commonality/generator-community/pulls
 [prs-welcome-badge-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs-welcome-url]: http://makeapullrequest.com
+[pulls-url]: https://github.com/commonality/generator-community/issues
 [quote-left-img]: ./docs/img/icons8/quote-left-25.png
 [readme-score-badge-image]: http://readme-score-api.herokuapp.com/score.svg?style=flat-square&url=https://github.com/commonality/generator-community
 [readme-score-url]: http://clayallsopp.github.io/readme-score?url=https://github.com/commonality/generator-community
