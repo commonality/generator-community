@@ -14,7 +14,7 @@
 ## Table of contents
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-- [1. __Issues__](#1-__issues__)
+- [1. Issues](#1-issues)
   * [1.1. Create Issues for feature requests and defects.](#11-create-issues-for-feature-requests-and-defects)
   * [1.2. Format titles with **`type(scope): subject`**.](#12-format-titles-with-typescope-subject)
   * [1.3. Fill out the issue template.](#13-fill-out-the-issue-template)
