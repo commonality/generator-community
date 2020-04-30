@@ -1,0 +1,72 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - yeoman-generator > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - yeoman-generator > async > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-license > yeoman-generator > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > yeoman-generator > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-license > yeoman-generator > async > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > yeoman-generator > async > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-license > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-license > yeoman-generator > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-jest > yeoman-generator > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-travis > yeoman-generator > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-travis > merge-and-concat > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-license > yeoman-generator > async > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-jest > yeoman-generator > async > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-travis > yeoman-generator > async > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-license > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-license > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-license > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-jest > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-travis > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-license > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-jest > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-travis > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-license > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-jest > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
+    - generator-node > generator-travis > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-04-30T21:04:52.711Z'
