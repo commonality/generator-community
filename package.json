@@ -38,7 +38,8 @@
     "markdown-magic-package-scripts": "1.2.0",
     "parse-author": "2.0.0",
     "update-notifier": "2.2.0",
-    "yeoman-generator": "2.0.0"
+    "yeoman-generator": "2.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-jest": "21.0.2",
@@ -107,11 +108,13 @@
     "lint:manifest": "fixpack",
     "lint:node-version": "check-node-version --package",
     "posttest": "npm run security",
-    "prepublish": "npm run security",
+    "prepublish": "npm run snyk-protect && npm run security",
     "pretest": "npm prune && npm run lint",
     "release": "standard-version",
     "security": "npm run security:nsp:scan",
     "security:nsp:scan": "nsp check",
-    "test": "jest --forceExit --config=jest.config.json"
-  }
+    "test": "jest --forceExit --config=jest.config.json",
+    "snyk-protect": "snyk protect"
+  },
+  "snyk": true
 }
