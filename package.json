@@ -38,7 +38,7 @@
     "markdown-magic-package-scripts": "1.2.0",
     "parse-author": "2.0.0",
     "update-notifier": "2.2.0",
-    "yeoman-generator": "2.0.0"
+    "yeoman-generator": "5.0.0"
   },
   "devDependencies": {
     "babel-jest": "21.0.2",
