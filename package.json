@@ -29,7 +29,7 @@
     "generator-license": "5.1.0",
     "generator-node": "2.2.0",
     "git-remote-origin-url": "2.0.0",
-    "git-url-parse": "7.0.1",
+    "git-url-parse": "11.0.0",
     "github-username": "4.1.0",
     "inquirer-npm-name": "2.0.0",
     "lodash": "^4.17.4",
