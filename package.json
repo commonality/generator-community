@@ -26,8 +26,8 @@
     "scope": "\\S+.*"
   },
   "dependencies": {
-    "generator-license": "5.1.0",
-    "generator-node": "2.2.0",
+    "generator-license": "5.2.0",
+    "generator-node": "2.4.0",
     "git-remote-origin-url": "2.0.0",
     "git-url-parse": "7.0.1",
     "github-username": "4.1.0",
